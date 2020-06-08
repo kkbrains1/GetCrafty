@@ -6,9 +6,35 @@ const router = new Router();
 const Craftbeer = require('./../models/craftbeer');
 
 router.post('/', (req, res, next) => {
-  //console.log(req.body);
-  const { name, tagline } = req.body;
-  Craftbeer.create({ name, tagline })
+  console.log(req.body);
+  const {
+    name,
+    tagline,
+    first_brewed,
+    description,
+    image_url,
+    abv,
+    ibu,
+    food_pairing,
+    ingredients,
+    method,
+    contributed_by,
+    price
+  } = req.body;
+  Craftbeer.create({
+    name,
+    tagline,
+    first_brewed,
+    description,
+    image_url,
+    abv,
+    ibu,
+    food_pairing,
+    ingredients,
+    method,
+    contributed_by,
+    price
+  })
     .then(craftbeer => {
       res.json({ craftbeer });
     })
