@@ -1,0 +1,19 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  a {
+    padding: 1em;
+    &:first-child {
+      margin-right: auto;
+    }
+  }
+  button {
+    border: 0;
+  }
+  img {
+    width: 2em;
+    border-radius: 50%;
+    height: 2em;
+  }
+}
+

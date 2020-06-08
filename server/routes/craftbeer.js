@@ -7,8 +7,34 @@ const Craftbeer = require('./../models/craftbeer');
 
 router.post('/', (req, res, next) => {
   //console.log(req.body);
-  const { name, tagline } = req.body;
-  Craftbeer.create({ name, tagline })
+  const {
+    name,
+    tagline,
+    first_brewed,
+    description,
+    image_url,
+    abv,
+    ibu,
+    food_pairing,
+    ingredients,
+    method,
+    contributed_by,
+    price
+  } = req.body;
+  Craftbeer.create({
+    name,
+    tagline,
+    first_brewed,
+    description,
+    image_url,
+    abv,
+    ibu,
+    food_pairing,
+    ingredients,
+    method,
+    contributed_by,
+    price
+  })
     .then((craftbeer) => {
       res.json({ craftbeer });
     })
@@ -26,7 +52,7 @@ router.get('/list', (req, res, next) => {
 
 router.get('/:id', (req, res, next) => {
   const craftbeerId = req.params.id;
-  console.log(req.params);
+  //console.log(req.params);
   Craftbeer.findById(craftbeerId)
     .then((craftbeer) => {
       res.json({ craftbeer });
