@@ -7,22 +7,49 @@ const User = require('./../models/user');
 
 const router = new Router();
 
-router.post('/sign-up', (req, res, next) => {
+// MULTER CONFIG
+
+const multer = require('multer');
+const cloudinary = require('cloudinary').v2;
+const { CloudinaryStorage } = require('multer-storage-cloudinary');
+
+//UPLOAD IMG => CONECTED WITH .ENV
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_API_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET
+});
+
+const storage = new CloudinaryStorage({
+  cloudinary,
+  params: {
+    folder: 'GetCrafty'
+  }
+});
+
+const uploader = multer({ storage });
+
+router.post('/sign-up', uploader.single("photo"), (req, res, next) => {
   const { name, email, password } = req.body;
+  //console.log(req.file)
+  let imageUrl;
+  if (req.file) imageUrl = req.file.path;
   bcryptjs
     .hash(password, 10)
     .then(hash => {
       return User.create({
         name,
         email,
-        passwordHash: hash
+        passwordHash: hash,
+        photo: imageUrl
       });
     })
     .then(user => {
       req.session.user = user._id;
-      res.json({ user });
+      res.json({ user: user });
     })
     .catch(error => {
+      console.log(error)
       next(error);
     });
 });
@@ -55,6 +82,12 @@ router.post('/sign-in', (req, res, next) => {
 router.post('/sign-out', (req, res, next) => {
   req.session.destroy();
   res.json({});
+});
+
+router.get('/me', (req, res, next) => {
+  res.json({
+    user: req.user || null
+  });
 });
 
 module.exports = router;
