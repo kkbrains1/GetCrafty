@@ -22,9 +22,9 @@ const schema = new mongoose.Schema(
         }
       },
       {
-        beer: {
+        craftbeer: {
           type: mongoose.Schema.Types.ObjectId,
-          ref: 'Beer'
+          ref: 'Craftbeer'
         },
         quantity: {
           type: Number

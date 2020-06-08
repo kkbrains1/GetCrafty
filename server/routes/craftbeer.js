@@ -6,7 +6,7 @@ const router = new Router();
 const Craftbeer = require('./../models/craftbeer');
 
 router.post('/', (req, res, next) => {
-  console.log(req.body);
+  //console.log(req.body);
   const {
     name,
     tagline,
@@ -52,7 +52,7 @@ router.get('/list', (req, res, next) => {
 
 router.get('/:id', (req, res, next) => {
   const craftbeerId = req.params.id;
-  console.log(req.params);
+  //console.log(req.params);
   Craftbeer.findById(craftbeerId)
     .then(craftbeer => {
       res.json({ craftbeer });
