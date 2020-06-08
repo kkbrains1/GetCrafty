@@ -10,6 +10,8 @@ import AuthenticationSignUpView from './views/Authentication/SignUp';
 import AuthenticationSignInView from './views/Authentication/SignIn';
 import { loadAuthenticatedUser } from './services/authentication';
 
+import CraftbeerListView from './views/Products/Craftbeer/List';
+
 class App extends Component {
   constructor() {
     super();
@@ -52,6 +54,10 @@ class App extends Component {
             <Route
               path="/sign-in"
               render={(props) => <AuthenticationSignInView {...props} updateUser={this.updateUser} />}
+            />
+            <Route 
+              path="/products/craftbeer/list"
+              component={CraftbeerListView}
             />
           </Switch>
         </BrowserRouter>
