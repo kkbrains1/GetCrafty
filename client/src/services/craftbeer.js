@@ -9,6 +9,7 @@ const listCraftbeers = () => {
     .get('/list')
     .then(result => {
       const craftbeers = result.data.craftbeers;
+      console.log(craftbeers)
       return Promise.resolve(craftbeers)
     })
     .catch(error => {
@@ -16,4 +17,16 @@ const listCraftbeers = () => {
     });
 };
 
-export default listCraftbeers;
+const singleCraftbeer = id => {
+  return baseURLCraftbeer
+    .get(`/${id}`)
+    .then(result => {
+      const craftbeer = result.data.craftbeer;
+      return Promise.resolve(craftbeer)
+    })
+    .catch(error => {
+      return Promise.reject(error);
+    });
+};
+
+export {listCraftbeers, singleCraftbeer};

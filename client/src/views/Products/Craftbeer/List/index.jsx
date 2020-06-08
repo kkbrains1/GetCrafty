@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './style.scss';
 
-import listCraftbeers from '../../../../services/craftbeer';
+import {listCraftbeers} from '../../../../services/craftbeer';
+import CraftbeerList from './../../../../components/Products/CraftbeerList';
 
 class CraftbeerListView extends Component {
   constructor() {
@@ -29,9 +30,7 @@ class CraftbeerListView extends Component {
     return (
       <div>
         <h1>I am the craft beer list view</h1>
-        {this.state.craftbeers.map(craftbeer => (
-          <span>{craftbeer.name}</span>
-        ))}
+        <CraftbeerList craftbeers={this.state.craftbeers} />
       </div>
     );
   }

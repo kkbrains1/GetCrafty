@@ -11,6 +11,7 @@ import AuthenticationSignInView from './views/Authentication/SignIn';
 import { loadAuthenticatedUser } from './services/authentication';
 
 import CraftbeerListView from './views/Products/Craftbeer/List';
+import CraftbeerSingleView from './views/Products/Craftbeer/Single';
 
 class App extends Component {
   constructor() {
@@ -23,18 +24,18 @@ class App extends Component {
 
   componentDidMount() {
     loadAuthenticatedUser()
-      .then((user) => {
+      .then(user => {
         this.updateUser(user);
         this.setState({
           loaded: true
         });
       })
-      .catch((error) => {
+      .catch(error => {
         console.log(error);
       });
   }
 
-  updateUser = (user) => {
+  updateUser = user => {
     this.setState({
       user
     });
@@ -49,15 +50,16 @@ class App extends Component {
             <Route path="/" exact component={HomeView} />
             <Route
               path="/sign-up"
-              render={(props) => <AuthenticationSignUpView {...props} updateUser={this.updateUser} />}
+              render={props => <AuthenticationSignUpView {...props} updateUser={this.updateUser} />}
             />
             <Route
               path="/sign-in"
-              render={(props) => <AuthenticationSignInView {...props} updateUser={this.updateUser} />}
+              render={props => <AuthenticationSignInView {...props} updateUser={this.updateUser} />}
             />
-            <Route 
-              path="/products/craftbeer/list"
-              component={CraftbeerListView}
+            <Route path="/products/craftbeer/list" exact component={CraftbeerListView} />
+            <Route
+              path="/products/craftbeer/:id"
+              render={props => <CraftbeerSingleView {...props} />}
             />
           </Switch>
         </BrowserRouter>
