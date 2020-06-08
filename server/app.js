@@ -15,6 +15,8 @@ const indexRouter = require('./routes/index');
 const authenticationRouter = require('./routes/authentication');
 
 const craftbeerRouter = require('./routes/craftbeer.js');
+const snackRouter = require('./routes/snack.js');
+const brewingkitRouter = require('./routes/brewingkit.js');
 
 const app = express();
 
@@ -45,6 +47,8 @@ app.use(bindUserToViewLocals);
 app.use('/', indexRouter);
 app.use('/authentication', authenticationRouter);
 app.use('/api/craftbeer', craftbeerRouter);
+app.use('/api/snack', snackRouter);
+app.use('/api/brewingkit', brewingkitRouter);
 
 // Catch missing routes and forward to error handler
 app.use((req, res, next) => {
