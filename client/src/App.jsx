@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
 import NavBar from './components/NavBar';
+import Footer from './components/Footer';
 import HomeView from './views/Home';
+import PastOrdersView from './views/PastOrders';
+import ErrorView from './views/Error';
+import SingleOrderView from './views/SingleOrder';
 
 import AuthenticationSignUpView from './views/Authentication/SignUp';
 import AuthenticationSignInView from './views/Authentication/SignIn';
@@ -53,7 +57,24 @@ class App extends Component {
               path="/sign-in"
               render={(props) => <AuthenticationSignInView {...props} updateUser={this.updateUser} />}
             />
+            <Route
+              path="/order/:id"
+              render={(props) => (
+                <SingleOrderView
+                  {...props}
+                  // shoppingBasket={this.state.shoppingBasket}
+                  // changeDishQuantity={this.changeDishQuantity}
+                />
+              )}
+            />
+            {/* <Route path="/shopping-basket" component={ShoppingBasketView} /> */}
+            <Route path="/past-orders" component={PastOrdersView} />
+
+            <Route path="/error/:code" component={ErrorView} />
+
+            <Redirect to="/error/404" />
           </Switch>
+          <Footer />
         </BrowserRouter>
       </div>
     );
