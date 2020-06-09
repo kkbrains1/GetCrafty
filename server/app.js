@@ -13,6 +13,8 @@ const basicAuthenticationDeserializer = require('./middleware/basic-authenticati
 
 const authenticationRouter = require('./routes/authentication');
 const craftbeerRouter = require('./routes/craftbeer.js');
+const snackRouter = require('./routes/snack.js');
+const brewingkitRouter = require('./routes/brewingkit.js');
 const orderRouter = require('./routes/order');
 
 const app = express();
@@ -43,6 +45,8 @@ app.use(basicAuthenticationDeserializer);
 
 app.use('/authentication', authenticationRouter);
 app.use('/api/craftbeer', craftbeerRouter);
+app.use('/api/snack', snackRouter);
+app.use('/api/brewingkit', brewingkitRouter);
 app.use('/api/order', orderRouter);
 
 // Catch missing routes and forward to error handler

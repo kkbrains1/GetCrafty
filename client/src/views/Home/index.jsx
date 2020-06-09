@@ -3,10 +3,9 @@ import './style.scss';
 
 import { Link } from 'react-router-dom';
 
-function Home() {
+function HomeView() {
   return (
     <div>
-      
       <section>
         <div className="logo-position-section-1">
           <span>[img.logo]</span>
@@ -14,41 +13,37 @@ function Home() {
       </section>
 
       <section>
-      <Link to="/">
-        {/*<img src={'./../public/images/'}*/}
-        <h1>About us / Welcome</h1>
-        <p>[text]</p>
-      </Link>
+        <Link to="/">
+          {/*<img src={'./../public/images/'}*/}
+          <h1>About us / Welcome</h1>
+          <p>[text]</p>
+        </Link>
       </section>
 
       <section>
-      <Link to="/beers">
-        {/*<img src={'./../public/images/'}*/}
-        <h1>Our beers</h1>
-        <span>[beer.img]</span>
-        <h2>[beer.title]</h2>
-        <p>[beers.description]</p>
-        <p>
-          <span>[icon]</span>
-          <span>[beer.volume]</span>
-        </p>
-        <p>
-          <span>[icon]</span>
-          <span>[beer.tagline]</span>
-        </p>
-      </Link>
+        <Link to="/beers">
+          {/*<img src={'./../public/images/'}*/}
+          <h1>Our beers</h1>
+          <span>[beer.img]</span>
+          <h2>[beer.title]</h2>
+          <p>[beers.description]</p>
+          <p>
+            <span>[icon]</span>
+            <span>[beer.volume]</span>
+          </p>
+          <p>
+            <span>[icon]</span>
+            <span>[beer.tagline]</span>
+          </p>
+        </Link>
       </section>
 
       <section>
-      <Link to="/">
-        {/*<img src={'./../public/images/'}*/}
-        <h1>Brewery Experience</h1>
-        <p>
-          [img]
-          [img]
-          [img]
-        </p>
-      </Link>
+        <Link to="/">
+          {/*<img src={'./../public/images/'}*/}
+          <h1>Brewery Experience</h1>
+          <p>[img] [img] [img]</p>
+        </Link>
       </section>
 
       <section>
@@ -60,4 +55,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default HomeView;
