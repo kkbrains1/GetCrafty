@@ -31,7 +31,7 @@ const uploader = multer({ storage });
 
 router.post('/sign-up', uploader.single("photo"), (req, res, next) => {
   const { name, email, password } = req.body;
-  //console.log(req.file)
+  console.log(req.file)
   let imageUrl;
   if (req.file) imageUrl = req.file.path;
   bcryptjs
@@ -79,6 +79,42 @@ router.post('/sign-in', (req, res, next) => {
     });
 });
 
+
+//Update Password
+
+router.post('/update-password', (req, res, next) => {
+  const password = req.body.password;
+  bcryptjs
+    .hash(password, 10)
+    .then((hash) => {
+      return User.findByIdAndUpdate(req.user._id, {
+        passwordHash: hash
+      });
+    })
+    .then((user) => {
+      res.json('/');
+    })
+    .catch((error) => {
+      next(error);
+    });
+});
+
+//Update Img
+
+router.post('/update-img', uploader.single("photo"), (req, res, next) => {
+  const photo = req.file.path;
+  console.log(req.file)
+  User.findByIdAndUpdate(req.user._id, { photo: photo })
+    .then(user => {
+    req.session.user = user._id;
+    res.json({ user: user });
+    })
+    .catch(error => {
+      console.log(error)
+      next(error);
+    });
+});
+
 router.post('/sign-out', (req, res, next) => {
   req.session.destroy();
   res.json({});
@@ -89,5 +125,6 @@ router.get('/me', (req, res, next) => {
     user: req.user || null
   });
 });
+
 
 module.exports = router;

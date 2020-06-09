@@ -60,4 +60,34 @@ const loadAuthenticatedUser = () => {
     });
 };
 
-export { signUp, signIn, signOut, loadAuthenticatedUser };
+
+const updatePassword = (body) => {
+  return baseAuthenticationService
+    .post('/update-password', body)
+    .then((response) => {
+      const data = response.data;
+      const user = data.user;
+      return Promise.resolve(user);
+    })
+    .catch((error) => {
+      return Promise.reject(error);
+    });
+};
+
+const updateImg = (body) => {
+  const form = new FormData();
+  form.append('photo', body.photo);
+  return baseAuthenticationService
+    .post('/update-img', form)
+    .then((response) => {
+      const data = response.data;
+      const user = data.user;
+      return Promise.resolve(user);
+    })
+    .catch((error) => {
+      return Promise.reject(error);
+    });
+};
+
+
+export { signUp, signIn, signOut, loadAuthenticatedUser, updatePassword, updateImg };

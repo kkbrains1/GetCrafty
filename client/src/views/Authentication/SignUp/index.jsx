@@ -33,7 +33,6 @@ class AuthenticationSignUpView extends Component {
 
     signUp({ email, name, password, photo})
       .then((user) => {
-        console.log("clicked")
         this.props.updateUser(user);
         // Redirect user to home page after successful sign up
         this.props.history.push('/');

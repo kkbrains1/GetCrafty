@@ -12,7 +12,6 @@ const serveFavicon = require('serve-favicon');
 const basicAuthenticationDeserializer = require('./middleware/basic-authentication-deserializer.js');
 
 const authenticationRouter = require('./routes/authentication');
-
 const craftbeerRouter = require('./routes/craftbeer.js');
 const orderRouter = require('./routes/order');
 
@@ -20,6 +19,7 @@ const app = express();
 
 app.use(serveFavicon(join(__dirname, 'public/images', 'favicon.ico')));
 app.use(logger('dev'));
+app.use(express.static(join(__dirname, '../client/build')));
 app.use(express.json());
 app.use(cookieParser());
 app.use(

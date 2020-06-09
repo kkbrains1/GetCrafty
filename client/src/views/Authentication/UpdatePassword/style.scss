@@ -1,0 +1,14 @@
+.user-profile-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 25%;
+  .user-profile-btn{
+      padding: 1em;
+      background-color: transparent;
+      color: inherit;
+      border: 1px solid rgb(199, 199, 199);
+      width: 75%;
+      margin: 0.2em auto;
+    }
+}
