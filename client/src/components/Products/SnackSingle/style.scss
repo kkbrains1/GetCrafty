@@ -1,0 +1,27 @@
+.beer__page {
+  display: flex;
+  overflow-x: scroll;
+  h1 {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+  }
+}
+
+.beer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.beer__media {
+  width: 6em;
+}
+
+.beer__buttons {
+  display: flex;
+  p {
+    box-sizing: border-box;
+    padding: 0.5em 1em;
+  }
+}

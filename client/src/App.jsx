@@ -12,6 +12,8 @@ import { loadAuthenticatedUser } from './services/authentication';
 
 import CraftbeerListView from './views/Products/Craftbeer/List';
 import CraftbeerSingleView from './views/Products/Craftbeer/Single';
+import SnackListView from './views/Products/Snack/List';
+import SnackSingleView from './views/Products/Snack/Single';
 
 class App extends Component {
   constructor() {
@@ -60,6 +62,11 @@ class App extends Component {
             <Route
               path="/products/craftbeer/:id"
               render={props => <CraftbeerSingleView {...props} />}
+            />
+            <Route path="/products/snack/list" exact component={SnackListView} />
+            <Route
+              path="/products/snack/:id"
+              render={props => <SnackSingleView {...props} />}
             />
           </Switch>
         </BrowserRouter>

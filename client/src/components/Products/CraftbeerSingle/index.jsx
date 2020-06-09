@@ -12,7 +12,6 @@ const CraftbeerSingle = props => {
         <div className="beer__buttons">
           <span>Alc {craftbeer.abv} %</span>
           <span>IBU {craftbeer.ibu}</span>
-
           <button>-</button>
           <span>0</span>
           <button>+</button>
