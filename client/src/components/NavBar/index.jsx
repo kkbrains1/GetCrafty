@@ -26,7 +26,7 @@ const NavBar = (props) => {
       </Link>
       {(props.user && (
         <>
-          <img src={props.user.photo} />
+          <img src={props.user.photo} alt={props.user.name}/>
           <Link to="/userProfile">{props.user.name}</Link>
           <button onClick={signOutAndLiftUserState}>Sign Out</button>
         </>
