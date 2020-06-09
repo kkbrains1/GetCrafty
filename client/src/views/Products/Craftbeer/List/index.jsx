@@ -29,7 +29,7 @@ class CraftbeerListView extends Component {
   render() {
     return (
       <div>
-        <h1>I am the craft beer list view</h1>
+        <h1>BEER</h1>
         <CraftbeerList craftbeers={this.state.craftbeers} />
       </div>
     );
