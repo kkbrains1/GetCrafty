@@ -14,6 +14,8 @@ import CraftbeerListView from './views/Products/Craftbeer/List';
 import CraftbeerSingleView from './views/Products/Craftbeer/Single';
 import SnackListView from './views/Products/Snack/List';
 import SnackSingleView from './views/Products/Snack/Single';
+import BrewingkitListView from './views/Products/Brewingkit/List';
+import BrewingkitSingleView from './views/Products/Brewingkit/Single';
 
 class App extends Component {
   constructor() {
@@ -64,9 +66,11 @@ class App extends Component {
               render={props => <CraftbeerSingleView {...props} />}
             />
             <Route path="/products/snack/list" exact component={SnackListView} />
+            <Route path="/products/snack/:id" render={props => <SnackSingleView {...props} />} />
+            <Route path="/products/brewingkit/list" exact component={BrewingkitListView} />
             <Route
-              path="/products/snack/:id"
-              render={props => <SnackSingleView {...props} />}
+              path="/products/brewingkit/:id"
+              render={props => <BrewingkitSingleView {...props} />}
             />
           </Switch>
         </BrowserRouter>

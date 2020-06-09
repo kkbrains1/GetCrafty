@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Maris Otter Extra Malt",
+    "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "photo": "https://source.unsplash.com/collection/251966/800x601",
+    "price": {
+      "amount": 300,
+      "currency": "EUR"
+    },
+    "description": "Maris Otter Extra Malt"
+  },
+  {
+    "name": "Caramalt Malt",
+    "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "photo": "https://source.unsplash.com/collection/251966/800x601",
+    "price": {
+      "amount": 300,
+      "currency": "EUR"
+    },
+    "description": "Caramalt Malt"
+  },
+  {
+    "name": "Munich Malt",
+    "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "photo": "https://source.unsplash.com/collection/251966/800x601",
+    "price": {
+      "amount": 300,
+      "currency": "EUR"
+    },
+    "description": "Munich Malt"
+  },
+  {
+    "name": "Propino Pale Malt",
+    "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "photo": "https://source.unsplash.com/collection/251966/800x601",
+    "price": {
+      "amount": 300,
+      "currency": "EUR"
+    },
+    "description": "Propino Pale Malt"
+  },
+  {
+    "name": "Extra Pale Malt",
+    "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "photo": "https://source.unsplash.com/collection/251966/800x601",
+    "price": {
+      "amount": 300,
+      "currency": "EUR"
+    },
+    "description": "Extra Pale Malt"
+  }
+]
