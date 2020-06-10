@@ -79,7 +79,7 @@ router.get('/list', (req, res, next) => {
   Order.find()
     .then((orders) => {
       allOrders = orders;
-      let baskets = allOrders.map((item) => item.basket);
+      const baskets = allOrders.map((item) => item.basket);
       allProductIds = baskets
         .flat()
         .map((item) => item._id.toString())

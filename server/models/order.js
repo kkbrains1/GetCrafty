@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-​
+
 const schema = new mongoose.Schema(
   {
     basket: [
@@ -57,13 +57,5 @@ const schema = new mongoose.Schema(
     }
   }
 );
-​
 const Model = mongoose.model('Order', schema);
-​
 module.exports = Model;
-Recolher
-
-
-
-
-

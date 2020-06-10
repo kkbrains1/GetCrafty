@@ -50,6 +50,19 @@ router.get('/list', (req, res, next) => {
     .catch((error) => next(error));
 });
 
+router.get('/random', (req, res, next) => {
+  Craftbeer.find()
+    .then((allBeers) => {
+      const random_id = Math.floor(Math.random() * allBeers.length);
+      const beer = allBeers[random_id];
+      console.log(allBeers, random_id);
+      res.json({ beer });
+    })
+    .catch((error) => {
+      next(error);
+    });
+});
+
 router.get('/:id', (req, res, next) => {
   const craftbeerId = req.params.id;
   //console.log(req.params);

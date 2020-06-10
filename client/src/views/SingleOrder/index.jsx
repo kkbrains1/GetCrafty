@@ -15,7 +15,8 @@ class SingleOrderView extends Component {
     const id = this.props.match.params.id;
 
     loadOrder(id)
-      .then((order) => {
+      .then((order, products) => {
+        console.log(order, products);
         this.setState({
           loaded: true,
           order
@@ -50,6 +51,9 @@ class SingleOrderView extends Component {
                 <th>Total</th>
               </tr>
               {order.basket.map((item) => {
+                return <p>{item._id}</p>;
+              })}
+              {/* {order.basket.map((item) => {
                 return (
                   <tr>
                     <td>{item.details.name}</td>
@@ -64,7 +68,7 @@ class SingleOrderView extends Component {
                     </td>
                   </tr>
                 );
-              })}
+              })} */}
             </table>
             <h4>
               {' '}
