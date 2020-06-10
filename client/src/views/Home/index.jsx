@@ -15,8 +15,13 @@ function HomeView() {
       <section>
         <Link to="/">
           {/*<img src={'./../public/images/'}*/}
-          <h1>About us / Welcome</h1>
-          <p>[text]</p>
+          <h1>Welcome to GetCrafty!</h1>
+          <h4>The beer that makes your sunset a pleasant one!</h4>
+          <p>
+            Are you a beer lover and you want to celebrate life? So with GetCrafty you will make the difference on your
+            meetings with your friends. GetCrafty is perfect from the first sip to the last one!
+          </p>
+          <p>Join us at Sign Up and dive into a moment to remember.</p>
         </Link>
       </section>
 
@@ -48,7 +53,10 @@ function HomeView() {
 
       <section>
         <footer>
-          <h1>Footer</h1>
+          <span>Contact us</span>
+          <span>FAQ</span>
+          <span>Partners</span>
+          <span>Link to FB</span>
         </footer>
       </section>
     </div>

@@ -3,59 +3,46 @@ const mongoose = require('mongoose');
 const schema = new mongoose.Schema(
   {
     basket: [
+      // {
+      //   brewingkit: {
+      //     type: mongoose.Schema.Types.ObjectId,
+      //     ref: 'BrewingKit'
+      //   },
+      //   quantity: {
+      //     type: Number
+      //   }
+      // },
+      // {
+      //   snack: {
+      //     type: mongoose.Schema.Types.ObjectId,
+      //     ref: 'Snack'
+      //   },
+      //   quantity: {
+      //     type: Number
+      //   }
+      // },
+      // {
+      //   craftbeer: {
+      //     type: mongoose.Schema.Types.ObjectId,
+      //     ref: 'Craftbeer'
+      //   },
+      //   quantity: {
+      //     type: Number
+      //   }
+      // }
       {
-        brewingkit: {
-          type: mongoose.Schema.Types.ObjectId,
-          ref: 'BrewingKit'
-        },
-        price: {
-          amount: { type: Number },
-          currency: {
-            type: String
-          }
+        product: {
+          type: String
         },
         quantity: {
           type: Number
-        }
-      },
-      {
-        snack: {
-          type: mongoose.Schema.Types.ObjectId,
-          ref: 'Snack'
         },
-        price: {
-          amount: { type: Number },
-          currency: {
-            type: String
-          }
-        },
-        quantity: {
-          type: Number
-        }
-      },
-      {
-        craftbeer: {
-          type: mongoose.Schema.Types.ObjectId,
-          ref: 'Craftbeer'
-        },
-        price: {
-          amount: { type: Number },
-          currency: {
-            type: String
-          }
-        },
-        quantity: {
-          type: Number
+        details: {
+          type: Object
         }
       }
     ],
     total: {
-      amount: { type: Number },
-      currency: {
-        type: String
-      }
-    },
-    totalPrice: {
       amount: { type: Number },
       currency: {
         type: String
