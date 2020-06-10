@@ -10,20 +10,23 @@ const Order = require('./../models/order');
 
 router.post('/', (req, res, next) => {
   const { basket } = req.body;
+  console.log(basket);
   //let customer;
-/*   let craftbeers;
+  /*   let craftbeers;
   let snacks;
   let brewingkits; */
   // let totalAmount = 0;
-  const productIds = basket.map(item => item.product);
-  const craftbeerIds = basket.filter(item => item.type === 'craftbeer').map(item => item.product);
-  const snackIds = basket.filter(item => item.type === 'snack').map(item => item.product);
-  const brewingkitIds = basket.filter(item => item.type === 'brewingkit').map(item => item.product);
-  console.log('craftbeers', craftbeerIds, 'snacks', snackIds, 'brewingkit', brewingkitIds);
+  const productIds = [...basket].map(item => item._id);
+  // const craftbeerIds = [...basket].filter(item => item.type === 'craftbeer').map(item => item._id);
+  // const snackIds = [...basket].filter(item => item.type === 'snack').map(item => item._id);
+  // const brewingkitIds = [...basket].filter(item => item.type === 'brewingkit').map(item => item._id);
+  // console.log('craftbeers', craftbeerIds, 'snacks', snackIds, 'brewingkit', brewingkitIds);
+  //console.log(basket);
   let list = [];
   Craftbeer.find({ _id: productIds })
     .then(result => {
       list = [...list, ...result];
+      //console.log(productIds);
       // craftbeers = result;
       // //console.log(craftbeers);
       // const subTotal = craftbeers.reduce((sum, article) => {
@@ -47,11 +50,11 @@ router.post('/', (req, res, next) => {
     })
     .then(result => {
       list = [...list, ...result];
-      console.log(list);
+      //console.log(basket);
       // snacks = result;
       //console.log('snacks', snacks);
       const totalAmount = list.reduce((sum, article) => {
-        const quantity = basket.find(item => item.product === article._id.toString()).quantity;
+        const quantity = basket.find(item => item._id === article._id.toString()).quantity;
         return sum + article.price.amount * quantity;
       }, 0);
       // totalAmount += subTotal;
@@ -70,9 +73,29 @@ router.post('/', (req, res, next) => {
 });
 
 router.get('/list', (req, res, next) => {
+  let allProductIds;
+  let allProducts = [];
+  let allOrders;
   Order.find()
     .then(orders => {
-      res.json({ orders });
+      allOrders = orders;
+      let baskets = allOrders.map(item => item.basket);
+      allProductIds = (baskets.flat()
+        .map(item => item._id.toString())
+        .filter((x, i, a) => a.indexOf(x) == i));
+      return Craftbeer.find({ _id: allProductIds });
+    })
+    .then(result => {
+      allProducts = [...allProducts, ...result];
+      return Snack.find({ _id: allProductIds });
+    })
+    .then(result => {
+      allProducts = [...allProducts, ...result];
+      return Brewingkit.find({ _id: allProductIds });
+    })
+    .then(result=> {
+      allProducts = [...allProducts, ...result];
+      res.json({ allOrders, allProducts });
     })
     .catch(error => {
       next(error);

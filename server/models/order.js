@@ -8,12 +8,6 @@ const schema = new mongoose.Schema(
           type: mongoose.Schema.Types.ObjectId,
           ref: 'BrewingKit'
         },
-        price: {
-          amount: { type: Number },
-          currency: {
-            type: String
-          }
-        },
         quantity: {
           type: Number
         }
@@ -23,12 +17,6 @@ const schema = new mongoose.Schema(
           type: mongoose.Schema.Types.ObjectId,
           ref: 'Snack'
         },
-        price: {
-          amount: { type: Number },
-          currency: {
-            type: String
-          }
-        },
         quantity: {
           type: Number
         }
@@ -37,12 +25,6 @@ const schema = new mongoose.Schema(
         craftbeer: {
           type: mongoose.Schema.Types.ObjectId,
           ref: 'Craftbeer'
-        },
-        price: {
-          amount: { type: Number },
-          currency: {
-            type: String
-          }
         },
         quantity: {
           type: Number
