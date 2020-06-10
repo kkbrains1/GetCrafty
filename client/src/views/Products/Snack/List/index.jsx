@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './style.scss';
 
 import { listSnacks } from '../../../../services/snack';
-import ProductButtons from './../../../../components/Products/ProductButtons';
+import ProductButtons from './../../../../components/ProductButtons';
 
 class SnackListView extends Component {
   constructor() {

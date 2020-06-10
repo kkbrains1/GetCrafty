@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 //import './style.scss';
 
 import { singleCraftbeer } from '../../../../services/craftbeer';
-import ProductButtons from './../../../../components/Products/ProductButtons';
+import ProductButtons from './../../../../components/ProductButtons';
 
 class CraftbeerSingleView extends Component {
   constructor(props) {

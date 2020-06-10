@@ -61,7 +61,7 @@ class App extends Component {
       });
   }
 
-  changeAmount = (brewingkit, amount) => {
+/*   changeAmount = (brewingkit, amount) => {
     if (this.state.shoppingBasket.find((item) => item.brewingkit._id === brewingkit._id)) {
       const updatedShoppingBasket = deepCloneObject(this.state.shoppingBasket);
       const indexOfBrewingkitInShoppingBasket = this.state.shoppingBasket.findIndex(
@@ -86,7 +86,7 @@ class App extends Component {
         ]
       });
     }
-  };
+  }; */
 
   emptyShoppingBasket = () => {
     this.setState({
@@ -95,22 +95,22 @@ class App extends Component {
   };
 
   // updateUser = user => {
-  // changeProductQuantity = (product, quantity) => {
+  changeProductQuantity = (product, quantity) => {
+    console.log('basket', this.state.shoppingBasket);
+    console.log('product', product);
+    console.log('quantity', quantity);
+    //if (this.state.shoppingBasket.find(item => item.product._id === product._id))
+    this.setState({
+      shoppingBasket: [
+        ...this.state.shoppingBasket,
+        {
+          product: product,
+          quantity: quantity
+        }
+      ]
+    });
   //   console.log('basket', this.state.shoppingBasket);
-  //   console.log('product', product);
-  //   console.log('quantity', quantity);
-  //   //if (this.state.shoppingBasket.find(item => item.product._id === product._id))
-  //   this.setState({
-  //     shoppingBasket: [
-  //       ...this.state.shoppingBasket,
-  //       {
-  //         product: product,
-  //         quantity: quantity
-  //       }
-  //     ]
-  //   });
-  //   console.log('basket', this.state.shoppingBasket);
-  // };
+};
 
   updateUser = (user) => {
     this.setState({

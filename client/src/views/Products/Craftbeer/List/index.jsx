@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './style.scss';
 
 import { listCraftbeers } from '../../../../services/craftbeer';
-import ProductButtons from './../../../../components/Products/ProductButtons';
+import ProductButtons from './../../../../components/ProductButtons';
 
 class CraftbeerListView extends Component {
   constructor() {
@@ -44,13 +44,13 @@ class CraftbeerListView extends Component {
               </div>
             </Link>
             <div className="beer__buttons">
-            <ProductButtons
-                  {...this.props}
-                  product={product}
-                  quantity={quantity}
-                  shoppingBasket={this.props.shoppingBasket}
-                  changeQuantity={quantity => this.props.changeProductQuantity(product, quantity)}
-                />
+              <ProductButtons
+                {...this.props}
+                product={product}
+                quantity={quantity}
+                shoppingBasket={this.props.shoppingBasket}
+                changeQuantity={quantity => this.props.changeProductQuantity(product, quantity)}
+              />
             </div>
           </div>
         ))}

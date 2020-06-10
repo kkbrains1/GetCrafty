@@ -19,11 +19,11 @@ class HomeView extends Component {
   fetchData = () => {
     // call the service to get a random beer~
     return randomCraftbeer()
-      .then((beer) => {
+      .then(beer => {
         // save the beer to the state
         this.setState({ beer, loaded: true });
       })
-      .catch((error) => {
+      .catch(error => {
         console.log(error);
       });
   };
@@ -54,7 +54,7 @@ class HomeView extends Component {
         </section>
 
         <section>
-          <Link to="/beers">
+          <Link to="/products/craftbeer/list">
             {/*<img src={'./../public/images/'}*/}
             <h1>Our beers</h1>
             {(!this.state.loaded && (
@@ -62,16 +62,16 @@ class HomeView extends Component {
                 <span>Loading...</span>
               </>
             )) || (
-
               <>
-                <img href={beer.photo}></img>
+                {/* in jsx href is replaced by src  */}
+                {/* <img href={beer.photo}></img> */}
+                <img src={beer.photo} alt={beer.name} />
                 <h2>{beer.name}</h2>
                 <p>
                   <em>{beer.tagline}</em>
                 </p>
                 <p>{beer.description}</p>
               </>
-
             )}
           </Link>
         </section>

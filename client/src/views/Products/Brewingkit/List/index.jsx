@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './style.scss';
 
 import { listBrewingkits } from '../../../../services/brewingkit';
-import ProductButtons from './../../../../components/Products/ProductButtons';
+import ProductButtons from './../../../../components/ProductButtons';
 
 class BrewingkitListView extends Component {
   constructor() {
@@ -15,12 +15,12 @@ class BrewingkitListView extends Component {
 
   loadBrewingkits() {
     listBrewingkits()
-      .then((brewingkits) => {
+      .then(brewingkits => {
         this.setState({
           brewingkits
         });
       })
-      .catch((error) => console.log(error));
+      .catch(error => console.log(error));
   }
 
   componentDidMount() {
