@@ -104,9 +104,27 @@ router.get('/list', (req, res, next) => {
 
 router.get('/:id', (req, res, next) => {
   const orderId = req.params.id;
+  let allProductIds;
+  let allProducts = [];
+  let order;
   Order.findById(orderId)
-    .then(order => {
-      res.json({ order });
+    .then(result => {
+      order = result;
+      allProductIds = order.basket.map(item => item._id.toString());
+      console.log(allProductIds);
+      return Craftbeer.find({ _id: allProductIds });
+    })
+    .then(result => {
+      allProducts = [...allProducts, ...result];
+      return Snack.find({ _id: allProductIds });
+    })
+    .then(result => {
+      allProducts = [...allProducts, ...result];
+      return Brewingkit.find({ _id: allProductIds });
+    })
+    .then(result => {
+      allProducts = [...allProducts, ...result];
+      res.json({ order, allProducts });
     })
     .catch(error => {
       next(error);
