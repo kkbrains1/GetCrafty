@@ -24,10 +24,10 @@ const loadOrder = (id) => {
     .get(`/${id}`)
     .then((response) => {
       const data = response.data;
-
+      const products = data.allProducts;
       const order = data.order;
-      console.log(order);
-      return Promise.resolve({ ...order });
+      console.log(products);
+      return Promise.resolve({ ...order }, { ...products });
     })
     .catch((error) => {
       return Promise.reject(error);

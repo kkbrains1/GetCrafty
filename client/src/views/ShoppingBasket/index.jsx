@@ -13,6 +13,7 @@ class ShoppingBasketView extends Component {
   // }
   
   render() {
+    console.log('this =>',this.props)
     return (
       <div>
         <h1>Shopping Basket</h1>

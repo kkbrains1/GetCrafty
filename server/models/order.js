@@ -1,48 +1,14 @@
+'use strict';
+
 const mongoose = require('mongoose');
 
 const schema = new mongoose.Schema(
   {
     basket: [
       {
-        brewingkit: {
+        product: {
           type: mongoose.Schema.Types.ObjectId,
-          ref: 'BrewingKit'
-        },
-        price: {
-          amount: { type: Number },
-          currency: {
-            type: String
-          }
-        },
-        quantity: {
-          type: Number
-        }
-      },
-      {
-        snack: {
-          type: mongoose.Schema.Types.ObjectId,
-          ref: 'Snack'
-        },
-        price: {
-          amount: { type: Number },
-          currency: {
-            type: String
-          }
-        },
-        quantity: {
-          type: Number
-        }
-      },
-      {
-        craftbeer: {
-          type: mongoose.Schema.Types.ObjectId,
-          ref: 'Craftbeer'
-        },
-        price: {
-          amount: { type: Number },
-          currency: {
-            type: String
-          }
+          ref: 'Product'
         },
         quantity: {
           type: Number
@@ -76,6 +42,4 @@ const schema = new mongoose.Schema(
   }
 );
 
-const Model = mongoose.model('Order', schema);
-
-module.exports = Model;
+module.exports = mongoose.model('Order', schema);

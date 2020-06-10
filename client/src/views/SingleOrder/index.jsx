@@ -15,7 +15,8 @@ class SingleOrderView extends Component {
     const id = this.props.match.params.id;
 
     loadOrder(id)
-      .then((order) => {
+      .then((order, products) => {
+        console.log(order, products);
         this.setState({
           loaded: true,
           order
@@ -32,6 +33,7 @@ class SingleOrderView extends Component {
 
   render() {
     const order = this.state.order;
+
     return (
       <div>
         {!this.state.loaded && (
@@ -48,17 +50,33 @@ class SingleOrderView extends Component {
                 <th>Quantity</th>
                 <th>Total</th>
               </tr>
-              {/* <tr>
-                <td>{order.basket}</td>
-                <td>{order.basket.price}</td>
-                <td>{order.basket.quantity}</td>
-                <td>{order.total}</td>
-              </tr>
-              <tr>
-                <td>{order.totalPrice}</td>
-              </tr> */}
-              <h5>{order._id}</h5>
+              {order.basket.map((item) => {
+                return <p>{item._id}</p>;
+              })}
+              {/* {order.basket.map((item) => {
+              {order.basket.map(item => {
+                return (
+                  <tr>
+                    <td>{item.details.name}</td>
+                    <td>
+                      {item.details.price.amount}
+                      {item.details.price.currency}
+                    </td>
+                    <td>{item.quantity}</td>
+                    <td>
+                      {item.quantity * item.details.price.amount}
+                      {item.details.price.currency}
+                    </td>
+                  </tr>
+                );
+              })} */}
             </table>
+            <h4>
+              {' '}
+              Total ammount : {order.total.amount}
+              {order.total.currency}
+            </h4>
+            <h5>order ID: {order._id}</h5>
           </>
         )}
       </div>

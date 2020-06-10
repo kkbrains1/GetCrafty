@@ -9,7 +9,7 @@ class ErrorView extends Component {
 
     switch (code) {
       case '404':
-        message = 'Page not found';
+        message = 'Oh noooo,  looks like you’ve found our junior developer’s page...';
         break;
       case '401':
         message = 'Not authorized';

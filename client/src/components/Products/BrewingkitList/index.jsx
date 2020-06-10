@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './style.scss';
-
 /*const BrewingkitList = props => {
   return (
     <div className="beer__list">
@@ -30,7 +29,6 @@ import './style.scss';
     </div>
   );
 };*/
-
 const BrewingkitList = props => {
   console.log("THIS",props)
   return (
@@ -54,9 +52,7 @@ const BrewingkitList = props => {
               </span>
             </div>
           </div>
-  
     </div>
   );
 };
-
 export default BrewingkitList;

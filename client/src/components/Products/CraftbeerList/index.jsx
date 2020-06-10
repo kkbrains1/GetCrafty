@@ -5,7 +5,7 @@ import './style.scss';
 const CraftbeerList = props => {
   return (
     <div className="beer__list">
-      {props.craftbeers.map((craftbeer, index) => (
+      {props.craftbeers.map((craftbeer) => (
         <Link to={`/products/craftbeer/${craftbeer._id}`} key={craftbeer._id}>
           <div className="beer__card">
             <div className="beer__media">
