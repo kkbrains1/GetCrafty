@@ -16,6 +16,7 @@ class CraftbeerSingleView extends Component {
     //console.log(this.props)
     singleCraftbeer(this.props.match.params.id)
       .then(craftbeer => {
+        //console.log(this.props);
         this.setState({
           craftbeer
         });
@@ -28,8 +29,20 @@ class CraftbeerSingleView extends Component {
   }
 
   render() {
+    let quantity = 0;
+    let product = this.state.craftbeer
     return (
-      <div>{this.state.craftbeer && <CraftbeerSingle craftbeer={this.state.craftbeer} />}</div>
+      <div>
+        {this.state.craftbeer && (
+          <CraftbeerSingle
+            {...this.props}
+            craftbeer={this.state.craftbeer}
+            quantity={quantity}
+            shoppingBasket={this.props.shoppingBasket}
+            changeQuantity={quantity => this.props.changeProductQuantity(product, quantity)}
+          />
+        )}
+      </div>
     );
   }
 }

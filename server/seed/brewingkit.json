@@ -2,6 +2,7 @@
   {
     "name": "Maris Otter Extra Malt",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "brewingkit",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -12,6 +13,7 @@
   {
     "name": "Caramalt Malt",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "brewingkit",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -22,6 +24,7 @@
   {
     "name": "Munich Malt",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "brewingkit",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -32,6 +35,7 @@
   {
     "name": "Propino Pale Malt",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "brewingkit",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -42,6 +46,7 @@
   {
     "name": "Extra Pale Malt",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "brewingkit",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,

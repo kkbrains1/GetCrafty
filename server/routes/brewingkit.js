@@ -3,12 +3,12 @@
 const { Router } = require('express');
 const router = new Router();
 
-const BrewingKit = require('./../models/brewingkit');
+const Product = require('./../models/product');
 
 router.post('/', (req, res, next) => {
   console.log(req.body);
   const { name, tagline } = req.body;
-  BrewingKit.create({ name, tagline })
+  Product.create({ name, tagline })
     .then((brewingkit) => {
       res.json({ brewingkit });
     })
@@ -17,7 +17,7 @@ router.post('/', (req, res, next) => {
 
 router.get('/list', (req, res, next) => {
   console.log(req.body);
-  BrewingKit.find()
+  Product.find({ type: 'brewingkit' })
     .then((brewingkits) => {
       res.json({ brewingkits });
     })
@@ -26,7 +26,7 @@ router.get('/list', (req, res, next) => {
 
 router.get('/:id', (req, res, next) => {
   const brewingkitId = req.params.id;
-  BrewingKit.findById(brewingkitId)
+  Product.findById(brewingkitId)
     .then((brewingkit) => {
       res.json({ brewingkit });
     })

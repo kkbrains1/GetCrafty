@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 const CraftbeerSingle = props => {
   const craftbeer = props.craftbeer;
+  console.log(props);
   return (
     <div className="beer__page">
       <div className="beer">
@@ -12,9 +13,9 @@ const CraftbeerSingle = props => {
         <div className="beer__buttons">
           <span>Alc {craftbeer.abv} %</span>
           <span>IBU {craftbeer.ibu}</span>
-          <button>-</button>
-          <span>0</span>
-          <button>+</button>
+          <button onClick={() => props.changeQuantity(props.quantity - 1)}>-</button>
+          <span>Qty {props.quantity}</span>
+          <button onClick={() => props.changeQuantity(props.quantity + 1)}>+</button>
         </div>
         <p>{craftbeer.description}</p>
       </div>

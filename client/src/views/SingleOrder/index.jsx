@@ -15,13 +15,14 @@ class SingleOrderView extends Component {
     const id = this.props.match.params.id;
 
     loadOrder(id)
-      .then((order) => {
+      .then((order, products) => {
+        console.log(order, products);
         this.setState({
           loaded: true,
           order
         });
       })
-      .catch((error) => {
+      .catch(error => {
         console.log(error);
       });
   }
@@ -49,7 +50,7 @@ class SingleOrderView extends Component {
                 <th>Quantity</th>
                 <th>Total</th>
               </tr>
-              {order.basket.map((item) => {
+              {order.basket.map(item => {
                 return (
                   <tr>
                     <td>{item.details.name}</td>

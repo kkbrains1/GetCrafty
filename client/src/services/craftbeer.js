@@ -9,8 +9,8 @@ const listCraftbeers = () => {
     .get('/list')
     .then(result => {
       const craftbeers = result.data.craftbeers;
-      console.log(craftbeers)
-      return Promise.resolve(craftbeers)
+      //console.log(craftbeers)
+      return Promise.resolve(craftbeers);
     })
     .catch(error => {
       return Promise.reject(error);
@@ -22,11 +22,11 @@ const singleCraftbeer = id => {
     .get(`/${id}`)
     .then(result => {
       const craftbeer = result.data.craftbeer;
-      return Promise.resolve(craftbeer)
+      return Promise.resolve(craftbeer);
     })
     .catch(error => {
       return Promise.reject(error);
     });
 };
 
-export {listCraftbeers, singleCraftbeer};
+export { listCraftbeers, singleCraftbeer };

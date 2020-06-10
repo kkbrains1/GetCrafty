@@ -2,6 +2,7 @@
   {
     "name": "Apricot coconut cake",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -12,6 +13,7 @@
   {
     "name": "Aromatic korma curry with lemon and garlic naan",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -22,6 +24,7 @@
   {
     "name": "Banana split",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -32,6 +35,7 @@
   {
     "name": "Beef Wellington with a red wine jus",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -42,6 +46,7 @@
   {
     "name": "Blue cheese beef burger",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -52,6 +57,7 @@
   {
     "name": "Caramel and banana meringue pie",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -62,6 +68,7 @@
   {
     "name": "Caramel toffee cake",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -72,6 +79,7 @@
   {
     "name": "Chargrilled corn on the cob with paprika butter",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -82,6 +90,7 @@
   {
     "name": "Chicken sausages with creamy mash",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -92,6 +101,7 @@
   {
     "name": "Chocolate cake",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -102,6 +112,7 @@
   {
     "name": "Chocolate milk shake",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -112,6 +123,7 @@
   {
     "name": "Chocolate orange brownies",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -122,6 +134,7 @@
   {
     "name": "Citrus salad with balsamic dressing",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -132,6 +145,7 @@
   {
     "name": "Clootie dumpling",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -142,6 +156,7 @@
   {
     "name": "Coffee dusted venison loin",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -152,6 +167,7 @@
   {
     "name": "Coriander & chilli crab cakes",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -162,6 +178,7 @@
   {
     "name": "Crab melt sandwich",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -172,6 +189,7 @@
   {
     "name": "Creamy lemon bar doused in powdered sugar",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -182,6 +200,7 @@
   {
     "name": "FaÌŠrikaÌŠl (mutton stew) with a spicy twist",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -192,6 +211,7 @@
   {
     "name": "FenalaÌŠr (salted cured lamb)",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -202,6 +222,7 @@
   {
     "name": "Fish tacos with hot sauce",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -212,6 +233,7 @@
   {
     "name": "food_pairing",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -222,6 +244,7 @@
   {
     "name": "Fresh berry crisp tart",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -232,6 +255,7 @@
   {
     "name": "Fresh crab with lemon",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -242,6 +266,7 @@
   {
     "name": "Fried crab cakes with avocado salsa",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -252,6 +277,7 @@
   {
     "name": "Garlic butter dipping sauce",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -262,6 +288,7 @@
   {
     "name": "Ginger and orange cookies",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -272,6 +299,7 @@
   {
     "name": "Glazed short ribs",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -282,6 +310,7 @@
   {
     "name": "Goats cheese salad",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -292,6 +321,7 @@
   {
     "name": "Goats cheese salad with walnuts, radish and blood orange",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -302,6 +332,7 @@
   {
     "name": "Grilled chicken quesadilla",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -312,6 +343,7 @@
   {
     "name": "Grilled portabello mushroom burger",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -322,6 +354,7 @@
   {
     "name": "Halibut with a mango and tomato salad",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -332,6 +365,7 @@
   {
     "name": "Hickory smoked ham",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -342,6 +376,7 @@
   {
     "name": "Kedgeree",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -352,6 +387,7 @@
   {
     "name": "Key lime pie",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -362,6 +398,7 @@
   {
     "name": "King prawn kebabs",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -372,6 +409,7 @@
   {
     "name": "Korean style chicken wings",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -382,6 +420,7 @@
   {
     "name": "Krumkake with lingonberry jam",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -392,6 +431,7 @@
   {
     "name": "Lamb chops with caramelised figs",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -402,6 +442,7 @@
   {
     "name": "Lemon pound cake with a ice sugar glaze",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -412,6 +453,7 @@
   {
     "name": "Lobster",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -422,6 +464,7 @@
   {
     "name": "Margherita pizza",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -432,6 +475,7 @@
   {
     "name": "Memphis-style beef short ribs",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -442,6 +486,7 @@
   {
     "name": "Mint chocloate ice cream",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -452,6 +497,7 @@
   {
     "name": "Miso ramen",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -462,6 +508,7 @@
   {
     "name": "Mussels with a garlic and herb sauce",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -472,6 +519,7 @@
   {
     "name": "Oysters",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -482,6 +530,7 @@
   {
     "name": "Pan seared venison fillet with juniper sauce",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -492,6 +541,7 @@
   {
     "name": "Pastrami",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -502,6 +552,7 @@
   {
     "name": "Peanut brittle",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -512,6 +563,7 @@
   {
     "name": "Pistachio cake",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -522,6 +574,7 @@
   {
     "name": "Poached sole fillet with capers",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -532,6 +585,7 @@
   {
     "name": "Pot roasted artichokes",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -542,6 +596,7 @@
   {
     "name": "Raspberry chocolate torte",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -552,6 +607,7 @@
   {
     "name": "Roasted garlic and chilli infused camembert cheese",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -562,6 +618,7 @@
   {
     "name": "Roasted wood pigeon with black pudding",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -572,6 +629,7 @@
   {
     "name": "Rocky Road",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -582,6 +640,7 @@
   {
     "name": "Scotch broth with sourdough bread",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -592,6 +651,7 @@
   {
     "name": "Sharp cheddar cheese and onion/ raisin chutney",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -602,6 +662,7 @@
   {
     "name": "Shortbread cookies",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -612,6 +673,7 @@
   {
     "name": "Smoked chicken wings",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -622,6 +684,7 @@
   {
     "name": "Spicy chicken skewers",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -632,6 +695,7 @@
   {
     "name": "Spicy chicken tikka masala",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -642,6 +706,7 @@
   {
     "name": "Spicy crab cakes",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -652,6 +717,7 @@
   {
     "name": "Spicy cucumber and carrot Thai salad",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -662,6 +728,7 @@
   {
     "name": "Spicy shredded pork roll with hot dipping sauce",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -672,6 +739,7 @@
   {
     "name": "Stilton on gingerbread biscuits",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -682,6 +750,7 @@
   {
     "name": "Strawberry and rhubarb pie",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -692,6 +761,7 @@
   {
     "name": "Summer fruit salad",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -702,6 +772,7 @@
   {
     "name": "Sweet filled dumplings",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -712,6 +783,7 @@
   {
     "name": "Swiss and horseradish sandwich",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -722,6 +794,7 @@
   {
     "name": "Tandoori lamb with pomegranate",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -732,6 +805,7 @@
   {
     "name": "Vegetable egg scramble",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -742,6 +816,7 @@
   {
     "name": "Vietnamese squid salad",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -752,6 +827,7 @@
   {
     "name": "Vinegar doused fish and chips",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -762,6 +838,7 @@
   {
     "name": "Warm blackberry pie",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,
@@ -772,6 +849,7 @@
   {
     "name": "Yuzu cheesecake",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "type": "snack",
     "photo": "https://source.unsplash.com/collection/251966/800x601",
     "price": {
       "amount": 300,

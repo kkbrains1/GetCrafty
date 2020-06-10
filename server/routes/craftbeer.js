@@ -3,7 +3,7 @@
 const { Router } = require('express');
 const router = new Router();
 
-const Craftbeer = require('./../models/craftbeer');
+const Product = require('./../models/product');
 
 router.post('/', (req, res, next) => {
   //console.log(req.body);
@@ -21,7 +21,7 @@ router.post('/', (req, res, next) => {
     contributed_by,
     price
   } = req.body;
-  Craftbeer.create({
+  Product.create({
     name,
     tagline,
     first_brewed,
@@ -35,29 +35,29 @@ router.post('/', (req, res, next) => {
     contributed_by,
     price
   })
-    .then((craftbeer) => {
+    .then(craftbeer => {
       res.json({ craftbeer });
     })
-    .catch((error) => next(error));
+    .catch(error => next(error));
 });
 
 router.get('/list', (req, res, next) => {
   //'console.log(req.body)';
-  Craftbeer.find()
-    .then((craftbeers) => {
+  Product.find({ type: 'craftbeer' })
+    .then(craftbeers => {
       res.json({ craftbeers });
     })
-    .catch((error) => next(error));
+    .catch(error => next(error));
 });
 
 router.get('/:id', (req, res, next) => {
   const craftbeerId = req.params.id;
   //console.log(req.params);
-  Craftbeer.findById(craftbeerId)
-    .then((craftbeer) => {
+  Product.findById(craftbeerId)
+    .then(craftbeer => {
       res.json({ craftbeer });
     })
-    .catch((error) => next(error));
+    .catch(error => next(error));
 });
 
 module.exports = router;
