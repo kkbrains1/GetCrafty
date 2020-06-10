@@ -14,12 +14,12 @@ class BrewingkitListView extends Component {
 
   loadBrewingkits() {
     listBrewingkits()
-      .then(brewingkits => {
+      .then((brewingkits) => {
         this.setState({
           brewingkits
         });
       })
-      .catch(error => console.log(error));
+      .catch((error) => console.log(error));
   }
 
   componentDidMount() {

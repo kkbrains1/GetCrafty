@@ -27,12 +27,24 @@ import SnackSingleView from './views/Products/Snack/Single';
 import BrewingkitListView from './views/Products/Brewingkit/List';
 import BrewingkitSingleView from './views/Products/Brewingkit/Single';
 
+const deepCloneObject = object => JSON.parse(JSON.stringify(object));
+
 class App extends Component {
   constructor() {
     super();
     this.state = {
       user: null,
-      loaded: false
+      loaded: false,
+      shoppingBasket: []
+      // shoppingBasket: [{
+      //   _id:"123", 
+      //   photo:"img", 
+      //   name:"asd",
+      //   description:"", 
+      //   price:{
+      //     amount:0, 
+      //     currency:"eur"
+      //   }}]
     };
   }
 
@@ -48,6 +60,40 @@ class App extends Component {
         console.log(error);
       });
   }
+
+  changeAmount = (brewingkit, amount) => {
+    if (this.state.shoppingBasket.find(item => item.brewingkit._id === brewingkit._id)) {
+
+      const updatedShoppingBasket = deepCloneObject(this.state.shoppingBasket);
+      const indexOfBrewingkitInShoppingBasket = this.state.shoppingBasket.findIndex(
+        item => item.brewingkit._id === brewingkit._id
+      );
+      if (amount) {
+        updatedShoppingBasket[indexOfBrewingkitInShoppingBasket].amount = Math.max(amount, 0);
+      } else {
+        updatedShoppingBasket.splice(indexOfBrewingkitInShoppingBasket, 1);
+      }
+      this.setState({
+        shoppingBasket: updatedShoppingBasket
+      });
+    } else {
+      this.setState({
+        shoppingBasket: [
+          ...this.state.shoppingBasket,
+          {
+            brewingkit: brewingkit,
+            amount: Math.max(amount, 0)
+          }
+        ]
+      });
+    }
+  };
+
+  emptyShoppingBasket = () => {
+    this.setState({
+      shoppingBasket: []
+    });
+  };
 
   updateUser = user => {
     this.setState({
@@ -65,7 +111,12 @@ class App extends Component {
             <Route path="/userProfile" component={UserProfileView} />
             <Route
               path="/sign-up"
-              render={props => <AuthenticationSignUpView {...props} updateUser={this.updateUser} />}
+              render={props => 
+                <AuthenticationSignUpView 
+                  {...props} 
+                  updateUser={this.updateUser} 
+                />
+              }
             />
             <Route
               path="/sign-in"
@@ -78,51 +129,65 @@ class App extends Component {
             />
             <Route path="/products/snack/list" exact component={SnackListView} />
             <Route path="/products/snack/:id" render={props => <SnackSingleView {...props} />} />
-            <Route path="/products/brewingkit/list" exact component={BrewingkitListView} />
+            <Route path="/products/brewingkit/list" exact render={props => 
+              <BrewingkitListView 
+              {...props} 
+                brewingkits={['']}
+              />
+             }
+            />
             <Route
               path="/products/brewingkit/:id"
-              render={props => <BrewingkitSingleView {...props} />}
-            />
-            <Route
-              path="/order/:id"
-              render={(props) => (
-                <SingleOrderView
-                  {...props}
-                  // shoppingBasket={this.state.shoppingBasket}
-                  // changeDishQuantity={this.changeDishQuantity}
-                />
-              )}
-            />
+              render={props => <BrewingkitSingleView 
+                {...props} 
+              />}
+            />         
 
             <Route
               path="/update-password"
               render={(props) => (
-                <UpdatePasswordView {...props} updateUser={this.updateUser} />
+                <UpdatePasswordView 
+                {...props} 
+                updateUser={this.updateUser} 
+                />
               )}
             />
             <Route
               path="/update-img"
               render={(props) => (
-                <UpdateImgView {...props} updateUser={this.updateUser} />
+                <UpdateImgView 
+                {...props} 
+                updateUser={this.updateUser} 
+                />
               )}
             />
             <Route
               path="/checkout"
               render={(props) => (
-                <CheckoutView {...props} updateUser={this.updateUser} />
+                <CheckoutView 
+                {...props} 
+                updateUser={this.updateUser} />
               )}
             />
             <Route
-              path="/shopping-basket"
+              path="/shoppingBasket"
               render={(props) => (
-                <ShoppingBasketView {...props} updateUser={this.updateUser} />
+                <ShoppingBasketView 
+                  {...props}                   
+                  shoppingBasket={this.state.shoppingBasket}
+                  changeAmount={this.changeAmount}
+                  />
               )}
             />
 
             {/* <Route path="/shopping-basket" component={ShoppingBasketView} /> */}
-            <Route path="/past-orders" component={PastOrdersView} />
+            <Route path="/past-orders" 
+              component={PastOrdersView} 
+            />
 
-            <Route path="/error/:code" component={ErrorView} />
+            <Route path="/error/:code" 
+              component={ErrorView} 
+              />
 
             <Redirect to="/error/404" />
 
