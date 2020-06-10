@@ -16,7 +16,7 @@ router.post('/', (req, res, next) => {
   let snacks;
   let brewingkits; */
   // let totalAmount = 0;
-  const productIds = [...basket].map(item => item._id);
+  const productIds = [...basket].map((item) => item._id);
   // const craftbeerIds = [...basket].filter(item => item.type === 'craftbeer').map(item => item._id);
   // const snackIds = [...basket].filter(item => item.type === 'snack').map(item => item._id);
   // const brewingkitIds = [...basket].filter(item => item.type === 'brewingkit').map(item => item._id);
@@ -24,7 +24,7 @@ router.post('/', (req, res, next) => {
   //console.log(basket);
   let list = [];
   Craftbeer.find({ _id: productIds })
-    .then(result => {
+    .then((result) => {
       list = [...list, ...result];
       //console.log(productIds);
       // craftbeers = result;
@@ -36,7 +36,7 @@ router.post('/', (req, res, next) => {
       // totalAmount += subTotal;
       return Snack.find({ _id: productIds });
     })
-    .then(result => {
+    .then((result) => {
       list = [...list, ...result];
 
       // snacks = result;
@@ -48,13 +48,13 @@ router.post('/', (req, res, next) => {
       // totalAmount += subTotal;
       return Brewingkit.find({ _id: productIds });
     })
-    .then(result => {
+    .then((result) => {
       list = [...list, ...result];
       //console.log(basket);
       // snacks = result;
       //console.log('snacks', snacks);
       const totalAmount = list.reduce((sum, article) => {
-        const quantity = basket.find(item => item._id === article._id.toString()).quantity;
+        const quantity = basket.find((item) => item._id === article._id.toString()).quantity;
         return sum + article.price.amount * quantity;
       }, 0);
       // totalAmount += subTotal;
@@ -66,10 +66,10 @@ router.post('/', (req, res, next) => {
         }
       });
     })
-    .then(order => {
+    .then((order) => {
       res.json({ order });
     })
-    .catch(error => next(error));
+    .catch((error) => next(error));
 });
 
 router.get('/list', (req, res, next) => {
@@ -77,27 +77,28 @@ router.get('/list', (req, res, next) => {
   let allProducts = [];
   let allOrders;
   Order.find()
-    .then(orders => {
+    .then((orders) => {
       allOrders = orders;
-      let baskets = allOrders.map(item => item.basket);
-      allProductIds = (baskets.flat()
-        .map(item => item._id.toString())
-        .filter((x, i, a) => a.indexOf(x) == i));
+      let baskets = allOrders.map((item) => item.basket);
+      allProductIds = baskets
+        .flat()
+        .map((item) => item._id.toString())
+        .filter((x, i, a) => a.indexOf(x) == i);
       return Craftbeer.find({ _id: allProductIds });
     })
-    .then(result => {
+    .then((result) => {
       allProducts = [...allProducts, ...result];
       return Snack.find({ _id: allProductIds });
     })
-    .then(result => {
+    .then((result) => {
       allProducts = [...allProducts, ...result];
       return Brewingkit.find({ _id: allProductIds });
     })
-    .then(result=> {
+    .then((result) => {
       allProducts = [...allProducts, ...result];
       res.json({ allOrders, allProducts });
     })
-    .catch(error => {
+    .catch((error) => {
       next(error);
     });
 });
@@ -126,7 +127,7 @@ router.get('/:id', (req, res, next) => {
       allProducts = [...allProducts, ...result];
       res.json({ order, allProducts });
     })
-    .catch(error => {
+    .catch((error) => {
       next(error);
     });
 });
