@@ -3,32 +3,32 @@
 const { Router } = require('express');
 const router = new Router();
 
-const Snack = require('./../models/snack');
+const Product = require('./../models/product');
 
 router.post('/', (req, res, next) => {
   const { name, tagline } = req.body;
-  Snack.create({ name, tagline })
-    .then((snack) => {
+  Product.create({ name, tagline })
+    .then(snack => {
       res.json({ snack });
     })
-    .catch((error) => next(error));
+    .catch(error => next(error));
 });
 
 router.get('/list', (req, res, next) => {
-  Snack.find()
-    .then((snacks) => {
+  Product.find({ type: 'snack' })
+    .then(snacks => {
       res.json({ snacks });
     })
-    .catch((error) => next(error));
+    .catch(error => next(error));
 });
 
 router.get('/:id', (req, res, next) => {
   const snackId = req.params.id;
-  Snack.findById(snackId)
-    .then((snack) => {
+  Product.findById(snackId)
+    .then(snack => {
       res.json({ snack });
     })
-    .catch((error) => next(error));
+    .catch(error => next(error));
 });
 
 module.exports = router;

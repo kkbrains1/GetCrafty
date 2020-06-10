@@ -14,8 +14,9 @@ class PastOrdersView extends Component {
 
   loadOrders() {
     listOrders()
-      .then((orders) => {
+      .then((orders, products) => {
         console.log(orders);
+        console.log(products);
         this.setState({
           loaded: true,
           orders

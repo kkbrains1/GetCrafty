@@ -54,6 +54,7 @@ class SingleOrderView extends Component {
                 return <p>{item._id}</p>;
               })}
               {/* {order.basket.map((item) => {
+              {order.basket.map(item => {
                 return (
                   <tr>
                     <td>{item.details.name}</td>

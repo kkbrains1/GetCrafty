@@ -9,7 +9,7 @@ const listCraftbeers = () => {
     .get('/list')
     .then((result) => {
       const craftbeers = result.data.craftbeers;
-      console.log(craftbeers);
+      //console.log(craftbeers)
       return Promise.resolve(craftbeers);
     })
     .catch((error) => {

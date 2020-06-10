@@ -1,30 +1,14 @@
+'use strict';
+
 const mongoose = require('mongoose');
 
 const schema = new mongoose.Schema(
   {
     basket: [
       {
-        brewingkit: {
+        product: {
           type: mongoose.Schema.Types.ObjectId,
-          ref: 'BrewingKit'
-        },
-        quantity: {
-          type: Number
-        }
-      },
-      {
-        snack: {
-          type: mongoose.Schema.Types.ObjectId,
-          ref: 'Snack'
-        },
-        quantity: {
-          type: Number
-        }
-      },
-      {
-        craftbeer: {
-          type: mongoose.Schema.Types.ObjectId,
-          ref: 'Craftbeer'
+          ref: 'Product'
         },
         quantity: {
           type: Number
@@ -57,5 +41,5 @@ const schema = new mongoose.Schema(
     }
   }
 );
-const Model = mongoose.model('Order', schema);
-module.exports = Model;
+
+module.exports = mongoose.model('Order', schema);

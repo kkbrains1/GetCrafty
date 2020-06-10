@@ -26,6 +26,7 @@ const loadOrder = (id) => {
       const data = response.data;
       const products = data.allProducts;
       const order = data.order;
+      console.log(products);
       return Promise.resolve({ ...order }, { ...products });
     })
     .catch((error) => {

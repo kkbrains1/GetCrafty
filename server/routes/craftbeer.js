@@ -3,7 +3,7 @@
 const { Router } = require('express');
 const router = new Router();
 
-const Craftbeer = require('./../models/craftbeer');
+const Product = require('./../models/product');
 
 router.post('/', (req, res, next) => {
   //console.log(req.body);
@@ -12,7 +12,7 @@ router.post('/', (req, res, next) => {
     tagline,
     first_brewed,
     description,
-    image_url,
+    photo,
     abv,
     ibu,
     food_pairing,
@@ -21,12 +21,12 @@ router.post('/', (req, res, next) => {
     contributed_by,
     price
   } = req.body;
-  Craftbeer.create({
+  Product.create({
     name,
     tagline,
     first_brewed,
     description,
-    image_url,
+    photo,
     abv,
     ibu,
     food_pairing,
@@ -43,7 +43,7 @@ router.post('/', (req, res, next) => {
 
 router.get('/list', (req, res, next) => {
   //'console.log(req.body)';
-  Craftbeer.find()
+  Product.find({ type: 'craftbeer' })
     .then((craftbeers) => {
       res.json({ craftbeers });
     })
@@ -51,7 +51,7 @@ router.get('/list', (req, res, next) => {
 });
 
 router.get('/random', (req, res, next) => {
-  Craftbeer.find()
+  Product.find()
     .then((allBeers) => {
       const random_id = Math.floor(Math.random() * allBeers.length);
       const beer = allBeers[random_id];
@@ -66,7 +66,7 @@ router.get('/random', (req, res, next) => {
 router.get('/:id', (req, res, next) => {
   const craftbeerId = req.params.id;
   //console.log(req.params);
-  Craftbeer.findById(craftbeerId)
+  Product.findById(craftbeerId)
     .then((craftbeer) => {
       res.json({ craftbeer });
     })
