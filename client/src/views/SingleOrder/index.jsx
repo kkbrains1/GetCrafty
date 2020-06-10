@@ -3,6 +3,8 @@ import './style.scss';
 
 import { loadOrder } from '../../services/orders';
 
+import formatPrice from './../../helpers/format-price';
+
 class SingleOrderView extends Component {
   constructor(props) {
     super(props);
@@ -33,7 +35,6 @@ class SingleOrderView extends Component {
 
   render() {
     const order = this.state.order;
-
     return (
       <div>
         {!this.state.loaded && (
@@ -46,36 +47,32 @@ class SingleOrderView extends Component {
             <table>
               <tr>
                 <th>Product</th>
+                <th>Type</th>
                 <th>Price</th>
                 <th>Quantity</th>
                 <th>Total</th>
               </tr>
+
               {order.basket.map((item) => {
-                return <p>{item._id}</p>;
-              })}
-              {/* {order.basket.map((item) => {
-              {order.basket.map(item => {
+                const Price = formatPrice(item.product.price);
+                const quantity = item.quantity;
+                let subtotal = {
+                  amount: item.product.price.amount * item.quantity,
+                  currency: item.product.price.currency
+                };
+                subtotal = formatPrice(subtotal);
                 return (
                   <tr>
-                    <td>{item.details.name}</td>
-                    <td>
-                      {item.details.price.amount}
-                      {item.details.price.currency}
-                    </td>
-                    <td>{item.quantity}</td>
-                    <td>
-                      {item.quantity * item.details.price.amount}
-                      {item.details.price.currency}
-                    </td>
+                    <td>{item.product.name}</td>
+                    <td>{item.product.type}</td>
+                    <td>{Price}</td>
+                    <td>{quantity}</td>
+                    <td>{subtotal}</td>
                   </tr>
                 );
-              })} */}
+              })}
             </table>
-            <h4>
-              {' '}
-              Total ammount : {order.total.amount}
-              {order.total.currency}
-            </h4>
+            <h4> Total ammount : {formatPrice(order.total)}</h4>
             <h5>order ID: {order._id}</h5>
           </>
         )}
