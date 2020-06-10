@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './style.scss';
 
 import { listSnacks } from '../../../../services/snack';
-import SnackList from './../../../../components/Products/SnackList';
+import ProductButtons from './../../../../components/Products/ProductButtons';
 
 class SnackListView extends Component {
   constructor() {
@@ -27,10 +28,32 @@ class SnackListView extends Component {
   }
 
   render() {
+    let quantity = 0;
     return (
-      <div>
+      <div className="beer__list">
         <h1>SNACKS</h1>
-        <SnackList snacks={this.state.snacks} />
+        {this.state.snacks.map(product => (
+          <div className="beer__card">
+            <Link to={`/products/snack/${product._id}`} key={product._id}>
+              <div className="beer__media">
+                <img src={product.photo} alt={product.name} />
+              </div>
+              <div className="beer__body">
+                <h4>{product.name}</h4>
+                <p>{product.description}</p>
+              </div>
+            </Link>
+            <div className="beer__buttons">
+              <ProductButtons
+                {...this.props}
+                product={product}
+                quantity={quantity}
+                shoppingBasket={this.props.shoppingBasket}
+                changeQuantity={quantity => this.props.changeProductQuantity(product, quantity)}
+              />
+            </div>
+          </div>
+        ))}
       </div>
     );
   }

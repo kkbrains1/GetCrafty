@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './style.scss';
 
 import { singleSnack } from '../../../../services/snack';
-import SnackSingle from './../../../../components/Products/SnackSingle';
+import ProductButtons from './../../../../components/ProductButtons';
 
 class SnackSingleView extends Component {
   constructor(props) {
@@ -28,7 +29,37 @@ class SnackSingleView extends Component {
   }
 
   render() {
-    return <div>{this.state.snack && <SnackSingle snack={this.state.snack} />}</div>;
+    let quantity = 0;
+    let product = this.state.snack;
+    return (
+      <div>
+        {this.state.snack && (
+          <div className="beer__page">
+            <div className="beer">
+              <h1>{product.name}</h1>
+              <img src={product.photo} alt={product.name} className="beer__media" />
+              <div className="beer__buttons">
+                <span>Alc {product.abv} %</span>
+                <span>IBU {product.ibu}</span>
+                <ProductButtons
+                  {...this.props}
+                  product={product}
+                  quantity={quantity}
+                  shoppingBasket={this.props.shoppingBasket}
+                  changeQuantity={quantity => this.props.changeProductQuantity(product, quantity)}
+                />
+              </div>
+              <p>{product.description}</p>
+            </div>
+            <hr />
+            <h2>THIS PAIRS AWESOMELY WITH...</h2>
+            <ul>
+              <li>LIST BEERS</li>
+            </ul>
+          </div>
+        )}
+      </div>
+    );
   }
 }
 
