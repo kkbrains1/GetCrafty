@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './style.scss';
 
-const SnackList = props => {
+const SnackList = (props) => {
   return (
     <div className="beer__list">
       {props.snacks.map((snack, index) => (

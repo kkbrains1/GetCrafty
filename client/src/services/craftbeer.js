@@ -7,26 +7,39 @@ const baseURLCraftbeer = axios.create({
 const listCraftbeers = () => {
   return baseURLCraftbeer
     .get('/list')
-    .then(result => {
+    .then((result) => {
       const craftbeers = result.data.craftbeers;
       //console.log(craftbeers)
       return Promise.resolve(craftbeers);
     })
-    .catch(error => {
+    .catch((error) => {
       return Promise.reject(error);
     });
 };
 
-const singleCraftbeer = id => {
+const randomCraftbeer = (id) => {
+  return baseURLCraftbeer
+    .get(`/random`)
+    .then((result) => {
+      //console.log('This =>', result)
+      const craftbeer = result.data.beer;
+      return Promise.resolve(craftbeer);
+    })
+    .catch((error) => {
+      return Promise.reject(error);
+    });
+};
+
+const singleCraftbeer = (id) => {
   return baseURLCraftbeer
     .get(`/${id}`)
-    .then(result => {
+    .then((result) => {
       const craftbeer = result.data.craftbeer;
       return Promise.resolve(craftbeer);
     })
-    .catch(error => {
+    .catch((error) => {
       return Promise.reject(error);
     });
 };
 
-export { listCraftbeers, singleCraftbeer };
+export { listCraftbeers, singleCraftbeer, randomCraftbeer };

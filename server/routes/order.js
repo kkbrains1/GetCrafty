@@ -9,16 +9,16 @@ const Order = require('./../models/order');
 router.post('/', (req, res, next) => {
   const { basket } = req.body;
   console.log(basket);
-  const productIds = [...basket].map(item => item.product);
+  const productIds = [...basket].map((item) => item.product);
   let list = [];
   Product.find({ _id: productIds })
-    .then(result => {
+    .then((result) => {
       list = [...list, ...result];
       //console.log(basket);
       // snacks = result;
       //console.log('snacks', snacks);
       const totalAmount = list.reduce((sum, article) => {
-        const quantity = basket.find(item => item.product === article._id.toString()).quantity;
+        const quantity = basket.find((item) => item.product === article._id.toString()).quantity;
         return sum + article.price.amount * quantity;
       }, 0);
       // totalAmount += subTotal;
@@ -30,22 +30,22 @@ router.post('/', (req, res, next) => {
         }
       });
     })
-    .then(order => {
+    .then((order) => {
       res.json({ order });
     })
-    .catch(error => next(error));
+    .catch((error) => next(error));
 });
 
 router.get('/list', (req, res, next) => {
   Order.find()
     .populate({ path: 'basket.product' })
-    .then(orders => {
+    .then((orders) => {
       //allProducts = [...allProducts, ...result];
       console.log(orders.basket);
       //res.json({ allOrders, allProducts });
       res.json({ orders });
     })
-    .catch(error => {
+    .catch((error) => {
       next(error);
     });
 });
@@ -57,12 +57,12 @@ router.get('/:id', (req, res, next) => {
   // let order;
   Order.findById(orderId)
     .populate({ path: 'basket.product' })
-    .then(order => {
+    .then((order) => {
       console.log(order);
       //      allProducts = [...allProducts, ...result];
       res.json({ order });
     })
-    .catch(error => {
+    .catch((error) => {
       next(error);
     });
 });

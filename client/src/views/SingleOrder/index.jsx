@@ -22,7 +22,7 @@ class SingleOrderView extends Component {
           order
         });
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
   }
@@ -50,6 +50,10 @@ class SingleOrderView extends Component {
                 <th>Quantity</th>
                 <th>Total</th>
               </tr>
+              {order.basket.map((item) => {
+                return <p>{item._id}</p>;
+              })}
+              {/* {order.basket.map((item) => {
               {order.basket.map(item => {
                 return (
                   <tr>
@@ -65,7 +69,7 @@ class SingleOrderView extends Component {
                     </td>
                   </tr>
                 );
-              })}
+              })} */}
             </table>
             <h4>
               {' '}

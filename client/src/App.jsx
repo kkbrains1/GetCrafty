@@ -6,7 +6,6 @@ import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import HomeView from './views/Home';
-
 import PastOrdersView from './views/PastOrders';
 import ErrorView from './views/Error';
 import SingleOrderView from './views/SingleOrder';
@@ -27,47 +26,93 @@ import SnackSingleView from './views/Products/Snack/Single';
 import BrewingkitListView from './views/Products/Brewingkit/List';
 import BrewingkitSingleView from './views/Products/Brewingkit/Single';
 
+const deepCloneObject = (object) => JSON.parse(JSON.stringify(object));
+
 class App extends Component {
   constructor() {
     super();
     this.state = {
       shoppingBasket: [],
       user: null,
-      loaded: false
+      loaded: false,
+      shoppingBasket: []
+      // shoppingBasket: [{
+      //   _id:"123",
+      //   photo:"img",
+      //   name:"asd",
+      //   description:"",
+      //   price:{
+      //     amount:0,
+      //     currency:"eur"
+      //   }}]
     };
   }
 
   componentDidMount() {
     loadAuthenticatedUser()
-      .then(user => {
+      .then((user) => {
         this.updateUser(user);
         this.setState({
           loaded: true
         });
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
   }
 
-  changeProductQuantity = (product, quantity) => {
-    console.log('basket', this.state.shoppingBasket);
-    console.log('product', product);
-    console.log('quantity', quantity);
-    //if (this.state.shoppingBasket.find(item => item.product._id === product._id))
-    this.setState({
-      shoppingBasket: [
-        ...this.state.shoppingBasket,
-        {
-          product: product,
-          quantity: quantity
-        }
-      ]
-    });
-    console.log('basket', this.state.shoppingBasket);
+  changeAmount = (brewingkit, amount) => {
+    if (this.state.shoppingBasket.find((item) => item.brewingkit._id === brewingkit._id)) {
+      const updatedShoppingBasket = deepCloneObject(this.state.shoppingBasket);
+      const indexOfBrewingkitInShoppingBasket = this.state.shoppingBasket.findIndex(
+        (item) => item.brewingkit._id === brewingkit._id
+      );
+      if (amount) {
+        updatedShoppingBasket[indexOfBrewingkitInShoppingBasket].amount = Math.max(amount, 0);
+      } else {
+        updatedShoppingBasket.splice(indexOfBrewingkitInShoppingBasket, 1);
+      }
+      this.setState({
+        shoppingBasket: updatedShoppingBasket
+      });
+    } else {
+      this.setState({
+        shoppingBasket: [
+          ...this.state.shoppingBasket,
+          {
+            brewingkit: brewingkit,
+            amount: Math.max(amount, 0)
+          }
+        ]
+      });
+    }
   };
 
-  updateUser = user => {
+  emptyShoppingBasket = () => {
+    this.setState({
+      shoppingBasket: []
+    });
+  };
+
+  // updateUser = user => {
+  // changeProductQuantity = (product, quantity) => {
+  //   console.log('basket', this.state.shoppingBasket);
+  //   console.log('product', product);
+  //   console.log('quantity', quantity);
+  //   //if (this.state.shoppingBasket.find(item => item.product._id === product._id))
+  //   this.setState({
+  //     shoppingBasket: [
+  //       ...this.state.shoppingBasket,
+  //       {
+  //         product: product,
+  //         quantity: quantity
+  //       }
+  //     ]
+  //   });
+  //   console.log('basket', this.state.shoppingBasket);
+  // };
+
+  updateUser = (user) => {
     this.setState({
       user
     });
@@ -79,20 +124,24 @@ class App extends Component {
         <BrowserRouter>
           <NavBar user={this.state.user} updateUser={this.updateUser} />
           <Switch>
-            <Route path="/" exact component={HomeView} />
+            <Route path="/" exact render={(props) => <HomeView {...props} />} />
             <Route path="/userProfile" component={UserProfileView} />
             <Route
               path="/sign-up"
-              render={props => <AuthenticationSignUpView {...props} updateUser={this.updateUser} />}
+              render={(props) => (
+                <AuthenticationSignUpView {...props} updateUser={this.updateUser} />
+              )}
             />
             <Route
               path="/sign-in"
-              render={props => <AuthenticationSignInView {...props} updateUser={this.updateUser} />}
+              render={(props) => (
+                <AuthenticationSignInView {...props} updateUser={this.updateUser} />
+              )}
             />
             <Route
               path="/products/craftbeer/list"
               exact
-              render={props => (
+              render={(props) => (
                 <CraftbeerListView
                   {...props}
                   shoppingBasket={this.state.shoppingBasket}
@@ -102,7 +151,7 @@ class App extends Component {
             />
             <Route
               path="/products/craftbeer/:id"
-              render={props => (
+              render={(props) => (
                 <CraftbeerSingleView
                   {...props}
                   shoppingBasket={this.state.shoppingBasket}
@@ -113,7 +162,7 @@ class App extends Component {
             <Route
               path="/products/snack/list"
               exact
-              render={props => (
+              render={(props) => (
                 <SnackListView
                   {...props}
                   shoppingBasket={this.state.shoppingBasket}
@@ -123,7 +172,7 @@ class App extends Component {
             />
             <Route
               path="/products/snack/:id"
-              render={props => (
+              render={(props) => (
                 <SnackSingleView
                   {...props}
                   shoppingBasket={this.state.shoppingBasket}
@@ -134,7 +183,7 @@ class App extends Component {
             <Route
               path="/products/brewingkit/list"
               exact
-              render={props => (
+              render={(props) => (
                 <BrewingkitListView
                   {...props}
                   shoppingBasket={this.state.shoppingBasket}
@@ -144,7 +193,7 @@ class App extends Component {
             />
             <Route
               path="/products/brewingkit/:id"
-              render={props => (
+              render={(props) => (
                 <BrewingkitSingleView
                   {...props}
                   shoppingBasket={this.state.shoppingBasket}
@@ -154,7 +203,7 @@ class App extends Component {
             />
             <Route
               path="/order/:id"
-              render={props => (
+              render={(props) => (
                 <SingleOrderView
                   {...props}
                   // shoppingBasket={this.state.shoppingBasket}
@@ -165,19 +214,19 @@ class App extends Component {
 
             <Route
               path="/update-password"
-              render={props => <UpdatePasswordView {...props} updateUser={this.updateUser} />}
+              render={(props) => <UpdatePasswordView {...props} updateUser={this.updateUser} />}
             />
             <Route
               path="/update-img"
-              render={props => <UpdateImgView {...props} updateUser={this.updateUser} />}
+              render={(props) => <UpdateImgView {...props} updateUser={this.updateUser} />}
             />
             <Route
               path="/checkout"
-              render={props => <CheckoutView {...props} updateUser={this.updateUser} />}
+              render={(props) => <CheckoutView {...props} updateUser={this.updateUser} />}
             />
             <Route
               path="/shopping-basket"
-              render={props => <ShoppingBasketView {...props} updateUser={this.updateUser} />}
+              render={(props) => <ShoppingBasketView {...props} updateUser={this.updateUser} />}
             />
 
             {/* <Route path="/shopping-basket" component={ShoppingBasketView} /> */}

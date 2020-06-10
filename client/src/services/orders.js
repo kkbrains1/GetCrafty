@@ -24,9 +24,8 @@ const loadOrder = (id) => {
     .get(`/${id}`)
     .then((response) => {
       const data = response.data;
-
+      const products = data.allProducts;
       const order = data.order;
-      const products = data.allProducts
       console.log(products);
       return Promise.resolve({ ...order }, { ...products });
     })
