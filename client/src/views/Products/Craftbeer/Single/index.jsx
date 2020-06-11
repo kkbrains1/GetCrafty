@@ -66,7 +66,7 @@ class CraftbeerSingleView extends Component {
               ))}
             </ul>
             <h2>FANCY BREWING SOME? </h2>
-            <h3>These are our ingredients...</h3>
+            <h3>Try adding these to your kit...</h3>
 
             <h4>Malts:</h4>
             <ul>

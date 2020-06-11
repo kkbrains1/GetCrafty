@@ -37,12 +37,10 @@ class SnackSingleView extends Component {
       <div>
         {this.state.snack && (
           <div className="product__page">
-            <div className="beer">
+            <div className="product__info">
               <h1>{product.name}</h1>
-              <img src={product.photo} alt={product.name} className="product__media" />
-              <div className="product__buttons">
-                <span>Alc {product.abv} %</span>
-                <span>IBU {product.ibu}</span>
+              <img src={product.photo} alt={product.name} className="z" />
+              <div className="product__buttons-single">
                 <ProductButtons
                   {...this.props}
                   product={product}
