@@ -2,9 +2,8 @@ import React from 'react';
 import './style.scss';
 
 import { Link } from 'react-router-dom';
-
+//import ShoppingBasketTotal from './../ShoppingBasketTotal';
 import { signOut } from './../../services/authentication';
-
 
 const NavBar = (props) => {
   const signOutAndLiftUserState = () => {
@@ -26,7 +25,7 @@ const NavBar = (props) => {
       </Link>
       {(props.user && (
         <>
-          <img src={props.user.photo} alt={props.user.name}/>
+          <img src={props.user.photo} alt={props.user.name} />
           <Link to="/userProfile">{props.user.name}</Link>
           <button onClick={signOutAndLiftUserState}>Sign Out</button>
         </>
@@ -36,6 +35,9 @@ const NavBar = (props) => {
           <Link to="/sign-up">Sign Up</Link>
         </>
       )}
+      <Link to="/shopping-basket"> ShoopingBasket
+       {/*<ShoppingBasketTotal shoppingBasket={props.shoppingBasket} />*/}
+      </Link>
     </nav>
   );
 };

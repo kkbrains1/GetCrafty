@@ -6,20 +6,20 @@ import { Link } from 'react-router-dom';
 function Footer() {
   return (
     <>
-      <div className="footer">
+      <div className="footerjsx">
         <div>
           <Link to="#">
-            <p className="">Contact us</p>
+            <p className="footerLink">Contact us | </p>
           </Link>
         </div>
         <div>
           <Link to="#">
-            <p className="">FAQ</p>
+            <p className="footerLink">FAQ | </p>
           </Link>
         </div>
         <div>
           <Link to="#">
-            <p className="">Partners</p>
+            <p className="footerLink">Partners</p>
           </Link>
         </div>
       </div>
