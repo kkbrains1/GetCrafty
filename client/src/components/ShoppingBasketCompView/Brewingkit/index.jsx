@@ -3,6 +3,7 @@ import React from 'react';
 import formatPrice from './../../../helpers/format-price';
 
 function Brewingkit(props) {
+  console.log(props)
   return (
     <div className="components">
       <div className="components-media">
