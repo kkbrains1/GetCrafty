@@ -5,6 +5,7 @@ import './style.scss';
 import { listCraftbeers } from '../../../../services/craftbeer';
 import ProductButtons from './../../../../components/ProductButtons';
 import calcQuantity from './../../../../helpers/update-quantity';
+import formatPrice from './../../../../helpers/format-price';
 
 class CraftbeerListView extends Component {
   constructor() {
@@ -30,18 +31,18 @@ class CraftbeerListView extends Component {
 
   render() {
     let shoppingBasket = this.props.shoppingBasket;
-    
+
     return (
       <div className="beer__list">
-        <h1>BEER</h1>
+        <h1>OUR CRAFTBEERS</h1>
         {this.state.craftbeers.map(product => (
           <div className="beer__card" key={product._id}>
-            <Link to={`/products/craftbeer/${product._id}`} >
+            <Link to={`/products/craftbeer/${product._id}`}>
               <div className="beer__media">
                 <img src={product.photo} alt={product.name} />
               </div>
               <div className="beer__body">
-                <h4>{product.name}</h4>
+                <h3>{product.name}</h3>
                 <p>{product.description}</p>
               </div>
             </Link>

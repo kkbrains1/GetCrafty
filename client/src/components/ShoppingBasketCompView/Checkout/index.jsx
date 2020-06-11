@@ -1,8 +1,9 @@
 import React from 'react';
 
-import formatPrice from './../../../helpers/format-price';
+import formatPrice from '../../../helpers/format-price';
 
-function Brewingkit(props) {
+
+function Checkout(props) {
   return (
     <div className="components">
       <div className="components-media">
@@ -10,7 +11,7 @@ function Brewingkit(props) {
       </div>
       <div className="components-body">
         <span>{props.name}</span>
-        <em>{formatPrice(props.price)}</em>
+        {<em>{formatPrice(props.price)}</em>}
       </div>
       <div className="components-actions">
         <span>Qty. {props.quantity}</span>
@@ -21,4 +22,4 @@ function Brewingkit(props) {
   );
 }
 
-export default Brewingkit;
+export default Checkout;

@@ -6,11 +6,19 @@ const ProductButtons = props => {
   return (
     <div>
       <button onClick={() => props.changeQuantity(props.quantity - 1)}>-</button>
-      <span>Qty {props.quantity}</span>
+      <span>
+        <bold>{props.quantity}</bold>
+      </span>
       <button onClick={() => props.changeQuantity(props.quantity + 1)}>+</button>
+      <span>Add for</span>
       <em>{formatPrice(props.product.price)}</em>
     </div>
   );
 };
 
 export default ProductButtons;
+
+/* 
+<span>
+Add {props.product.name} for <em>{formatPrice(props.product.price)}</em>
+</span> */

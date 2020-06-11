@@ -32,7 +32,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      shoppingBasket: [],
+      //shoppingBasket: [],
       user: null,
       loaded: false,
       shoppingBasket: []
@@ -67,33 +67,6 @@ class App extends Component {
     });
   };
 
-  //  changeProductQuantity = (product, quantity) => {
-  //     if (this.state.shoppingBasket.find((item) => item.product._id === product._id)) {
-  //       const updatedShoppingBasket = deepCloneObject(this.state.shoppingBasket);
-  //       const indexOfProductInShoppingBasket = this.state.shoppingBasket.findIndex(
-  //         (item) => item.product._id === product._id
-  //       );
-  //       if (quantity) {
-  //         updatedShoppingBasket[indexOfProductInShoppingBasket].quantity = Math.max(quantity, 0);
-  //       } else {
-  //         updatedShoppingBasket.splice(indexOfProductInShoppingBasket, 1);
-  //       }
-  //       this.setState({
-  //         shoppingBasket: updatedShoppingBasket
-  //       });
-  //     } else {
-  //       this.setState({
-  //         shoppingBasket: [
-  //           ...this.state.shoppingBasket,
-  //           {
-  //             product: product,
-  //             quantity: Math.max(quantity, 0)
-  //           }
-  //         ]
-  //       });
-  //     }
-  //   };
-
   emptyShoppingBasket = () => {
     this.setState({
       shoppingBasket: []
@@ -101,7 +74,7 @@ class App extends Component {
   };
 
   changeProductQuantity = (product, quantity) => {
-    //console.log('basket', this.state.shoppingBasket);
+    console.log('App basket', this.state.shoppingBasket);
     //console.log('product', product._id);
     //console.log('quantity', quantity);
     if (this.state.shoppingBasket.find((item) => item.product._id === product._id)) {
@@ -231,15 +204,17 @@ class App extends Component {
               render={(props) => <UpdatePasswordView {...props} updateUser={this.updateUser} />}
             />
             <Route path="/update-img" render={(props) => <UpdateImgView {...props} updateUser={this.updateUser} />} />
-            <Route path="/checkout" render={(props) => <CheckoutView {...props} updateUser={this.updateUser} />} />
+            <Route
+              path="/checkout"
+              render={(props) => <CheckoutView {...props} shoppingBasket={this.state.shoppingBasket} />}
+            />
             <Route
               path="/shopping-basket"
               render={(props) => (
                 <ShoppingBasketView
                   {...props}
                   shoppingBasket={this.state.shoppingBasket}
-                  //changeAmount={this.changeAmount}
-                  changeQuantity={this.changeProductQuantity}
+                  changeProductQuantity={this.changeProductQuantity}
                 />
               )}
             />
