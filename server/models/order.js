@@ -27,7 +27,7 @@ const schema = new mongoose.Schema(
         type: String
       }
     },
-    adress: { type: String },
+    address: { type: String },
     payment: { type: String },
     user: {
       type: mongoose.Schema.Types.ObjectId,
