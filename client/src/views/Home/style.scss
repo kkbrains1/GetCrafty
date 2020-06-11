@@ -3,3 +3,39 @@
 //Section_#03 - Our Beers
 //Section_#04 - Brewery Experience
 //Section_#05 - Footer
+
+//Section_#02 - Welcome
+.welcome {
+  text-align: center;
+  display: block;
+  justify-content: justify;
+  align-items: center;
+  margin: auto;
+  margin-top: 5em;
+  margin-bottom: 5em;
+}
+
+//Section_#03 - Our Beers
+.beersection {
+  margin-left: 1em;
+  text-align: center;
+  display: block;
+  justify-content: justify;
+  align-items: center;
+  margin: auto;
+  margin-top: 5em;
+  margin-bottom: 5em;
+}
+
+.randombeerimg {
+  height: 15em;
+  text-align: center;
+  display: block;
+  justify-content: justify;
+  align-items: center;
+  margin: auto;
+}
+
+.beerdescription {
+  text-align: justify;
+}

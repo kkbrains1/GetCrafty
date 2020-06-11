@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect, Link } from 'react-router-dom';
 
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
@@ -26,7 +26,7 @@ import SnackSingleView from './views/Products/Snack/Single';
 import BrewingkitListView from './views/Products/Brewingkit/List';
 import BrewingkitSingleView from './views/Products/Brewingkit/Single';
 
-const deepCloneObject = object => JSON.parse(JSON.stringify(object));
+const deepCloneObject = (object) => JSON.parse(JSON.stringify(object));
 
 class App extends Component {
   constructor() {
@@ -50,13 +50,13 @@ class App extends Component {
 
   componentDidMount() {
     loadAuthenticatedUser()
-      .then(user => {
+      .then((user) => {
         this.updateUser(user);
         this.setState({
           loaded: true
         });
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
   }
@@ -77,10 +77,10 @@ class App extends Component {
     console.log('App basket', this.state.shoppingBasket);
     //console.log('product', product._id);
     //console.log('quantity', quantity);
-    if (this.state.shoppingBasket.find(item => item.product._id === product._id)) {
+    if (this.state.shoppingBasket.find((item) => item.product._id === product._id)) {
       const updatedShoppingBasket = deepCloneObject(this.state.shoppingBasket);
       const indexOfProductInShoppingBasket = this.state.shoppingBasket.findIndex(
-        item => item.product._id === product._id
+        (item) => item.product._id === product._id
       );
       if (quantity) {
         updatedShoppingBasket[indexOfProductInShoppingBasket].quantity = Math.max(quantity, 0);
@@ -103,7 +103,7 @@ class App extends Component {
     }
   };
 
-  updateUser = user => {
+  updateUser = (user) => {
     this.setState({
       user
     });
@@ -114,21 +114,26 @@ class App extends Component {
       <div className="App">
         <BrowserRouter>
           <NavBar user={this.state.user} updateUser={this.updateUser} />
+          <div>
+            <Link to="/products/craftbeer/list" >Craftbeers</Link>
+            <Link to="/products/snack/list" >Snacks</Link>
+            <Link to="/products/brewingkit/list" >Brewing Kit</Link>
+          </div>
           <Switch>
-            <Route path="/" exact render={props => <HomeView {...props} />} />
+            <Route path="/" exact render={(props) => <HomeView {...props} />} />
             <Route path="/userProfile" component={UserProfileView} />
             <Route
               path="/sign-up"
-              render={props => <AuthenticationSignUpView {...props} updateUser={this.updateUser} />}
+              render={(props) => <AuthenticationSignUpView {...props} updateUser={this.updateUser} />}
             />
             <Route
               path="/sign-in"
-              render={props => <AuthenticationSignInView {...props} updateUser={this.updateUser} />}
+              render={(props) => <AuthenticationSignInView {...props} updateUser={this.updateUser} />}
             />
             <Route
               path="/products/craftbeer/list"
               exact
-              render={props => (
+              render={(props) => (
                 <CraftbeerListView
                   {...props}
                   shoppingBasket={this.state.shoppingBasket}
@@ -138,7 +143,7 @@ class App extends Component {
             />
             <Route
               path="/products/craftbeer/:id"
-              render={props => (
+              render={(props) => (
                 <CraftbeerSingleView
                   {...props}
                   shoppingBasket={this.state.shoppingBasket}
@@ -149,7 +154,7 @@ class App extends Component {
             <Route
               path="/products/snack/list"
               exact
-              render={props => (
+              render={(props) => (
                 <SnackListView
                   {...props}
                   shoppingBasket={this.state.shoppingBasket}
@@ -159,7 +164,7 @@ class App extends Component {
             />
             <Route
               path="/products/snack/:id"
-              render={props => (
+              render={(props) => (
                 <SnackSingleView
                   {...props}
                   shoppingBasket={this.state.shoppingBasket}
@@ -170,7 +175,7 @@ class App extends Component {
             <Route
               path="/products/brewingkit/list"
               exact
-              render={props => (
+              render={(props) => (
                 <BrewingkitListView
                   {...props}
                   shoppingBasket={this.state.shoppingBasket}
@@ -180,7 +185,7 @@ class App extends Component {
             />
             <Route
               path="/products/brewingkit/:id"
-              render={props => (
+              render={(props) => (
                 <BrewingkitSingleView
                   {...props}
                   shoppingBasket={this.state.shoppingBasket}
@@ -190,7 +195,7 @@ class App extends Component {
             />
             <Route
               path="/order/:id"
-              render={props => (
+              render={(props) => (
                 <SingleOrderView
                   {...props}
                   // shoppingBasket={this.state.shoppingBasket}
@@ -201,21 +206,16 @@ class App extends Component {
 
             <Route
               path="/update-password"
-              render={props => <UpdatePasswordView {...props} updateUser={this.updateUser} />}
+              render={(props) => <UpdatePasswordView {...props} updateUser={this.updateUser} />}
             />
-            <Route
-              path="/update-img"
-              render={props => <UpdateImgView {...props} updateUser={this.updateUser} />}
-            />
+            <Route path="/update-img" render={(props) => <UpdateImgView {...props} updateUser={this.updateUser} />} />
             <Route
               path="/checkout"
-              render={(props) => (
-                <CheckoutView {...props} shoppingBasket={this.state.shoppingBasket} />
-              )}
+              render={(props) => <CheckoutView {...props} shoppingBasket={this.state.shoppingBasket} />}
             />
             <Route
               path="/shopping-basket"
-              render={props => (
+              render={(props) => (
                 <ShoppingBasketView
                   {...props}
                   shoppingBasket={this.state.shoppingBasket}
@@ -231,7 +231,7 @@ class App extends Component {
 
             <Redirect to="/error/404" />
           </Switch>
-          <Footer />
+          <Footer className="footer" />
         </BrowserRouter>
       </div>
     );
