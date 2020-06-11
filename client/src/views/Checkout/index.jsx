@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import { CardElement, Elements, ElementsConsumer } from '@stripe/react-stripe-js';
 import { listOrders } from './../../services/orders';
+import ShoppingBasketTotal from './../../components/ShoppingBasketTotal';
+
 
 import './style.scss';
 
@@ -157,38 +159,37 @@ class CheckoutView extends Component {
 
                 <CardElement option={STRIPE_INPUT_OPTIONS} />
 
-                {/* {this.props.shoppingBasket.map((item) => (
-                  ))} */}
-                  <table>
-                    <thead>
-                      <tr>
-                        <th colspan="2">Your Order</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th>Products</th>
-                        <th>Total</th>
-                      </tr>
-                      <tr>
-                        {/* <td>{item.product.name}</td> */}
-                        <td>[product.price]</td>
-                      </tr>
-                      <tr>
-                        <td>[product.name]</td>
-                        <td>[product.price]</td>
-                      </tr>
-                      <tr>
-                        <th>Shipping Costs</th>
-                        <td>[shipping.price]</td>
-                      </tr>
-                      <tr>
-                        <th>Subtotal</th>
-                        <td>[subtotal]</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                      
+                {/* <table>
+                  <thead>
+                    <tr>
+                      <th colspan="2">Your Order</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>Products</th>
+                      <th>Total</th>
+                    </tr>
+                    <tr>
+                      <td>[product.name]</td> 
+                      <td>[product.price]</td>
+                    </tr>
+                    <tr>
+                      <td>[product.name]</td>
+                      <td>[product.price]</td>
+                    </tr>
+                    <tr>
+                      <th>Shipping Costs</th>
+                      <td>[shipping.price]</td>
+                    </tr>
+                    <tr>
+                      <th>Subtotal</th>
+                      <td>[subtotal]</td>
+                    </tr>
+                  </tbody>
+                </table> */}
+
+                <ShoppingBasketTotal shoppingBasket={this.props.shoppingBasket} />
 
                 <button>Confirm Purchase</button>
               </form>
