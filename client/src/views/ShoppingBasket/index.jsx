@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 import Checkout from '../../components/ShoppingBasketCompView/Checkout';
 
+
 class ShoppingBasketView extends Component {
   constructor(props) {
     super(props);
@@ -24,6 +25,7 @@ class ShoppingBasketView extends Component {
             changeQuantity={(quantity) => this.props.changeProductQuantity(item.product, quantity)}
           />
         ))}
+        
         <Link to="/checkout">Proceed to Checkout</Link>
       </div>
     );
