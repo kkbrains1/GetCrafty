@@ -19,7 +19,8 @@ class ShoppingBasketView extends Component {
         <h1>Shopping Basket</h1>
         {this.props.shoppingBasket.map(item => (
           <Brewingkit 
-            {...item.brewingkit}
+            //{...item.brewingkit}
+            {...item.products}
           />
         ))}
         <Link to="/checkout">Proceed to Checkout</Link>
