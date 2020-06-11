@@ -116,7 +116,7 @@ class App extends Component {
           <NavBar user={this.state.user} updateUser={this.updateUser} />
           <div>
             <Link to="/products/craftbeer/list" >Craftbeers</Link>
-            <Link to="/products/snack/list" >Snacks</Link>
+            <Link to="/products/snack/list" >Snack</Link>
             <Link to="/products/brewingkit/list" >Brewing Kit</Link>
           </div>
           <Switch>
