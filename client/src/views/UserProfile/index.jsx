@@ -38,7 +38,7 @@ class UserProfile extends Component {
           <>
             <img className="user-profile-img" src={user.photo} alt={user.name} />
             <h3>{user.name}</h3>
-            <Link className="user-profile-btn" to="/pastOrderList">
+            <Link className="user-profile-btn" to="/past-orders">
               <span>Past Order List</span>
             </Link>
             <Link className="user-profile-btn" to="/repeat-order">

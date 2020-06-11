@@ -17,7 +17,7 @@ class HomeView extends Component {
   }
 
   fetchData = () => {
-    // call the service to get a random beer~
+    // call the service to get a random beer
     return randomCraftbeer()
       .then(beer => {
         // save the beer to the state
@@ -41,7 +41,6 @@ class HomeView extends Component {
 
         <section>
           <Link to="/">
-            {/*<img src={'./../public/images/'}*/}
             <h1>Welcome to GetCrafty!</h1>
             <h4>The beer that makes your sunset a pleasant one!</h4>
             <p>
@@ -55,7 +54,6 @@ class HomeView extends Component {
 
         <section>
           <Link to="/products/craftbeer/list">
-            {/*<img src={'./../public/images/'}*/}
             <h1>Our beers</h1>
             {(!this.state.loaded && (
               <>
@@ -63,8 +61,6 @@ class HomeView extends Component {
               </>
             )) || (
               <>
-                {/* in jsx href is replaced by src  */}
-                {/* <img href={beer.photo}></img> */}
                 <img src={beer.photo} alt={beer.name} />
                 <h2>{beer.name}</h2>
                 <p>
@@ -78,7 +74,6 @@ class HomeView extends Component {
 
         <section>
           <Link to="/">
-            {/*<img src={'./../public/images/'}*/}
             <h1>Brewery Experience</h1>
             <p>[img] [img] [img]</p>
           </Link>
