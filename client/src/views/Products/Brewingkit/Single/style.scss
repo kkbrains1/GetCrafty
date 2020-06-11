@@ -1,0 +1,36 @@
+.product__page {
+  display: flex;
+  flex-direction: column;
+  margin: 1.5em;
+  // background-image: url(./../../../../images/logo_trans2_get_crafty.png);
+  // background-size: contain;
+  // background-color: rgba(0, 57, 78, 0.6);
+}
+
+.product__info {
+  h1 {
+    font-size: 3em;
+    text-align: center;
+    //margin-block-end: 0.4em;
+  }
+  img {
+    margin: 0 auto;
+    height: 44em;
+  }
+}
+
+.product__buttons-single {
+  display: flex;
+  justify-content: center;
+  margin: 2em 2.5em;
+  font-size: large;
+  span {
+    padding: 5px;
+    font-size: 0.8em;
+    box-sizing: border-box;
+    padding: 0.5em 1em;
+    em {
+      font-size: 1.5em;
+    }
+  }
+}

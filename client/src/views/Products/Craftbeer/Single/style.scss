@@ -1,27 +1,48 @@
-.beer__page {
-  display: flex;
-  overflow-x: scroll;
-  h1 {
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    hyphens: auto;
-  }
-}
-
-.beer {
+.product__page {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  margin: 1.5em;
+  // background-image: url(./../../../../images/logo_trans2_get_crafty.png);
+  // background-size: contain;
+  // background-color: rgba(0, 57, 78, 0.6);
 }
 
-.beer__media {
-  width: 6em;
+.product__info {
+  h1 {
+    font-size: 3em;
+    text-align: center;
+    //margin-block-end: 0.4em;
+  }
+  img {
+    margin: 0 auto;
+    height: 44em;
+  }
 }
 
-.beer__buttons {
+.product__small-details {
+  font-size: smaller;
+  text-align: center;
+  margin-top: 2em;
+  font-weight: 500;
+}
+
+.product__buttons-single {
   display: flex;
-  p {
+  justify-content: center;
+  margin: 2em 2.5em;
+  font-size: large;
+  span {
+    padding: 5px;
+    font-size: 0.8em;
     box-sizing: border-box;
     padding: 0.5em 1em;
+    em {
+      font-size: 1.5em;
+    }
   }
+}
+
+h3,
+h4 {
+  margin-block-end: 0;
 }

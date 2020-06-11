@@ -1,4 +1,4 @@
-.beer__page {
+.product__page {
   display: flex;
   overflow-x: scroll;
   h1 {
@@ -14,11 +14,11 @@
   align-items: center;
 }
 
-.beer__media {
+.product__media {
   width: 6em;
 }
 
-.beer__buttons {
+.product__buttons {
   display: flex;
   p {
     box-sizing: border-box;

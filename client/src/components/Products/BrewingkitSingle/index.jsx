@@ -4,11 +4,11 @@ import React from 'react';
 const BrewingkitSingle = props => {
   const brewingkit = props.brewingkit;
   return (
-    <div className="beer__page">
+    <div className="product__page">
       <div className="beer">
         <h1>{brewingkit.name}</h1>
-        <img src={brewingkit.photo} alt={brewingkit.name} className="beer__media" />
-        <div className="beer__buttons">
+        <img src={brewingkit.photo} alt={brewingkit.name} className="product__media" />
+        <div className="product__buttons">
           <button>-</button>
           <span>0</span>
           <button>+</button>

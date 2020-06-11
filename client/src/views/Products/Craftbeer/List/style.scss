@@ -1,4 +1,4 @@
-.beer__list {
+.product__list {
   display: flex;
   flex-direction: column;
   overflow-x: scroll;
@@ -7,7 +7,7 @@
   background-size: contain;
 }
 
-.beer__card {
+.product__card {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,7 +18,7 @@
   background-color: #8bb8c7;
 }
 
-.beer__media {
+.product__media {
   display: flex;
   justify-content: space-around;
   img {
@@ -27,7 +27,7 @@
   }
 }
 
-.beer__body {
+.product__body {
   display: flex;
   flex-direction: column;
   padding: 0.2em 0.2em 0;
@@ -44,7 +44,7 @@
   }
 }
 
-.beer__buttons {
+.product__buttons {
   display: flex;
   margin: 0 auto;
   span {
