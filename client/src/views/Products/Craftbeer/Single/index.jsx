@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-//import './style.scss';
+import './style.scss';
 
 import { singleCraftbeer } from '../../../../services/craftbeer';
 import ProductButtons from './../../../../components/ProductButtons';
@@ -38,7 +38,7 @@ class CraftbeerSingleView extends Component {
       <div>
         {this.state.craftbeer && (
           <div className="beer__page">
-            <div className="beer">
+            <div className="beer__media">
               <h1>{product.name}</h1>
               <img src={product.photo} alt={product.name} className="beer__media" />
               <div className="beer__buttons">
