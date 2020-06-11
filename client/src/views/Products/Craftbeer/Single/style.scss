@@ -1,53 +1,38 @@
-.beer__page {
+.product__page {
   display: flex;
   flex-direction: column;
-  overflow-x: scroll;
   margin: 1.5em;
-  background-image: url(./../../../../images/logo1_GetCrafty.png);
-  background-size: contain;
+  // background-image: url(./../../../../images/logo_trans2_get_crafty.png);
+  // background-size: contain;
+  // background-color: rgba(0, 57, 78, 0.6);
 }
 
-.beer__card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 0.5em;
-  box-shadow: 0 0.25em 1em -0.25em hsla(286, 83%, 21%, 0.75);
-  margin: 0.5em;
-  padding: 1em;
-  background-color: #8bb8c7;
-}
-
-.beer__media {
-  display: flex;
-  justify-content: space-around;
+.product__info {
+  h1 {
+    font-size: 3em;
+    text-align: center;
+    //margin-block-end: 0.4em;
+  }
   img {
-    height: 8em;
     margin: 0 auto;
+    height: 44em;
   }
 }
 
-.beer__body {
-  display: flex;
-  flex-direction: column;
-  padding: 0.2em 0.2em 0;
-  height: 6em;
-  margin: 0.5em;
-  h3 {
-    margin: 0 auto;
-    text-transform: uppercase;
-  }
-  p {
-    font-size: 0.9em;
-    overflow: hidden;
-    margin: 0;
-  }
+.product__small-details {
+  font-size: smaller;
+  text-align: center;
+  margin-top: 2em;
+  font-weight: 500;
 }
 
-.beer__buttons {
+.product__buttons-single {
   display: flex;
-  margin: 0 auto;
+  justify-content: center;
+  margin: 2em 2.5em;
+  font-size: large;
   span {
+    padding: 5px;
     font-size: 0.8em;
     box-sizing: border-box;
     padding: 0.5em 1em;
@@ -55,4 +40,9 @@
       font-size: 1.5em;
     }
   }
+}
+
+h3,
+h4 {
+  margin-block-end: 0;
 }

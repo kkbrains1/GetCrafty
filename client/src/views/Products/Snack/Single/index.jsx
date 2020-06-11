@@ -36,11 +36,11 @@ class SnackSingleView extends Component {
     return (
       <div>
         {this.state.snack && (
-          <div className="beer__page">
+          <div className="product__page">
             <div className="beer">
               <h1>{product.name}</h1>
-              <img src={product.photo} alt={product.name} className="beer__media" />
-              <div className="beer__buttons">
+              <img src={product.photo} alt={product.name} className="product__media" />
+              <div className="product__buttons">
                 <span>Alc {product.abv} %</span>
                 <span>IBU {product.ibu}</span>
                 <ProductButtons

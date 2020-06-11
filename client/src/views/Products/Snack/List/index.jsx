@@ -32,20 +32,20 @@ class SnackListView extends Component {
     let shoppingBasket = this.props.shoppingBasket;
 
     return (
-      <div className="beer__list">
+      <div className="product__list">
         <h1>SNACKS</h1>
         {this.state.snacks.map(product => (
-          <div className="beer__card" key={product._id}>
+          <div className="product__card" key={product._id}>
             <Link to={`/products/snack/${product._id}`}>
-              <div className="beer__media">
+              <div className="product__media">
                 <img src={product.photo} alt={product.name} />
               </div>
-              <div className="beer__body">
+              <div className="product__body">
                 <h4>{product.name}</h4>
                 <p>{product.description}</p>
               </div>
             </Link>
-            <div className="beer__buttons">
+            <div className="product__buttons">
               <ProductButtons
                 {...this.props}
                 product={product}

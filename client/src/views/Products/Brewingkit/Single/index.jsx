@@ -3,7 +3,7 @@ import './style.scss';
 
 import { singleBrewingkit } from '../../../../services/brewingkit';
 import ProductButtons from './../../../../components/ProductButtons';
-import calcQuantity from './../../../../helpers/update-quantity'
+import calcQuantity from './../../../../helpers/update-quantity';
 
 class BrewingkitSingleView extends Component {
   constructor(props) {
@@ -36,18 +36,16 @@ class BrewingkitSingleView extends Component {
     return (
       <div>
         {this.state.brewingkit && (
-          <div className="beer__page">
-            <div className="beer">
+          <div className="product__page">
+            <div className="product__info">
               <h1>{product.name}</h1>
-              <img src={product.photo} alt={product.name} className="beer__media" />
-              <div className="beer__buttons">
-                <span>Alc {product.abv} %</span>
-                <span>IBU {product.ibu}</span>
+              <img src={product.photo} alt={product.name} className="z" />
+              <div className="product__buttons-single">
                 <ProductButtons
                   {...this.props}
                   product={product}
                   quantity={calcQuantity(shoppingBasket, product)}
-                  shoppingBasket={shoppingBasket}
+                  shoppingBasket={this.props.shoppingBasket}
                   changeQuantity={quantity => this.props.changeProductQuantity(product, quantity)}
                 />
               </div>

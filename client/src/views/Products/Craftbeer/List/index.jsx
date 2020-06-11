@@ -33,20 +33,20 @@ class CraftbeerListView extends Component {
     let shoppingBasket = this.props.shoppingBasket;
 
     return (
-      <div className="beer__list">
+      <div className="product__list">
         <h1>OUR CRAFTBEERS</h1>
         {this.state.craftbeers.map(product => (
-          <div className="beer__card" key={product._id}>
+          <div className="product__card" key={product._id}>
             <Link to={`/products/craftbeer/${product._id}`}>
-              <div className="beer__media">
+              <div className="product__media">
                 <img src={product.photo} alt={product.name} />
               </div>
-              <div className="beer__body">
+              <div className="product__body">
                 <h3>{product.name}</h3>
                 <p>{product.description}</p>
               </div>
             </Link>
-            <div className="beer__buttons">
+            <div className="product__buttons">
               <ProductButtons
                 {...this.props}
                 product={product}

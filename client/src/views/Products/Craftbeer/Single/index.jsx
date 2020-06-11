@@ -37,13 +37,15 @@ class CraftbeerSingleView extends Component {
     return (
       <div>
         {this.state.craftbeer && (
-          <div className="beer__page">
-            <div className="beer__media">
+          <div className="product__page">
+            <div className="product__info">
               <h1>{product.name}</h1>
-              <img src={product.photo} alt={product.name} className="beer__media" />
-              <div className="beer__buttons">
-                <span>Alc {product.abv} %</span>
+              <img src={product.photo} alt={product.name} className="z" />
+              <div className="product__small-details">
+                <span>Alc {product.abv} % </span>
                 <span>IBU {product.ibu}</span>
+              </div>
+              <div className="product__buttons-single">
                 <ProductButtons
                   {...this.props}
                   product={product}
@@ -63,14 +65,20 @@ class CraftbeerSingleView extends Component {
                 </Link>
               ))}
             </ul>
-            <h2>FANCY BREWING SOME? These are our ingredients...</h2>
+            <h2>FANCY BREWING SOME? </h2>
+            <h3>These are our ingredients...</h3>
+
             <h4>Malts:</h4>
             <ul>
               {product.ingredients.malt.map(malt => (
                 <Link to="#" key={Date.now() * Math.random()}>
-                  <li>{malt.name}</li>
-                  <span>{malt.amount.value}</span>
-                  <span>{malt.amount.unit}</span>
+                  <li>
+                    {malt.name}:{' '}
+                    <em>
+                      {' '}
+                      {malt.amount.value} {malt.amount.unit}{' '}
+                    </em>
+                  </li>
                 </Link>
               ))}
             </ul>
@@ -78,9 +86,13 @@ class CraftbeerSingleView extends Component {
             <ul>
               {product.ingredients.hops.map(hops => (
                 <Link to="#" key={Date.now() * Math.random()}>
-                  <li>{hops.name}</li>
-                  <span>{hops.amount.value}</span>
-                  <span>{hops.amount.unit}</span>
+                  <li>
+                    {hops.name}:{' '}
+                    <em>
+                      {' '}
+                      {hops.amount.value} {hops.amount.unit}{' '}
+                    </em>
+                  </li>
                 </Link>
               ))}
             </ul>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect, Link } from 'react-router-dom';
 
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
@@ -114,6 +114,11 @@ class App extends Component {
       <div className="App">
         <BrowserRouter>
           <NavBar user={this.state.user} updateUser={this.updateUser} />
+          <div>
+            <Link to="/products/craftbeer/list" >Craftbeers</Link>
+            <Link to="/products/snack/list" >Snacks</Link>
+            <Link to="/products/brewingkit/list" >Brewing Kit</Link>
+          </div>
           <Switch>
             <Route path="/" exact render={(props) => <HomeView {...props} />} />
             <Route path="/userProfile" component={UserProfileView} />

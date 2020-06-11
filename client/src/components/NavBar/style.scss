@@ -1,6 +1,8 @@
 .navbar {
   display: flex;
   align-items: center;
+  // position: fixed;
+  background-color: #00394e;
   a {
     padding: 1em;
     &:first-child {
