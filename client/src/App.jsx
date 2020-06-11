@@ -61,16 +61,58 @@ class App extends Component {
       });
   }
 
-/*   changeAmount = (brewingkit, amount) => {
-    if (this.state.shoppingBasket.find((item) => item.brewingkit._id === brewingkit._id)) {
+  emptyShoppingBasket = () => {
+    this.setState({
+      shoppingBasket: []
+    });
+  };
+
+  //  changeProductQuantity = (product, quantity) => {
+  //     if (this.state.shoppingBasket.find((item) => item.product._id === product._id)) {
+  //       const updatedShoppingBasket = deepCloneObject(this.state.shoppingBasket);
+  //       const indexOfProductInShoppingBasket = this.state.shoppingBasket.findIndex(
+  //         (item) => item.product._id === product._id
+  //       );
+  //       if (quantity) {
+  //         updatedShoppingBasket[indexOfProductInShoppingBasket].quantity = Math.max(quantity, 0);
+  //       } else {
+  //         updatedShoppingBasket.splice(indexOfProductInShoppingBasket, 1);
+  //       }
+  //       this.setState({
+  //         shoppingBasket: updatedShoppingBasket
+  //       });
+  //     } else {
+  //       this.setState({
+  //         shoppingBasket: [
+  //           ...this.state.shoppingBasket,
+  //           {
+  //             product: product,
+  //             quantity: Math.max(quantity, 0)
+  //           }
+  //         ]
+  //       });
+  //     }
+  //   };
+
+  emptyShoppingBasket = () => {
+    this.setState({
+      shoppingBasket: []
+    });
+  };
+
+  changeProductQuantity = (product, quantity) => {
+    //console.log('basket', this.state.shoppingBasket);
+    //console.log('product', product._id);
+    //console.log('quantity', quantity);
+    if (this.state.shoppingBasket.find((item) => item.product._id === product._id)) {
       const updatedShoppingBasket = deepCloneObject(this.state.shoppingBasket);
-      const indexOfBrewingkitInShoppingBasket = this.state.shoppingBasket.findIndex(
-        (item) => item.brewingkit._id === brewingkit._id
+      const indexOfProductInShoppingBasket = this.state.shoppingBasket.findIndex(
+        (item) => item.product._id === product._id
       );
-      if (amount) {
-        updatedShoppingBasket[indexOfBrewingkitInShoppingBasket].amount = Math.max(amount, 0);
+      if (quantity) {
+        updatedShoppingBasket[indexOfProductInShoppingBasket].quantity = Math.max(quantity, 0);
       } else {
-        updatedShoppingBasket.splice(indexOfBrewingkitInShoppingBasket, 1);
+        updatedShoppingBasket.splice(indexOfProductInShoppingBasket, 1);
       }
       this.setState({
         shoppingBasket: updatedShoppingBasket
@@ -80,37 +122,13 @@ class App extends Component {
         shoppingBasket: [
           ...this.state.shoppingBasket,
           {
-            brewingkit: brewingkit,
-            amount: Math.max(amount, 0)
+            product: product,
+            quantity: Math.max(quantity, 0)
           }
         ]
       });
     }
-  }; */
-
-  emptyShoppingBasket = () => {
-    this.setState({
-      shoppingBasket: []
-    });
   };
-
-  // updateUser = user => {
-  changeProductQuantity = (product, quantity) => {
-    console.log('basket', this.state.shoppingBasket);
-    console.log('product', product);
-    console.log('quantity', quantity);
-    //if (this.state.shoppingBasket.find(item => item.product._id === product._id))
-    this.setState({
-      shoppingBasket: [
-        ...this.state.shoppingBasket,
-        {
-          product: product,
-          quantity: quantity
-        }
-      ]
-    });
-  //   console.log('basket', this.state.shoppingBasket);
-};
 
   updateUser = (user) => {
     this.setState({
@@ -226,7 +244,14 @@ class App extends Component {
             />
             <Route
               path="/shopping-basket"
-              render={(props) => <ShoppingBasketView {...props} updateUser={this.updateUser} />}
+              render={(props) => (
+                <ShoppingBasketView
+                  {...props}
+                  shoppingBasket={this.state.shoppingBasket}
+                  //changeAmount={this.changeAmount}
+                  changeQuantity={this.changeProductQuantity}
+                />
+              )}
             />
 
             {/* <Route path="/shopping-basket" component={ShoppingBasketView} /> */}

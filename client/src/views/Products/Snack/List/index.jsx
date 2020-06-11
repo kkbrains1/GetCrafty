@@ -4,6 +4,7 @@ import './style.scss';
 
 import { listSnacks } from '../../../../services/snack';
 import ProductButtons from './../../../../components/ProductButtons';
+import calcQuantity from './../../../../helpers/update-quantity';
 
 class SnackListView extends Component {
   constructor() {
@@ -28,13 +29,14 @@ class SnackListView extends Component {
   }
 
   render() {
-    let quantity = 0;
+    let shoppingBasket = this.props.shoppingBasket;
+
     return (
       <div className="beer__list">
         <h1>SNACKS</h1>
         {this.state.snacks.map(product => (
-          <div className="beer__card">
-            <Link to={`/products/snack/${product._id}`} key={product._id}>
+          <div className="beer__card" key={product._id}>
+            <Link to={`/products/snack/${product._id}`}>
               <div className="beer__media">
                 <img src={product.photo} alt={product.name} />
               </div>
@@ -47,7 +49,7 @@ class SnackListView extends Component {
               <ProductButtons
                 {...this.props}
                 product={product}
-                quantity={quantity}
+                quantity={calcQuantity(shoppingBasket, product)}
                 shoppingBasket={this.props.shoppingBasket}
                 changeQuantity={quantity => this.props.changeProductQuantity(product, quantity)}
               />

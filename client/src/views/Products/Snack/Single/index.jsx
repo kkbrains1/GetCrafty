@@ -4,6 +4,7 @@ import './style.scss';
 
 import { singleSnack } from '../../../../services/snack';
 import ProductButtons from './../../../../components/ProductButtons';
+import calcQuantity from './../../../../helpers/update-quantity';
 
 class SnackSingleView extends Component {
   constructor(props) {
@@ -29,8 +30,9 @@ class SnackSingleView extends Component {
   }
 
   render() {
-    let quantity = 0;
     let product = this.state.snack;
+    let shoppingBasket = this.props.shoppingBasket;
+
     return (
       <div>
         {this.state.snack && (
@@ -44,7 +46,7 @@ class SnackSingleView extends Component {
                 <ProductButtons
                   {...this.props}
                   product={product}
-                  quantity={quantity}
+                  quantity={calcQuantity(shoppingBasket, product)}
                   shoppingBasket={this.props.shoppingBasket}
                   changeQuantity={quantity => this.props.changeProductQuantity(product, quantity)}
                 />

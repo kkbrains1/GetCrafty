@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 import { singleCraftbeer } from '../../../../services/craftbeer';
 import ProductButtons from './../../../../components/ProductButtons';
+import calcQuantity from './../../../../helpers/update-quantity';
 
 class CraftbeerSingleView extends Component {
   constructor(props) {
@@ -30,8 +31,9 @@ class CraftbeerSingleView extends Component {
   }
 
   render() {
-    let quantity = 0;
     let product = this.state.craftbeer;
+    let shoppingBasket = this.props.shoppingBasket;
+
     return (
       <div>
         {this.state.craftbeer && (
@@ -45,7 +47,7 @@ class CraftbeerSingleView extends Component {
                 <ProductButtons
                   {...this.props}
                   product={product}
-                  quantity={quantity}
+                  quantity={calcQuantity(shoppingBasket, product)}
                   shoppingBasket={this.props.shoppingBasket}
                   changeQuantity={quantity => this.props.changeProductQuantity(product, quantity)}
                 />
