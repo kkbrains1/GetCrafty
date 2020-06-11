@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-// import pug from './../images/pug_error.png';
+import { Link } from 'react-router-dom';
+import pug from './../../images/pug_error.png';
 
 class ErrorView extends Component {
   render() {
@@ -19,9 +20,12 @@ class ErrorView extends Component {
     }
     return (
       <div>
-        {/* <img src={pug} alt="" /> */}
+        <img src={pug} alt="pug" />
         <h1>There was an error.</h1>
         <p>{message}</p>
+        <button>
+          <Link to="/"> Take me Home </Link>
+        </button>
       </div>
     );
   }
