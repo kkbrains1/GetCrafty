@@ -19,11 +19,11 @@ class HomeView extends Component {
   fetchData = () => {
     // call the service to get a random beer
     return randomCraftbeer()
-      .then(beer => {
+      .then((beer) => {
         // save the beer to the state
         this.setState({ beer, loaded: true });
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
   };
@@ -35,24 +35,27 @@ class HomeView extends Component {
       <div>
         <section>
           <div className="logo-position-section-1">
-            <span>[img.logo]</span>
+            <img src="./../../logo1_GetCrafty.png" alt="logo image" />
           </div>
         </section>
 
-        <section>
-          <Link to="/">
-            <h1>Welcome to GetCrafty!</h1>
-            <h4>The beer that makes your sunset a pleasant one!</h4>
-            <p>
-              Are you a beer lover and you want to celebrate life? So with GetCrafty you will make
-              the difference on your meetings with your friends. GetCrafty is perfect from the first
-              sip to the last one!
-            </p>
-            <p>Join us at Sign Up and dive into a moment to remember.</p>
-          </Link>
+        <section className="welcome">
+          <>
+            <Link to="/">
+              <h1>Welcome to GetCrafty!</h1>
+              <h4>Let's make your sunset a pleasant one!</h4>
+              <p>
+                Are you a beer lover and you want to enjoy life? GetCrafty will make the difference on your gatherings
+                with your friends. It's perfect from the first sip to the last one!
+              </p>
+              <p>
+                <strong>Sign Up</strong> and dive into the moment.
+              </p>
+            </Link>
+          </>
         </section>
 
-        <section>
+        <section className="beersection">
           <Link to="/products/craftbeer/list">
             <h1>Our beers</h1>
             {(!this.state.loaded && (
@@ -61,12 +64,12 @@ class HomeView extends Component {
               </>
             )) || (
               <>
-                <img src={beer.photo} alt={beer.name} />
-                <h2>{beer.name}</h2>
-                <p>
+                <img src={beer.photo} alt={beer.name} className="randombeerimg" />
+                <h3 className="beerName">{beer.name}</h3>
+                <p className="beertagline">
                   <em>{beer.tagline}</em>
                 </p>
-                <p>{beer.description}</p>
+                <p className="beerdescription">{beer.description}</p>
               </>
             )}
           </Link>

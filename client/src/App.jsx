@@ -146,15 +146,11 @@ class App extends Component {
             <Route path="/userProfile" component={UserProfileView} />
             <Route
               path="/sign-up"
-              render={(props) => (
-                <AuthenticationSignUpView {...props} updateUser={this.updateUser} />
-              )}
+              render={(props) => <AuthenticationSignUpView {...props} updateUser={this.updateUser} />}
             />
             <Route
               path="/sign-in"
-              render={(props) => (
-                <AuthenticationSignInView {...props} updateUser={this.updateUser} />
-              )}
+              render={(props) => <AuthenticationSignInView {...props} updateUser={this.updateUser} />}
             />
             <Route
               path="/products/craftbeer/list"
@@ -234,14 +230,8 @@ class App extends Component {
               path="/update-password"
               render={(props) => <UpdatePasswordView {...props} updateUser={this.updateUser} />}
             />
-            <Route
-              path="/update-img"
-              render={(props) => <UpdateImgView {...props} updateUser={this.updateUser} />}
-            />
-            <Route
-              path="/checkout"
-              render={(props) => <CheckoutView {...props} updateUser={this.updateUser} />}
-            />
+            <Route path="/update-img" render={(props) => <UpdateImgView {...props} updateUser={this.updateUser} />} />
+            <Route path="/checkout" render={(props) => <CheckoutView {...props} updateUser={this.updateUser} />} />
             <Route
               path="/shopping-basket"
               render={(props) => (
@@ -261,7 +251,7 @@ class App extends Component {
 
             <Redirect to="/error/404" />
           </Switch>
-          <Footer />
+          <Footer className="footer" />
         </BrowserRouter>
       </div>
     );

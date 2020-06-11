@@ -36,7 +36,7 @@ class SingleOrderView extends Component {
   render() {
     const order = this.state.order;
     return (
-      <div>
+      <div className="section">
         {!this.state.loaded && (
           <>
             <span>Loading...</span>
@@ -45,12 +45,12 @@ class SingleOrderView extends Component {
         {order && (
           <>
             <table>
-              <tr>
-                <th>Product</th>
-                <th>Type</th>
-                <th>Price</th>
-                <th>Quantity</th>
-                <th>Total</th>
+              <tr className="headertable">
+                <th className="left">Product</th>
+                <th className="rigth">Type</th>
+                <th className="rigth">Price</th>
+                <th className="rigth">Quantity</th>
+                <th className="rigth">Total</th>
               </tr>
 
               {order.basket.map((item) => {
@@ -62,18 +62,18 @@ class SingleOrderView extends Component {
                 };
                 subtotal = formatPrice(subtotal);
                 return (
-                  <tr>
+                  <tr className="row">
                     <td>{item.product.name}</td>
                     <td>{item.product.type}</td>
                     <td>{Price}</td>
-                    <td>{quantity}</td>
+                    <td className="center">{quantity}</td>
                     <td>{subtotal}</td>
                   </tr>
                 );
               })}
             </table>
             <h4> Total ammount : {formatPrice(order.total)}</h4>
-            <h5>order ID: {order._id}</h5>
+            {/* <h5>order ID: {order._id}</h5> */}
           </>
         )}
       </div>
