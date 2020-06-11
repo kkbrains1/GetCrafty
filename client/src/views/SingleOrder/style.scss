@@ -1,20 +1,61 @@
+.table {
+  width: 90%;
+  margin: 0 auto;
+}
+
 .headertable {
-  border-bottom: 1px solid;
   font-size: 13px;
+  margin-bottom: 10em;
 }
 
 .row {
   font-size: small;
 }
 
-.left {
+.product {
   text-align: left;
 }
 
-.rigth {
+.type {
+  text-align: left;
+}
+
+.price {
   text-align: right;
 }
 
-.center {
-  text-align: center;
+.quantity {
+  text-align: right;
+}
+
+.total {
+  text-align: right;
+}
+
+.pricecontent {
+  text-align: right;
+}
+
+.qtycontent {
+  text-align: right;
+}
+
+.totalcontent {
+  text-align: right;
+}
+
+.totalamount {
+  text-align: right;
+  padding: 1em;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+td,
+th {
+  border-bottom: 1px solid #e6e6e6;
+  padding: 0.5rem;
+  text-align: left;
 }

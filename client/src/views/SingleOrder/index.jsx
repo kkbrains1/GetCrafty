@@ -36,7 +36,7 @@ class SingleOrderView extends Component {
   render() {
     const order = this.state.order;
     return (
-      <div className="section">
+      <div>
         {!this.state.loaded && (
           <>
             <span>Loading...</span>
@@ -44,35 +44,38 @@ class SingleOrderView extends Component {
         )}
         {order && (
           <>
-            <table>
-              <tr className="headertable">
-                <th className="left">Product</th>
-                <th className="rigth">Type</th>
-                <th className="rigth">Price</th>
-                <th className="rigth">Quantity</th>
-                <th className="rigth">Total</th>
-              </tr>
-
-              {order.basket.map((item) => {
-                const Price = formatPrice(item.product.price);
-                const quantity = item.quantity;
-                let subtotal = {
-                  amount: item.product.price.amount * item.quantity,
-                  currency: item.product.price.currency
-                };
-                subtotal = formatPrice(subtotal);
-                return (
-                  <tr className="row">
-                    <td>{item.product.name}</td>
-                    <td>{item.product.type}</td>
-                    <td>{Price}</td>
-                    <td className="center">{quantity}</td>
-                    <td>{subtotal}</td>
-                  </tr>
-                );
-              })}
+            <table className="table">
+              <thead>
+                <tr className="headertable">
+                  <th className="product">Product</th>
+                  <th className="type">Type</th>
+                  <th className="price">Price</th>
+                  <th className="quantity">Qty</th>
+                  <th className="total">Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                {order.basket.map((item) => {
+                  const Price = formatPrice(item.product.price);
+                  const quantity = item.quantity;
+                  let subtotal = {
+                    amount: item.product.price.amount * item.quantity,
+                    currency: item.product.price.currency
+                  };
+                  subtotal = formatPrice(subtotal);
+                  return (
+                    <tr className="row">
+                      <td>{item.product.name}</td>
+                      <td>{item.product.type}</td>
+                      <td className="pricecontent">{Price}</td>
+                      <td className="qtycontent">{quantity}</td>
+                      <td className="totalcontent">{subtotal}</td>
+                    </tr>
+                  );
+                })}
+              </tbody>
             </table>
-            <h4> Total ammount : {formatPrice(order.total)}</h4>
+            <h4 className="totalamount"> Total amount : {formatPrice(order.total)}</h4>
             {/* <h5>order ID: {order._id}</h5> */}
           </>
         )}
