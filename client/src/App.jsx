@@ -32,7 +32,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      shoppingBasket: [],
+      //shoppingBasket: [],
       user: null,
       loaded: false,
       shoppingBasket: []
@@ -66,33 +66,6 @@ class App extends Component {
       shoppingBasket: []
     });
   };
-
-  //  changeProductQuantity = (product, quantity) => {
-  //     if (this.state.shoppingBasket.find((item) => item.product._id === product._id)) {
-  //       const updatedShoppingBasket = deepCloneObject(this.state.shoppingBasket);
-  //       const indexOfProductInShoppingBasket = this.state.shoppingBasket.findIndex(
-  //         (item) => item.product._id === product._id
-  //       );
-  //       if (quantity) {
-  //         updatedShoppingBasket[indexOfProductInShoppingBasket].quantity = Math.max(quantity, 0);
-  //       } else {
-  //         updatedShoppingBasket.splice(indexOfProductInShoppingBasket, 1);
-  //       }
-  //       this.setState({
-  //         shoppingBasket: updatedShoppingBasket
-  //       });
-  //     } else {
-  //       this.setState({
-  //         shoppingBasket: [
-  //           ...this.state.shoppingBasket,
-  //           {
-  //             product: product,
-  //             quantity: Math.max(quantity, 0)
-  //           }
-  //         ]
-  //       });
-  //     }
-  //   };
 
   emptyShoppingBasket = () => {
     this.setState({
@@ -240,7 +213,9 @@ class App extends Component {
             />
             <Route
               path="/checkout"
-              render={(props) => <CheckoutView {...props} updateUser={this.updateUser} />}
+              render={(props) => (
+                <CheckoutView {...props} shoppingBasket={this.state.shoppingBasket} />
+              )}
             />
             <Route
               path="/shopping-basket"
@@ -248,8 +223,7 @@ class App extends Component {
                 <ShoppingBasketView
                   {...props}
                   shoppingBasket={this.state.shoppingBasket}
-                  //changeAmount={this.changeAmount}
-                  changeQuantity={this.changeProductQuantity}
+                  changeProductQuantity={this.changeProductQuantity}
                 />
               )}
             />

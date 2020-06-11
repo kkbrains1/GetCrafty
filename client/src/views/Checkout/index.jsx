@@ -1,5 +1,4 @@
-
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import { CardElement, Elements, ElementsConsumer } from '@stripe/react-stripe-js';
 import { listOrders } from './../../services/orders';
@@ -22,7 +21,7 @@ const STRIPE_INPUT_OPTIONS = {
 };
 
 class CheckoutView extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       firstName: '',
@@ -36,8 +35,7 @@ class CheckoutView extends Component {
     this.stripePromise = loadStripe(STRIPE_API_KEY);
   }
 
-
-  handleInputChange = event => {
+  handleInputChange = (event) => {
     const { name, value } = event.target;
     this.setState({
       [name]: value
@@ -52,20 +50,31 @@ class CheckoutView extends Component {
         type: 'card',
         card: elements.getElement(CardElement)
       })
-      .then(data => {
+      .then((data) => {
         if (data.error) {
           return Promise.reject(data.error);
         } else {
-          const {firstName, lastName, country, city, address, postCode, contact} = this.state;
+          const { firstName, lastName, country, city, address, postCode, contact } = this.state;
           const creditCardToken = data.paymentMethod.id;
           // Call create order service and send creditCardToken, array of dishes with corresponding quantity, address
-          const shoppingBasket = this.props.shoppingBasket.map(item => {
+          const shoppingBasket = this.props.shoppingBasket.map((item) => {
             return {
               quantity: item.quantity,
-              beer: item.beer._id
+              product: item.product._id
             };
           });
-          return listOrders({ address, firstName, lastName, country, city, address, postCode, contact, shoppingBasket, creditCardToken });
+          return listOrders({
+            address,
+            firstName,
+            lastName,
+            country,
+            city,
+            address,
+            postCode,
+            contact,
+            shoppingBasket,
+            creditCardToken
+          });
         }
       })
       .then(() => {
@@ -74,19 +83,20 @@ class CheckoutView extends Component {
         // Redirect user to home page after successful purchase
         this.props.history.push('/');
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
   };
 
   render() {
+    console.log('PROPS HERE =>', this.props);
     return (
       <div className="container">
         <h1>Checkout</h1>
         <Elements stripe={this.stripePromise}>
           <ElementsConsumer>
             {({ stripe, elements }) => (
-              <form onSubmit={event => this.handleFormSubmission(event, stripe, elements)}>
+              <form onSubmit={(event) => this.handleFormSubmission(event, stripe, elements)}>
                 <label className="billing-adress">Billing Address</label>
                 <input
                   id="first-name-input"
@@ -143,39 +153,42 @@ class CheckoutView extends Component {
                   placeholder="Contact"
                   value={this.state.contact}
                   onChange={this.handleInputChange}
-                />             
+                />
 
                 <CardElement option={STRIPE_INPUT_OPTIONS} />
 
-                <table>
-                  <thead>
+                {/* {this.props.shoppingBasket.map((item) => (
+                  ))} */}
+                  <table>
+                    <thead>
                       <tr>
-                          <th colspan="2">Your Order</th>
+                        <th colspan="2">Your Order</th>
                       </tr>
-                  </thead>
-                  <tbody>
+                    </thead>
+                    <tbody>
                       <tr>
-                          <th>Products</th>
-                          <th>Total</th>
-                      </tr>
-                      <tr>
-                          <td>[product.name]</td>
-                          <td>[product.price]</td>
+                        <th>Products</th>
+                        <th>Total</th>
                       </tr>
                       <tr>
-                          <td>[product.name]</td>
-                          <td>[product.price]</td>
+                        {/* <td>{item.product.name}</td> */}
+                        <td>[product.price]</td>
                       </tr>
                       <tr>
-                          <th>Shipping Costs</th>
-                          <td>[shipping.price]</td>
+                        <td>[product.name]</td>
+                        <td>[product.price]</td>
                       </tr>
                       <tr>
-                          <th>Subtotal</th>
-                          <td>[subtotal]</td>
+                        <th>Shipping Costs</th>
+                        <td>[shipping.price]</td>
                       </tr>
-                  </tbody>
-              </table>
+                      <tr>
+                        <th>Subtotal</th>
+                        <td>[subtotal]</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                      
 
                 <button>Confirm Purchase</button>
               </form>
@@ -183,8 +196,8 @@ class CheckoutView extends Component {
           </ElementsConsumer>
         </Elements>
       </div>
-    )
+    );
   }
 }
 
-export default CheckoutView
+export default CheckoutView;
