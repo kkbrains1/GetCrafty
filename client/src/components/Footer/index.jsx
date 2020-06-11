@@ -5,17 +5,25 @@ import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
-    <div>
-      <Link to="#">
-        <span>Contact us</span>
-      </Link>
-      <Link to="#">
-        <span>FAQ</span>
-      </Link>
-      <Link to="#">
-        <span>Partners</span>
-      </Link>
-    </div>
+    <>
+      <div className="footer">
+        <div>
+          <Link to="#">
+            <p className="">Contact us</p>
+          </Link>
+        </div>
+        <div>
+          <Link to="#">
+            <p className="">FAQ</p>
+          </Link>
+        </div>
+        <div>
+          <Link to="#">
+            <p className="">Partners</p>
+          </Link>
+        </div>
+      </div>
+    </>
   );
 }
 
