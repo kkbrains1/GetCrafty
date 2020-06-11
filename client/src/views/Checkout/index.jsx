@@ -46,7 +46,7 @@ class CheckoutView extends Component {
 
   handleFormSubmission = (event, stripe, elements) => {
     event.preventDefault();
-
+    console.log(elements);
     stripe
       .createPaymentMethod({
         type: 'card',
