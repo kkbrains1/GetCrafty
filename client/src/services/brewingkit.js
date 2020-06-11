@@ -21,7 +21,7 @@ const singleBrewingkit = id => {
   return baseURLBrewingkit
     .get(`/${id}`)
     .then(result => {
-      console.log(result)
+      //console.log(result)
       const brewingkit = result.data.brewingkit;
       return Promise.resolve(brewingkit);
     })

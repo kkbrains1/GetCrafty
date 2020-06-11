@@ -19,11 +19,11 @@ class HomeView extends Component {
   fetchData = () => {
     // call the service to get a random beer
     return randomCraftbeer()
-      .then((beer) => {
+      .then(beer => {
         // save the beer to the state
         this.setState({ beer, loaded: true });
       })
-      .catch((error) => {
+      .catch(error => {
         console.log(error);
       });
   };
@@ -61,7 +61,7 @@ class HomeView extends Component {
               </>
             )) || (
               <>
-                <img src={beer.photo}></img>
+                <img src={beer.photo} alt={beer.name} />
                 <h2>{beer.name}</h2>
                 <p>
                   <em>{beer.tagline}</em>

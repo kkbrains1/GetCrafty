@@ -51,7 +51,7 @@ router.get('/list', (req, res, next) => {
 });
 
 router.get('/random', (req, res, next) => {
-  Product.find()
+  Product.find({ type: 'craftbeer' })
     .then((allBeers) => {
       const random_id = Math.floor(Math.random() * allBeers.length);
       const beer = allBeers[random_id];

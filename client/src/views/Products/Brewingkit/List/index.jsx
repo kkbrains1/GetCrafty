@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './style.scss';
 
 import { listBrewingkits } from '../../../../services/brewingkit';
-import BrewingkitList from './../../../../components/Products/BrewingkitList';
+import ProductButtons from './../../../../components/ProductButtons';
+import calcQuantity from './../../../../helpers/update-quantity';
 
 class BrewingkitListView extends Component {
   constructor() {
@@ -14,12 +16,12 @@ class BrewingkitListView extends Component {
 
   loadBrewingkits() {
     listBrewingkits()
-      .then((brewingkits) => {
+      .then(brewingkits => {
         this.setState({
           brewingkits
         });
       })
-      .catch((error) => console.log(error));
+      .catch(error => console.log(error));
   }
 
   componentDidMount() {
@@ -27,10 +29,32 @@ class BrewingkitListView extends Component {
   }
 
   render() {
+    let shoppingBasket = this.props.shoppingBasket;
     return (
-      <div>
+      <div className="beer__list">
         <h1>BREWING KITS</h1>
-        <BrewingkitList brewingkits={this.state.brewingkits} />
+        {this.state.brewingkits.map(product => (
+          <div className="beer__card" key={product._id}>
+            <Link to={`/products/brewingkit/${product._id}`}>
+              <div className="beer__media">
+                <img src={product.photo} alt={product.name} />
+              </div>
+              <div className="beer__body">
+                <h4>{product.name}</h4>
+                <p>{product.description}</p>
+              </div>
+            </Link>
+            <div className="beer__buttons">
+              <ProductButtons
+                {...this.props}
+                product={product}
+                quantity={calcQuantity(shoppingBasket, product)}
+                shoppingBasket={this.props.shoppingBasket}
+                changeQuantity={quantity => this.props.changeProductQuantity(product, quantity)}
+              />
+            </div>
+          </div>
+        ))}
       </div>
     );
   }

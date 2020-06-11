@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import './style.scss';
 
 import { listCraftbeers } from '../../../../services/craftbeer';
-import ProductButtons from './../../../../components/Products/ProductButtons';
+import ProductButtons from './../../../../components/ProductButtons';
+import calcQuantity from './../../../../helpers/update-quantity';
 
 class CraftbeerListView extends Component {
   constructor() {
@@ -28,13 +29,14 @@ class CraftbeerListView extends Component {
   }
 
   render() {
-    let quantity = 0;
+    let shoppingBasket = this.props.shoppingBasket;
+    
     return (
       <div className="beer__list">
         <h1>BEER</h1>
         {this.state.craftbeers.map(product => (
-          <div className="beer__card">
-            <Link to={`/products/craftbeer/${product._id}`} key={product._id}>
+          <div className="beer__card" key={product._id}>
+            <Link to={`/products/craftbeer/${product._id}`} >
               <div className="beer__media">
                 <img src={product.photo} alt={product.name} />
               </div>
@@ -44,13 +46,14 @@ class CraftbeerListView extends Component {
               </div>
             </Link>
             <div className="beer__buttons">
-            <ProductButtons
-                  {...this.props}
-                  product={product}
-                  quantity={quantity}
-                  shoppingBasket={this.props.shoppingBasket}
-                  changeQuantity={quantity => this.props.changeProductQuantity(product, quantity)}
-                />
+              <ProductButtons
+                {...this.props}
+                product={product}
+                quantity={calcQuantity(shoppingBasket, product)}
+                shoppingBasket={this.props.shoppingBasket}
+                changeQuantity={quantity => this.props.changeProductQuantity(product, quantity)}
+                //changeQuantity={this.props.changeProductQuantity}
+              />
             </div>
           </div>
         ))}
