@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './style.scss';
 import { randomCraftbeer } from './../../services/craftbeer';
-
+import brew1 from './../../images/brew_1.jpg';
 import { Link } from 'react-router-dom';
 
 class HomeView extends Component {
@@ -32,10 +32,10 @@ class HomeView extends Component {
     const beer = this.state.beer;
     //console.log(beer);
     return (
-      <div>
+      <div className="bigger_container">
         <section>
           <div className="logo-position-section-1">
-            <img src="./../../logo1_GetCrafty.png" alt="logo image" />
+            <img src="/static/media/logo1_GetCrafty.8fd7fa85.png" alt="logo image" />
           </div>
         </section>
 
@@ -48,7 +48,7 @@ class HomeView extends Component {
                 Are you a beer lover and you want to enjoy life? GetCrafty will make the difference on your gatherings
                 with your friends. It's perfect from the first sip to the last one!
               </p>
-              <p>
+              <p className="SignUp">
                 <strong>Sign Up</strong> and dive into the moment.
               </p>
             </Link>
@@ -60,7 +60,7 @@ class HomeView extends Component {
             <h1>Our beers</h1>
             {(!this.state.loaded && (
               <>
-                <span>Loading...</span>
+                <span className="Loading">Loading...</span>
               </>
             )) || (
               <>
@@ -77,8 +77,10 @@ class HomeView extends Component {
 
         <section>
           <Link to="/">
-            <h1>Brewery Experience</h1>
-            <p>[img] [img] [img]</p>
+            <h1 className="BreweryTitle">Brewery Experience</h1>
+            <img src={brew1} alt="Brewery img" />
+            <img src="/static/media/brew_2.jpg" alt="Brewery img" />
+            <img src="/static/media/brew_3.jpg" alt="Brewery img" />
           </Link>
         </section>
       </div>

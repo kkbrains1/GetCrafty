@@ -1,4 +1,26 @@
+//Loading
+.Loading {
+  background-color: #00394e;
+  text-align: center;
+  padding-top: 10em;
+  background-color: #fad693;
+}
 //Section_#01
+.Logo {
+  margin-top: 30em;
+  background-color: #fad693;
+}
+.logo-position-section-1 {
+  width: 10em;
+  align-items: center;
+  padding: 1em;
+  background-color: #00394e;
+  border-radius: 0.5em;
+  margin-left: 25%;
+  margin-top: 1em;
+  margin-bottom: 3em;
+}
+
 //Section_#02 - About/Welcome
 //Section_#03 - Our Beers
 //Section_#04 - Brewery Experience
@@ -11,10 +33,13 @@
   justify-content: justify;
   align-items: center;
   margin: auto;
-  margin-top: 5em;
+  margin-top: 2em;
   margin-bottom: 5em;
+  color: #00394e;
 }
-
+.SignUp {
+  padding-top: 3em;
+}
 //Section_#03 - Our Beers
 .beersection {
   margin-left: 1em;
@@ -23,11 +48,13 @@
   justify-content: justify;
   align-items: center;
   margin: auto;
-  margin-top: 5em;
+  margin-top: 7em;
   margin-bottom: 5em;
+  color: #00394e;
 }
 
 .randombeerimg {
+  margin-top: 3em;
   height: 15em;
   text-align: center;
   display: block;
@@ -38,4 +65,11 @@
 
 .beerdescription {
   text-align: justify;
+  color: #00394e;
+}
+
+//Section_#04 - Brewery Experience
+.BreweryTitle {
+  text-align: center;
+  color: #00394e;
 }

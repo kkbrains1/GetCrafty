@@ -3,15 +3,22 @@
   height: 60px;
   font-size: small;
   display: flex;
-  background-color: #d1c9c9;
+  background-color: #00394e;
+  color: white;
   align-items: center;
   text-align: center;
-  margin: auto;
+  margin-top: auto;
+  position: absolute;
+  //margin: auto;
   //position: fixed;
   //position: absolute;
   bottom: 0;
 }
 
 .footerLink {
-  margin-left: 3em;
+  text-align: center;
+}
+
+.footerlinkspace {
+  width: 33%;
 }
