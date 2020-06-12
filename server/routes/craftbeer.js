@@ -6,7 +6,7 @@ const router = new Router();
 const Product = require('./../models/product');
 
 router.post('/', (req, res, next) => {
-  //console.log(req.body);
+  console.log(req.body);
   const {
     name,
     tagline,

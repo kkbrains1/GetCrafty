@@ -77,7 +77,8 @@ class AddProduct extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
+        <h1>Add a New Product</h1>
         <form onSubmit={this.handleFormSubmission}>
           <label htmlFor="name-input">Name</label>
           <input
@@ -120,7 +121,7 @@ class AddProduct extends Component {
             id="price-input"
             name="price"
             type="number"
-            step="0.1" 
+            step="0.01" 
             placeholder="price"
             onChange={this.handleInputChange}
           />
@@ -139,7 +140,7 @@ class AddProduct extends Component {
             id="ibu-input"
             name="ibu"
             type="number"
-            step="0.1" 
+            step="0.01" 
             placeholder="ibu"
             onChange={this.handleInputChange}
           />
