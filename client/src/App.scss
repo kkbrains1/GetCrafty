@@ -1,4 +1,34 @@
-.footer {
-  position: fixed;
-  bottom: 0;
+.App {
+  min-height: 100vh;
+  position: relative;
+  margin: 0;
+  background-color: #fad693;
+}
+
+.container {
+  height: 100%;
+}
+
+.bigger_container {
+  padding-top: 3em;
+  background-color: #fad693;
+  padding-bottom: 100px;
+}
+
+.productlinks {
+  border-top: 1px solid #fad693;
+  background-color: #00394e;
+  display: flex;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+.product {
+  text-align: center;
+  font-weight: 600;
+  color: white;
+}
+.productspace {
+  width: 33%;
+  text-align: center;
 }

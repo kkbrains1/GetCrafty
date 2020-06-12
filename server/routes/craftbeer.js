@@ -6,7 +6,7 @@ const router = new Router();
 const Product = require('./../models/product');
 
 router.post('/', (req, res, next) => {
-  //console.log(req.body);
+  console.log(req.body);
   const {
     name,
     tagline,
@@ -55,7 +55,7 @@ router.get('/random', (req, res, next) => {
     .then((allBeers) => {
       const random_id = Math.floor(Math.random() * allBeers.length);
       const beer = allBeers[random_id];
-      console.log(allBeers, random_id);
+      //console.log(allBeers, random_id);
       res.json({ beer });
     })
     .catch((error) => {

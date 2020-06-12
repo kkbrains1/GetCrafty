@@ -19,8 +19,8 @@ const NavBar = (props) => {
   return (
     <nav className="navbar">
       <Link to="/">
-        <div className="logo">
-          <h1>NavBar</h1>
+        <div className="Logoimg">
+          <img src="/static/media/logo1_GetCrafty.8fd7fa85.png" alt="logo image" />
         </div>
       </Link>
       {(props.user && (
@@ -31,12 +31,18 @@ const NavBar = (props) => {
         </>
       )) || (
         <>
-          <Link to="/sign-in">Sign In</Link>
-          <Link to="/sign-up">Sign Up</Link>
+          <Link to="/sign-in" className="authentication">
+            Sign In
+          </Link>
+          <Link to="/sign-up" className="authentication">
+            Sign Up
+          </Link>
         </>
       )}
-      <Link to="/shopping-basket"> ShoopingBasket
-       {/*<ShoppingBasketTotal shoppingBasket={props.shoppingBasket} />*/}
+      <Link to="/shopping-basket">
+        {' '}
+        <img src="" alt="Shopping Cart"></img>
+        {/*<ShoppingBasketTotal shoppingBasket={props.shoppingBasket} />*/}
       </Link>
     </nav>
   );
