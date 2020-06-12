@@ -37,7 +37,9 @@ router.post('/', (req, res, next) => {
 });
 
 router.get('/list', (req, res, next) => {
-  Order.find()
+  //const user = req.user._id;
+  //console.log('I am ', req.user);
+  Order.find({})
     .populate({ path: 'basket.product' })
     .then((orders) => {
       //allProducts = [...allProducts, ...result];

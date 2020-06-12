@@ -42,4 +42,29 @@ const singleCraftbeer = (id) => {
     });
 };
 
-export { listCraftbeers, singleCraftbeer, randomCraftbeer };
+const submitProduct = (body) => {
+  const form = new FormData();
+  form.append('name', body.name);
+  form.append('description', body.description);
+  form.append('tagline', body.tagline);
+  form.append('photo', body.photo);
+  form.append('type', body.type);
+  form.append('abv', body.abv);
+  form.append('ibu', body.ibu);
+  form.append('food_pairing', body.food_pairing);
+  form.append('ingredients', body.ingredients);
+  form.append('contributed_by', body.contributed_by);
+  form.append('price', body.price);
+  //console.log(body)
+  return baseURLCraftbeer
+    .post('/add-product', form)
+    .then((response) => {
+      const product = response.data.product;
+      return Promise.resolve(product);
+    })
+    .catch((error) => {
+      return Promise.reject(error);
+    });
+};
+
+export { listCraftbeers, singleCraftbeer, randomCraftbeer, submitProduct };

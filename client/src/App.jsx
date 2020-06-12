@@ -25,6 +25,7 @@ import SnackListView from './views/Products/Snack/List';
 import SnackSingleView from './views/Products/Snack/Single';
 import BrewingkitListView from './views/Products/Brewingkit/List';
 import BrewingkitSingleView from './views/Products/Brewingkit/Single';
+import AddProduct from './views/Products/AddProduct';
 
 const deepCloneObject = object => JSON.parse(JSON.stringify(object));
 
@@ -193,16 +194,7 @@ class App extends Component {
                 />
               )}
             />
-            <Route
-              path="/products/:name"
-              render={props => (
-                <BrewingkitSingleView
-                  {...props}
-                  shoppingBasket={this.state.shoppingBasket}
-                  changeProductQuantity={this.changeProductQuantity}
-                />
-              )}
-            />
+            <Route path="/products/add-product" render={props => <AddProduct {...props} />} />
             <Route
               path="/order/:id"
               render={props => (

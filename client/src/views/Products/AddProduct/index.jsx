@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { signUp } from './../../../services/authentication';
+import { submitProduct } from './../../../services/craftbeer';
 
 class AddProduct extends Component {
   constructor(props) {
@@ -13,6 +13,8 @@ class AddProduct extends Component {
       abv: '',
       ibu: '',
       food_pairing: '',
+      ingredients: '',
+      contributed_by: '',
       price: null
     };
   }
@@ -34,11 +36,37 @@ class AddProduct extends Component {
   handleFormSubmission = event => {
     event.preventDefault();
 
-    const { name, description, tagline, photo, type, abv, ibu, food_pairing, price } = this.state;
+    const {
+      name,
+      description,
+      tagline,
+      photo,
+      type,
+      abv,
+      ibu,
+      food_pairing,
+      ingredients,
+      contributed_by,
+      price
+    } = this.state;
 
-    signUp({ name, description, tagline, photo, type, abv, ibu, food_pairing, price })
+    submitProduct({
+      name,
+      description,
+      tagline,
+      photo,
+      type,
+      abv,
+      ibu,
+      food_pairing,
+      ingredients,
+      contributed_by,
+      price
+    })
       .then(product => {
-        this.props.updateUser(product);
+        this.setState({
+          product
+        });
         // Redirect user to home page after successful sign up
         this.props.history.push('/');
       })
@@ -51,7 +79,7 @@ class AddProduct extends Component {
     return (
       <div>
         <form onSubmit={this.handleFormSubmission}>
-          <label htmlFor="name-input">Email</label>
+          <label htmlFor="name-input">Name</label>
           <input
             id="name-input"
             name="name"
@@ -60,7 +88,7 @@ class AddProduct extends Component {
             value={this.state.name}
             onChange={this.handleInputChange}
           />
-          <label htmlFor="description-input">Full Name</label>
+          <label htmlFor="description-input">Description</label>
           <input
             id="description-input"
             name="description"
@@ -69,7 +97,7 @@ class AddProduct extends Component {
             value={this.state.description}
             onChange={this.handleInputChange}
           />
-          <label htmlFor="tagline-input">Password</label>
+          <label htmlFor="tagline-input">Tagline</label>
           <input
             id="tagline-input"
             name="tagline"
@@ -79,13 +107,59 @@ class AddProduct extends Component {
             onChange={this.handleInputChange}
           />
 
-          <label htmlFor="photo-input">Profile Photo</label>
+          <label htmlFor="type-input">Type</label>
+          <input
+            id="type-input"
+            name="type"
+            type="text"
+            placeholder="type"
+            onChange={this.handleInputChange}
+          />
+          <label htmlFor="price-input">Price</label>
+          <input
+            id="price-input"
+            name="price"
+            type="number"
+            step="0.1" 
+            placeholder="price"
+            onChange={this.handleInputChange}
+          />
+
+          <label htmlFor="photo-input">Photo</label>
           <input
             id="photo-input"
             name="photo"
             type="file"
             placeholder="photo"
             onChange={this.handleFileInputChange}
+          />
+
+          <label htmlFor="ibu-input">IBU (%)</label>
+          <input
+            id="ibu-input"
+            name="ibu"
+            type="number"
+            step="0.1" 
+            placeholder="ibu"
+            onChange={this.handleInputChange}
+          />
+
+<label htmlFor="food_pairing-input">Food Pairing</label>
+          <input
+            id="food_pairing-input"
+            name="food_pairing"
+            type="text"
+            placeholder="food_pairing"
+            onChange={this.handleInputChange}
+          />
+
+          <label htmlFor="ingredients-input">Ingredients</label>
+          <input
+            id="ingredients-input"
+            name="ingredients"
+            type="text"
+            placeholder="ingredients"
+            onChange={this.handleInputChange}
           />
 
           <button>Submit</button>
