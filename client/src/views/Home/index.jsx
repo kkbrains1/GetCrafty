@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './style.scss';
 import { randomCraftbeer } from './../../services/craftbeer';
+import logo from './../../images/logo1_GetCrafty.png'
 import brew1 from './../../images/brew_1.jpg';
 import brew2 from './../../images/brew_2.jpg';
 import brew3 from './../../images/brew_3.jpg';
@@ -37,7 +38,7 @@ class HomeView extends Component {
       <div className="bigger_container">
         <section>
           <div className="logo-position-section-1">
-            <img src="/static/media/logo1_GetCrafty.8fd7fa85.png" alt="logo image" />
+            <img src={logo} alt="logo image" />
           </div>
         </section>
 

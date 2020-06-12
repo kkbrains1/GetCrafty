@@ -16,12 +16,12 @@ class SnackListView extends Component {
 
   loadSnacks() {
     listSnacks()
-      .then(snacks => {
+      .then((snacks) => {
         this.setState({
           snacks
         });
       })
-      .catch(error => console.log(error));
+      .catch((error) => console.log(error));
   }
 
   componentDidMount() {
@@ -33,8 +33,8 @@ class SnackListView extends Component {
 
     return (
       <div className="product__list">
-        <h1>SNACKS</h1>
-        {this.state.snacks.map(product => (
+        <h1 className="Title">SNACKS</h1>
+        {this.state.snacks.map((product) => (
           <div className="product__card" key={product._id}>
             <Link to={`/products/snack/${product._id}`}>
               <div className="product__media">
@@ -51,7 +51,7 @@ class SnackListView extends Component {
                 product={product}
                 quantity={calcQuantity(shoppingBasket, product)}
                 shoppingBasket={this.props.shoppingBasket}
-                changeQuantity={quantity => this.props.changeProductQuantity(product, quantity)}
+                changeQuantity={(quantity) => this.props.changeProductQuantity(product, quantity)}
               />
             </div>
           </div>

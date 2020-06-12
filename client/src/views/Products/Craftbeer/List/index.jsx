@@ -17,12 +17,12 @@ class CraftbeerListView extends Component {
 
   loadCraftbeers() {
     listCraftbeers()
-      .then(craftbeers => {
+      .then((craftbeers) => {
         this.setState({
           craftbeers
         });
       })
-      .catch(error => console.log(error));
+      .catch((error) => console.log(error));
   }
 
   componentDidMount() {
@@ -34,8 +34,8 @@ class CraftbeerListView extends Component {
 
     return (
       <div className="product__list">
-        <h1>OUR CRAFTBEERS</h1>
-        {this.state.craftbeers.map(product => (
+        <h1 className="Title">OUR CRAFTBEERS</h1>
+        {this.state.craftbeers.map((product) => (
           <div className="product__card" key={product._id}>
             <Link to={`/products/craftbeer/${product._id}`}>
               <div className="product__media">
@@ -52,7 +52,7 @@ class CraftbeerListView extends Component {
                 product={product}
                 quantity={calcQuantity(shoppingBasket, product)}
                 shoppingBasket={this.props.shoppingBasket}
-                changeQuantity={quantity => this.props.changeProductQuantity(product, quantity)}
+                changeQuantity={(quantity) => this.props.changeProductQuantity(product, quantity)}
                 //changeQuantity={this.props.changeProductQuantity}
               />
             </div>

@@ -3,12 +3,12 @@
   align-items: center;
   // position: fixed;
   background-color: #00394e;
-  a {
-    padding: 1em;
-    &:first-child {
-      margin-right: auto;
-    }
-  }
+  // a {
+  //   padding: 1em;
+  //   &:first-child {
+  //     margin-right: auto;
+  //   }
+  //}
   button {
     border: 0;
   }
@@ -24,9 +24,14 @@
 }
 
 .logoimg {
-  width: 5em;
+  width: 6em;
+}
+
+.signs {
+  align-items: center;
 }
 
 .shopcart {
   width: 2em;
+  padding: 1em;
 }

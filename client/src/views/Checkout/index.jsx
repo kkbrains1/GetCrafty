@@ -37,7 +37,7 @@ class CheckoutView extends Component {
     //console.log('load stripe', this.stripePromise);
   }
 
-  handleInputChange = event => {
+  handleInputChange = (event) => {
     const { name, value } = event.target;
     this.setState({
       [name]: value
@@ -53,7 +53,7 @@ class CheckoutView extends Component {
         type: 'card',
         card: elements.getElement(CardElement)
       })
-      .then(data => {
+      .then((data) => {
         if (data.error) {
           return Promise.reject(data.error);
         } else {
@@ -61,7 +61,7 @@ class CheckoutView extends Component {
           //const address = this.state.address;
           const creditCardToken = data.paymentMethod.id;
           // Call create order service and send creditCardToken, array of dishes with corresponding quantity, address
-          const shoppingBasket = this.props.shoppingBasket.map(item => {
+          const shoppingBasket = this.props.shoppingBasket.map((item) => {
             return {
               quantity: item.quantity,
               product: item.product._id
@@ -98,7 +98,7 @@ class CheckoutView extends Component {
         // Redirect user to home page after successful purchase
         this.props.history.push('/past-orders');
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
   };
@@ -107,13 +107,16 @@ class CheckoutView extends Component {
     //console.log('PROPS HERE =>', this.props);
     return (
       <div>
-        <h1>Checkout</h1>
+        <h1 className="Title">Checkout</h1>
         <Elements stripe={this.stripePromise}>
           <ElementsConsumer>
             {({ stripe, elements }) => (
-              <form onSubmit={event => this.handleFormSubmission(event, stripe, elements)}>
-                <label htmlFor="first-name-input">First Name</label>
+              <form onSubmit={(event) => this.handleFormSubmission(event, stripe, elements)}>
+                <label htmlFor="first-name-input" className="infoTitle">
+                  First Name
+                </label>
                 <input
+                  className="infoInput"
                   id="first-name-input"
                   type="text"
                   name="firstName"
@@ -121,8 +124,11 @@ class CheckoutView extends Component {
                   value={this.state.firstName}
                   onChange={this.handleInputChange}
                 />
-                <label htmlFor="last-name-input">Last Name</label>
+                <label htmlFor="last-name-input" className="infoTitle">
+                  Last Name
+                </label>
                 <input
+                  className="infoInput"
                   id="last-name-input"
                   type="text"
                   name="lastName"
@@ -130,8 +136,11 @@ class CheckoutView extends Component {
                   value={this.state.lastName}
                   onChange={this.handleInputChange}
                 />
-                <label htmlFor="address-input">Delivery Address</label>
+                <label htmlFor="address-input" className="infoTitle">
+                  Delivery Address
+                </label>
                 <input
+                  className="infoInput"
                   id="address-input"
                   type="text"
                   name="address"
@@ -139,8 +148,11 @@ class CheckoutView extends Component {
                   value={this.state.address}
                   onChange={this.handleInputChange}
                 />
-                <label htmlFor="city-input">City</label>
+                <label htmlFor="city-input" className="infoTitle">
+                  City
+                </label>
                 <input
+                  className="infoInput"
                   id="city-input"
                   type="text"
                   name="city"
@@ -148,8 +160,11 @@ class CheckoutView extends Component {
                   value={this.state.city}
                   onChange={this.handleInputChange}
                 />
-                <label htmlFor="post-code-input">Postcode</label>
+                <label htmlFor="post-code-input" className="infoTitle">
+                  Postcode
+                </label>
                 <input
+                  className="infoInput"
                   id="post-code-input"
                   type="text"
                   name="postCode"
@@ -157,8 +172,11 @@ class CheckoutView extends Component {
                   value={this.state.postCode}
                   onChange={this.handleInputChange}
                 />
-                <label htmlFor="country-input">Country</label>
+                <label htmlFor="country-input" className="infoTitle">
+                  Country
+                </label>
                 <input
+                  className="infoInput"
                   id="country-input"
                   type="text"
                   name="country"
@@ -166,8 +184,11 @@ class CheckoutView extends Component {
                   value={this.state.country}
                   onChange={this.handleInputChange}
                 />
-                <label htmlFor="contact-input">Contact Number</label>
+                <label htmlFor="contact-input" className="infoTitle">
+                  Contact Number
+                </label>
                 <input
+                  className="infoInput"
                   id="contact-input"
                   type="number"
                   name="contact"
@@ -176,7 +197,7 @@ class CheckoutView extends Component {
                   onChange={this.handleInputChange}
                 />
 
-                <CardElement option={STRIPE_INPUT_OPTIONS} />
+                <CardElement option={STRIPE_INPUT_OPTIONS} className="infoInput" />
 
                 <button>Confirm Purchase</button>
               </form>
