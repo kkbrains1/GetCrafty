@@ -1,0 +1,11 @@
+.shopping-basket-main {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2em;
+  h1,
+  a {
+    align-items: center;
+    margin: 0 auto;
+  }
+  font-family: inherit;
+}

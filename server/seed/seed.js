@@ -7,7 +7,8 @@ const URI = process.env.MONGODB_URI;
 
 const Products = require('../models/product');
 
-const PRODUCT_DATA = require('./products2.json');
+const PRODUCT_DATA = require('./brewingkit.json');
+
 
 const run = async () => {
   try {

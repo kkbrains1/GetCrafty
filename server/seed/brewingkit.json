@@ -3,42 +3,42 @@
     "name": "Maris Otter Extra Malt",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
     "type": "brewingkit",
-    "photo": "https://source.unsplash.com/collection/251966/800x601",
+    "photo": "https://www.muntons-inc.com/wp-content/uploads/2019/02/whole-maris-otter-extra-pale-ale-malt.jpg",
     "price": {
-      "amount": 300,
+      "amount": 750,
       "currency": "EUR"
     },
-    "description": "Maris Otter Extra Malt"
+    "description": "Lower colour version of Maris Otter® malt suitable as British Lager malt and Golden Ale brewing. It is a heavily favoured base malt for a variety of beer styles with high yield & low colour."
   },
   {
     "name": "Caramalt Malt",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
     "type": "brewingkit",
-    "photo": "https://source.unsplash.com/collection/251966/800x601",
+    "photo": "https://hoppydaysbrewingsupplies.com.au/wp-content/uploads/Cara4.jpg",
     "price": {
-      "amount": 300,
+      "amount": 600,
       "currency": "EUR"
     },
-    "description": "Caramalt Malt"
+    "description": "Our Caramalt is a sweet, chewy and heavenly malt. It contributes golden-hued colour enhancement and flavour enrichment from its mild toffee notes in Lagers and Extra Pale Ales. Due to its low colour, it’s incredibly versatile and can be used to enhance almost any beer style that needs a little sweetness."
   },
   {
     "name": "Munich Malt",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
     "type": "brewingkit",
-    "photo": "https://source.unsplash.com/collection/251966/800x601",
+    "photo": "https://www.morebeer.com/web_files/intranet.morebeer.com/images/24171.png",
     "price": {
-      "amount": 300,
+      "amount": 960,
       "currency": "EUR"
     },
-    "description": "Munich Malt"
+    "description": "Munich malts hold a special place in the brewer’s repertoire of raw materials. Offering both color and flavor benefits typically associated with specialty malts plus diastatic power for starch conversion, this malt can do what no other malt can."
   },
   {
     "name": "Propino Pale Malt",
-    "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
+    "tagline": "Traditional pale malts for top quality warm fermented beers. Slightly darker and maltier than lager malt. The extra pales are similar in color to lager malts but with pale malt qualities.",
     "type": "brewingkit",
-    "photo": "https://source.unsplash.com/collection/251966/800x601",
+    "photo": "https://www.muntons-inc.com/wp-content/uploads/2019/02/whole-propino-pale-ale-malt.jpg",
     "price": {
-      "amount": 300,
+      "amount": 875,
       "currency": "EUR"
     },
     "description": "Propino Pale Malt"
@@ -47,11 +47,11 @@
     "name": "Extra Pale Malt",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
     "type": "brewingkit",
-    "photo": "https://source.unsplash.com/collection/251966/800x601",
+    "photo": "https://images.unsplash.com/photo-1584353781226-579f0ab7c770?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80",
     "price": {
-      "amount": 300,
+      "amount": 590,
       "currency": "EUR"
     },
-    "description": "Extra Pale Malt"
+    "description": "Extra Pale Ale Malt is an excellent base malt for Brewers who require a low colour, well modified malt. The plump grains of UK two-row barley ensure uniformity and consistency, as well as good extract and enzymic activity. If you’re limited on base malt storage, Extra Pale Ale Malt doubles as a great light-coloured base for both Lagers and Ales."
   }
 ]

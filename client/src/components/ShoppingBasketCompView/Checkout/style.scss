@@ -1,0 +1,22 @@
+.components {
+  display: flex;
+  padding: 2em;
+  margin: 2em auto;
+  .components-media {
+    width: 20%;
+  }
+  .components-col {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-left: 2em;
+  }
+  .components-actions span {
+    display: flex;
+    padding: 0.2em 0;
+  }
+  .components-body {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+  }
+}

@@ -3,110 +3,110 @@
     "name": "Apricot coconut cake",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
     "type": "snack",
-    "photo": "https://source.unsplash.com/collection/251966/800x601",
+    "photo": "https://images.unsplash.com/photo-1564305564045-c62d40dd0123?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80",
     "price": {
-      "amount": 300,
+      "amount": 600,
       "currency": "EUR"
     },
-    "description": "Apricot coconut cake"
+    "description": "This is a moist and delicious cake.  Made with naturally sweet Turkish dried apricots, it is packed with fibre, vitamins and minerals."
   },
   {
-    "name": "Aromatic korma curry with lemon and garlic naan",
+    "name": "Cajun nuts",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
     "type": "snack",
-    "photo": "https://source.unsplash.com/collection/251966/800x601",
+    "photo": "https://images.unsplash.com/photo-1543158181-1274e5362710?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
     "price": {
-      "amount": 300,
+      "amount": 575,
       "currency": "EUR"
     },
-    "description": "Aromatic korma curry with lemon and garlic naan"
+    "description": "Cajun Nuts spiced up with a spice mixture including paprika, cayenne pepper, white pepper, onion powder, oregano, and thyme. They are coated in bacon grease and garlic and roasted in a 200 degree oven to help meld the flavors to the nuts."
   },
   {
-    "name": "Banana split",
+    "name": "Azeitão cheese",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
     "type": "snack",
-    "photo": "https://source.unsplash.com/collection/251966/800x601",
+    "photo": "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1353&q=80",
     "price": {
-      "amount": 300,
+      "amount": 1560,
       "currency": "EUR"
     },
-    "description": "Banana split"
+    "description": "Azeitão is a cured cheese, of a buttery, pudding-like, semi-soft consistency, white or light yellow in colour, with few or no holes. Since the flower of the locally grown cardoon plant acts as a coagulant, it is truly a vegetarian cheese. Its taste has a mix of sour and salty with a continual herbaceousness."
   },
   {
-    "name": "Beef Wellington with a red wine jus",
+    "name": "Wild Heat Beef Jerky",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
     "type": "snack",
-    "photo": "https://source.unsplash.com/collection/251966/800x601",
+    "photo": "https://images.unsplash.com/photo-1550103178-1b309fc7727a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
     "price": {
       "amount": 300,
       "currency": "EUR"
     },
-    "description": "Beef Wellington with a red wine jus"
+    "description": "Wild Heat Beef Jerky takes spicy meat snacks to a whole new level. It packs more than just heat. The complex flavor combination of spices will take your taste buds to a new depth of savory and spicy – leaving you with a serious kick that hurts so good you’ll be coming back for more!"
   },
   {
-    "name": "Blue cheese beef burger",
+    "name": "Gorgonzola Dolce",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
     "type": "snack",
-    "photo": "https://source.unsplash.com/collection/251966/800x601",
+    "photo": "https://images.unsplash.com/photo-1570917333569-eb1ad88fd4c1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=687&q=80",
     "price": {
-      "amount": 300,
+      "amount": 960,
       "currency": "EUR"
     },
-    "description": "Blue cheese beef burger"
+    "description": "Gorgonzola Dolce 'The Sweet One' in Italy this is sometimes known as Cremifacato or Dolcelatte. Traditionally made from cows milk, it has a wonderful flavor that is mild, creamy and sweet. This is a younger version of an aged Gorgonzola and is most loved for the soft, spreadable texture."
   },
   {
     "name": "Caramel and banana meringue pie",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
     "type": "snack",
-    "photo": "https://source.unsplash.com/collection/251966/800x601",
+    "photo": "https://images.unsplash.com/photo-1511029107878-7b524f99db63?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
     "price": {
-      "amount": 300,
+      "amount": 630,
       "currency": "EUR"
     },
-    "description": "Caramel and banana meringue pie"
+    "description": "Dulce de Leche, bananas and meringue are a delicious and rich combination, but the lime zest adds a citrous bite and makes it irresistible!"
   },
   {
     "name": "Caramel toffee cake",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
     "type": "snack",
-    "photo": "https://source.unsplash.com/collection/251966/800x601",
+    "photo": "https://images.unsplash.com/photo-1570299792061-8b78ae15915f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
     "price": {
-      "amount": 300,
+      "amount": 575,
       "currency": "EUR"
     },
-    "description": "Caramel toffee cake"
+    "description": "If you're looking for decadent caramel dessert, this Caramel Apple Toffee Cake is it. An irresistable homemade spiced sheet cake smothered with layer of sweet apples and toffee bits, with caramel sauce drizzled all over it. But wait, we're still not done... top it fluffy whipped cream, even more caramel and more toffee and you are in cake heaven! "
   },
   {
-    "name": "Chargrilled corn on the cob with paprika butter",
+    "name": "Chicken Tikka Masala Crisps",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
     "type": "snack",
-    "photo": "https://source.unsplash.com/collection/251966/800x601",
+    "photo": "https://images.unsplash.com/photo-1528751014936-863e6e7a319c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=633&q=80",
     "price": {
-      "amount": 300,
+      "amount": 200,
       "currency": "EUR"
     },
-    "description": "Chargrilled corn on the cob with paprika butter"
+    "description": "Chicken Tikka Masala Flavour Potato Crisps - guaranteed to make you twant to drink"
   },
   {
-    "name": "Chicken sausages with creamy mash",
+    "name": "The Best Bratwurst",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
     "type": "snack",
-    "photo": "https://source.unsplash.com/collection/251966/800x601",
+    "photo": "https://images.unsplash.com/photo-1591340239768-af24f220c941?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
     "price": {
-      "amount": 300,
+      "amount": 490,
       "currency": "EUR"
     },
-    "description": "Chicken sausages with creamy mash"
+    "description": "This Bratwurst is a fresh German sausage of pork and veal, flavored with the best seasonings: caraway, coriander and nutmeg. Simmered in beer with onions that become sweet and caramelized, this is the best accompaniment for your craftbeers"
   },
   {
     "name": "Chocolate cake",
     "tagline": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores, ipsa saepe iste, officiis perferendis repellendus",
     "type": "snack",
-    "photo": "https://source.unsplash.com/collection/251966/800x601",
+    "photo": "https://images.unsplash.com/photo-1571606809798-027ae70d593f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
     "price": {
-      "amount": 300,
+      "amount": 900,
       "currency": "EUR"
     },
-    "description": "Chocolate cake"
+    "description": "This mouthwatering and reassuringly expensive chocolate cake turns any day into a party"
   }
 ]

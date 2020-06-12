@@ -15,7 +15,7 @@ class ShoppingBasketView extends Component {
   render() {
     //console.log('this =>', this.props);
     return (
-      <div>
+      <div className="shopping-basket-main">
         <h1>Shopping Basket</h1>
         {this.props.shoppingBasket.map((item) => (
           <Checkout
