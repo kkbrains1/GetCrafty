@@ -5,14 +5,15 @@ import { Link } from 'react-router-dom';
 //import ShoppingBasketTotal from './../ShoppingBasketTotal';
 import { signOut } from './../../services/authentication';
 import shopCart from './../../images/shop-cart.png';
+import logo from './../../images/logo1_GetCrafty.png';
 
-const NavBar = (props) => {
+const NavBar = props => {
   const signOutAndLiftUserState = () => {
     signOut()
       .then(() => {
         props.updateUser(null);
       })
-      .catch((error) => {
+      .catch(error => {
         console.log(error);
       });
   };
@@ -21,7 +22,7 @@ const NavBar = (props) => {
     <nav className="navbar">
       <Link to="/">
         <div className="logoimg">
-          <img src="/static/media/logo1_GetCrafty.8fd7fa85.png" alt="logo image" />
+          <img src={logo} alt="logo image" />
         </div>
       </Link>
       {(props.user && (
