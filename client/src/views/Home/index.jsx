@@ -30,7 +30,7 @@ class HomeView extends Component {
 
   render() {
     const beer = this.state.beer;
-    console.log(beer);
+    //console.log(beer);
     return (
       <div className="bigger_container">
         <section>

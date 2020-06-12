@@ -60,7 +60,7 @@ class CraftbeerSingleView extends Component {
             <h2>BEST PAIRED WITH...</h2>
             <ul>
               {product.food_pairing.map(foodItem => (
-                <Link to="#" key={Date.now() * Math.random()}>
+                <Link to={`/products/${foodItem}`} key={Date.now() * Math.random()}>
                   <li>{foodItem}</li>
                 </Link>
               ))}
@@ -71,7 +71,7 @@ class CraftbeerSingleView extends Component {
             <h4>Malts:</h4>
             <ul>
               {product.ingredients.malt.map(malt => (
-                <Link to="#" key={Date.now() * Math.random()}>
+                <Link to={`/products/${malt.name}`} key={Date.now() * Math.random()}>
                   <li>
                     {malt.name}:{' '}
                     <em>
@@ -85,7 +85,7 @@ class CraftbeerSingleView extends Component {
             <h4>Hops:</h4>
             <ul>
               {product.ingredients.hops.map(hops => (
-                <Link to="#" key={Date.now() * Math.random()}>
+                <Link to={`/products/${hops.name}`} key={Date.now() * Math.random()}>
                   <li>
                     {hops.name}:{' '}
                     <em>
@@ -98,7 +98,9 @@ class CraftbeerSingleView extends Component {
             </ul>
             <h4>Yeast:</h4>
             <ul>
-              <li>{product.ingredients.yeast}</li>
+              <Link to={`/products/${product.ingredients.yeast}`} key={Date.now() * Math.random()}>
+                <li>{product.ingredients.yeast}</li>
+              </Link>
             </ul>
           </div>
         )}

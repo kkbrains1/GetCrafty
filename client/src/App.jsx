@@ -25,6 +25,7 @@ import SnackListView from './views/Products/Snack/List';
 import SnackSingleView from './views/Products/Snack/Single';
 import BrewingkitListView from './views/Products/Brewingkit/List';
 import BrewingkitSingleView from './views/Products/Brewingkit/Single';
+import AddProduct from './views/Products/AddProduct';
 
 const deepCloneObject = (object) => JSON.parse(JSON.stringify(object));
 
@@ -74,7 +75,7 @@ class App extends Component {
   };
 
   changeProductQuantity = (product, quantity) => {
-    console.log('App basket', this.state.shoppingBasket);
+    //console.log('App basket', this.state.shoppingBasket);
     //console.log('product', product._id);
     //console.log('quantity', quantity);
     if (this.state.shoppingBasket.find((item) => item.product._id === product._id)) {
@@ -207,6 +208,7 @@ class App extends Component {
                 />
               )}
             />
+            <Route path="/products/add-product" render={(props) => <AddProduct {...props} />} />
             <Route
               path="/order/:id"
               render={(props) => (
