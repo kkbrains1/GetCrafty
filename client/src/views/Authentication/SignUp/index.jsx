@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { signUp } from './../../../services/authentication';
+import './style.scss';
 
 class AuthenticationSignUpView extends Component {
   constructor(props) {
@@ -31,7 +32,7 @@ class AuthenticationSignUpView extends Component {
 
     const { email, name, password, photo } = this.state;
 
-    signUp({ email, name, password, photo})
+    signUp({ email, name, password, photo })
       .then((user) => {
         this.props.updateUser(user);
         // Redirect user to home page after successful sign up
@@ -45,9 +46,12 @@ class AuthenticationSignUpView extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleFormSubmission}>
-          <label htmlFor="email-input">Email</label>
+        <form onSubmit={this.handleFormSubmission} className="labelForm">
+          <label htmlFor="email-input" className="infoTitle">
+            Email
+          </label>
           <input
+            className="infoInput"
             id="email-input"
             name="email"
             type="email"
@@ -55,8 +59,11 @@ class AuthenticationSignUpView extends Component {
             value={this.state.email}
             onChange={this.handleInputChange}
           />
-          <label htmlFor="name-input">Full Name</label>
+          <label htmlFor="name-input" className="infoTitle">
+            Full Name
+          </label>
           <input
+            className="infoInput"
             id="name-input"
             name="name"
             type="text"
@@ -64,8 +71,11 @@ class AuthenticationSignUpView extends Component {
             value={this.state.name}
             onChange={this.handleInputChange}
           />
-          <label htmlFor="password-input">Password</label>
+          <label htmlFor="password-input" className="infoTitle">
+            Password
+          </label>
           <input
+            className="infoInput"
             id="password-input"
             name="password"
             type="password"
@@ -74,9 +84,11 @@ class AuthenticationSignUpView extends Component {
             onChange={this.handleInputChange}
           />
 
-        
-          <label htmlFor="photo-input">Profile Photo</label>
+          <label htmlFor="photo-input" className="infoTitle">
+            Profile Photo
+          </label>
           <input
+            className="infoInput"
             id="photo-input"
             name="photo"
             type="file"
@@ -84,8 +96,7 @@ class AuthenticationSignUpView extends Component {
             onChange={this.handleFileInputChange}
           />
 
-
-          <button>Sign Up</button>
+          <button className="signUp">Sign Up</button>
         </form>
       </div>
     );

@@ -80,14 +80,18 @@ class HomeView extends Component {
         <section>
           <Link to="/">
             <h1 className="breweryTitle">Brewery Experience</h1>
-            <div>
-              <img src={brew1} alt="Brewery img" className="brew1" />
-            </div>
-            <div>
-              <img src={brew2} alt="Brewery img" className="brew2" />
-            </div>
-            <div>
-              <img src={brew3} alt="Brewery img" className="brew3" />
+            <div className="wrapperImg">
+              <div className="breweryImg">
+                <div>
+                  <img src={brew1} alt="Brewery img" className="brew1" />
+                </div>
+                <div>
+                  <img src={brew2} alt="Brewery img" className="brew2" />
+                </div>
+              </div>
+              <div>
+                <img src={brew3} alt="Brewery img" className="brew3" />
+              </div>
             </div>
           </Link>
         </section>
