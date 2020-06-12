@@ -5,13 +5,17 @@
   background-color: #00394e;
   a {
     padding: 1em;
+    &:first-child {
+      margin-right: auto;
+    }
   }
   button {
     border: 0;
   }
   img {
-    width: 4em;
-    height: 4em;
+    width: 3em;
+    border-radius: 50%;
+    height: 3em;
   }
 }
 .authentication {
