@@ -18,17 +18,17 @@ class UpdatePassword extends Component {
     });
   };
 
-  handleFormSubmission = (event) => {
+  handleFormSubmission = event => {
     event.preventDefault();
 
     const { password } = this.state;
     //console.log(password)
-    updatePassword({ password})
-      .then((user) => {
+    updatePassword({ password })
+      .then(user => {
         this.props.updateUser(user);
         this.props.history.push('/');
       })
-      .catch((error) => {
+      .catch(error => {
         console.log(error);
       });
   };
@@ -41,7 +41,7 @@ class UpdatePassword extends Component {
             className="user-profile-btn"
             id="update-password-input"
             name="update-password"
-            type="update-password"
+            type="password"
             placeholder="Update Password"
             value={this.state.password}
             onChange={this.handleInputChange}

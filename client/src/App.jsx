@@ -124,7 +124,7 @@ class App extends Component {
             <div className="productspace">
               {' '}
               <Link to="/products/brewingkit/list" className="product">
-                Brewing Kit
+                Brewing Material
               </Link>
             </div>
           </div>

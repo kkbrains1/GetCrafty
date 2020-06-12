@@ -67,7 +67,17 @@ class CheckoutView extends Component {
               product: item.product._id
             };
           });
-          return createOrder({ firstName, lastName, country, city, address, postCode, contact, shoppingBasket, creditCardToken });
+          return createOrder({
+            firstName,
+            lastName,
+            country,
+            city,
+            address,
+            postCode,
+            contact,
+            shoppingBasket,
+            creditCardToken
+          });
           /*           return listOrders({
             address,
             firstName,
@@ -86,7 +96,7 @@ class CheckoutView extends Component {
         // Order succeeded
         this.props.emptyShoppingBasket();
         // Redirect user to home page after successful purchase
-        this.props.history.push('/');
+        this.props.history.push('/past-orders');
       })
       .catch(error => {
         console.log(error);
@@ -137,9 +147,9 @@ class CheckoutView extends Component {
                   placeholder="City"
                   value={this.state.city}
                   onChange={this.handleInputChange}
-                /> 
-<label htmlFor="post-code-input">Postcode</label>
-<input
+                />
+                <label htmlFor="post-code-input">Postcode</label>
+                <input
                   id="post-code-input"
                   type="text"
                   name="postCode"
@@ -164,8 +174,7 @@ class CheckoutView extends Component {
                   placeholder="Contact"
                   value={this.state.contact}
                   onChange={this.handleInputChange}
-                /> 
-
+                />
 
                 <CardElement option={STRIPE_INPUT_OPTIONS} />
 

@@ -32,7 +32,7 @@ class BrewingkitListView extends Component {
     let shoppingBasket = this.props.shoppingBasket;
     return (
       <div className="product__list">
-        <h1>BREWING KITS</h1>
+        <h1>BREWING MATERIAL</h1>
         {this.state.brewingkits.map(product => (
           <div className="product__card" key={product._id}>
             <Link to={`/products/brewingkit/${product._id}`}>
