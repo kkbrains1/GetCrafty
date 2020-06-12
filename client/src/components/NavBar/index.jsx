@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 //import ShoppingBasketTotal from './../ShoppingBasketTotal';
 import { signOut } from './../../services/authentication';
 import shopCart from './../../images/shop-cart.png';
-import logo from './../../images/logo_trans1_get_crafty.png';
+import logo from './../../images/logo1_GetCrafty.png';
 
 const NavBar = (props) => {
   const signOutAndLiftUserState = () => {
@@ -21,8 +21,8 @@ const NavBar = (props) => {
   return (
     <nav className="navbar">
       <Link to="/">
-        <div>
-          <img className="logoimg" src={logo} alt="logo image" />
+        <div className="logoimg">
+          <img src={logo} alt="logo image" />
         </div>
       </Link>
       {(props.user && (
