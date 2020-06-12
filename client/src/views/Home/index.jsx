@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './style.scss';
 import { randomCraftbeer } from './../../services/craftbeer';
 import brew1 from './../../images/brew_1.jpg';
+import brew2 from './../../images/brew_2.jpg';
+import brew3 from './../../images/brew_3.jpg';
 import { Link } from 'react-router-dom';
 
 class HomeView extends Component {
@@ -77,10 +79,20 @@ class HomeView extends Component {
 
         <section>
           <Link to="/">
-            <h1 className="BreweryTitle">Brewery Experience</h1>
-            <img src={brew1} alt="Brewery img" />
-            <img src="/static/media/brew_2.jpg" alt="Brewery img" />
-            <img src="/static/media/brew_3.jpg" alt="Brewery img" />
+            <h1 className="breweryTitle">Brewery Experience</h1>
+            <div className="wrapperImg">
+              <div className="breweryImg">
+                <div>
+                  <img src={brew1} alt="Brewery img" className="brew1" />
+                </div>
+                <div>
+                  <img src={brew2} alt="Brewery img" className="brew2" />
+                </div>
+              </div>
+              <div>
+                <img src={brew3} alt="Brewery img" className="brew3" />
+              </div>
+            </div>
           </Link>
         </section>
       </div>

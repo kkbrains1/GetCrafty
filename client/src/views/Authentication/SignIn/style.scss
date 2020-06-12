@@ -1,0 +1,43 @@
+.signForm {
+  margin-top: 8em;
+}
+
+.emailTitle {
+  padding: 0;
+  color: #00394e;
+  margin-left: 10%;
+  font-weight: 700;
+}
+
+.emailInput {
+  padding: 0;
+  width: 80%;
+  margin-left: 10%;
+  border: none;
+  border-bottom: 1px solid #00394e;
+}
+
+.passTitle {
+  padding: 0;
+  color: #00394e;
+  margin-left: 10%;
+  font-weight: 700;
+  margin-top: 1.5em;
+}
+.passInput {
+  padding: 0;
+  width: 80%;
+  margin-left: 10%;
+  border: none;
+  border-bottom: 1px solid #00394e;
+}
+
+.signIn {
+  background-color: #00394e;
+  font-weight: 300;
+  color: #fff;
+  border-radius: 0.3em;
+  width: 10em;
+  height: 3.3em;
+  margin-top: 1em;
+}

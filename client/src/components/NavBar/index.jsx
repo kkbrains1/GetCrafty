@@ -4,6 +4,7 @@ import './style.scss';
 import { Link } from 'react-router-dom';
 //import ShoppingBasketTotal from './../ShoppingBasketTotal';
 import { signOut } from './../../services/authentication';
+import shopCart from './../../images/shop-cart.png';
 
 const NavBar = (props) => {
   const signOutAndLiftUserState = () => {
@@ -19,7 +20,7 @@ const NavBar = (props) => {
   return (
     <nav className="navbar">
       <Link to="/">
-        <div className="Logoimg">
+        <div className="logoimg">
           <img src="/static/media/logo1_GetCrafty.8fd7fa85.png" alt="logo image" />
         </div>
       </Link>
@@ -41,7 +42,7 @@ const NavBar = (props) => {
       )}
       <Link to="/shopping-basket">
         {' '}
-        <img src="" alt="Shopping Cart"></img>
+        <img src={shopCart} alt="Shopping Cart" className="shopcart"></img>
         {/*<ShoppingBasketTotal shoppingBasket={props.shoppingBasket} />*/}
       </Link>
     </nav>

@@ -1,9 +1,17 @@
+.orderSummary {
+  color: #00394e;
+  margin-left: 1em;
+  margin-top: 1em;
+}
+
 .table {
   width: 90%;
   margin: 0 auto;
+  margin-top: 2em;
 }
 
 .headertable {
+  color: #00394e;
   font-size: 13px;
   margin-bottom: 10em;
 }
@@ -12,7 +20,7 @@
   font-size: small;
 }
 
-.product {
+.productcell {
   text-align: left;
 }
 
@@ -32,6 +40,10 @@
   text-align: right;
 }
 
+.row {
+  color: #00394e;
+}
+
 .pricecontent {
   text-align: right;
 }
@@ -47,6 +59,7 @@
 .totalamount {
   text-align: right;
   padding: 1em;
+  color: #00394e;
 }
 
 table {

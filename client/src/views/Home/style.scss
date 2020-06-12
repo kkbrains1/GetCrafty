@@ -69,7 +69,37 @@
 }
 
 //Section_#04 - Brewery Experience
-.BreweryTitle {
+.breweryTitle {
   text-align: center;
   color: #00394e;
+  margin-left: 20px;
+}
+
+.wrapperImg {
+  width: 100%;
+}
+
+.breweryImg {
+  align-items: center;
+  display: flex;
+  margin-top: 3em;
+}
+
+.brew1 {
+  height: 9em;
+  margin-left: 1.5em;
+  border: 1px solid #00394e;
+}
+
+.brew2 {
+  margin-right: 1em;
+  height: 9em;
+  border: 1px solid #00394e;
+}
+
+.brew3 {
+  width: 333px;
+  margin-left: 1.5em;
+  margin-right: 2em;
+  border: 1px solid #00394e;
 }

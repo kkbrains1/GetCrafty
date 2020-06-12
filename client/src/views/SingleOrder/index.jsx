@@ -44,10 +44,11 @@ class SingleOrderView extends Component {
         )}
         {order && (
           <>
+            <h2 className="orderSummary">Order summary</h2>
             <table className="table">
               <thead>
                 <tr className="headertable">
-                  <th className="product">Product</th>
+                  <th className="productcell">Product</th>
                   <th className="type">Type</th>
                   <th className="price">Price</th>
                   <th className="quantity">Qty</th>
