@@ -1,28 +1,52 @@
+.Title {
+  color: #00394e;
+  margin-left: 1em;
+}
+
+.infoTitle {
+  padding: 0;
+  color: #00394e;
+  margin-left: 10%;
+  font-weight: 700;
+}
+
+.infoInput {
+  padding: 0;
+  width: 80%;
+  margin-left: 10%;
+  border: none;
+  border-bottom: 1px solid #00394e;
+}
+
 .StripeElement {
-  padding: 1.25em 1em;
-  border: 1px solid rgb(199, 199, 199);
+  // padding: 1.25em 1em;
+  // border: 1px solid rgb(199, 199, 199);
+  padding-top: 1em;
   margin-bottom: 1em;
 }
 
-.container{
-  max-width:100%;
-  display:flex;
+.container {
+  max-width: 100%;
+  display: flex;
   flex-direction: column;
   justify-content: center;
-    form{
-      align-items:center;
-    }
-    input#first-name-input,
-    #last-name-input,#country-input,
-    #city-input, #address-input,
-    #post-code-input, #contact-input {
-     width:75%;
-    }
-    table{
-      width:100%;
-      background-color: #ebebeb;
-      padding: 3em;
-      border: 1px solid black;
-      margin-bottom: 2em;
-    }
+  form {
+    align-items: center;
+  }
+  input#first-name-input,
+  #last-name-input,
+  #country-input,
+  #city-input,
+  #address-input,
+  #post-code-input,
+  #contact-input {
+    width: 75%;
+  }
+  table {
+    width: 100%;
+    background-color: #ebebeb;
+    padding: 3em;
+    border: 1px solid black;
+    margin-bottom: 2em;
+  }
 }
