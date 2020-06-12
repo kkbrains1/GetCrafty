@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import './style.scss';
-
+import formatPrice from './../../helpers/format-price';
+import formatDate from './../../helpers/format-date';
 import { listOrders } from '../../services/orders';
-
+import { Link } from 'react-router-dom';
 class PastOrdersView extends Component {
   constructor() {
     super();
@@ -15,8 +16,6 @@ class PastOrdersView extends Component {
   loadOrders() {
     listOrders()
       .then((orders, products) => {
-        console.log(orders);
-        console.log(products);
         this.setState({
           loaded: true,
           orders
@@ -35,29 +34,34 @@ class PastOrdersView extends Component {
     return (
       <div>
         {!this.state.loaded && <span>Loading...</span>}
-        <h1>Past Orders List</h1>
+        <h1 className="title">Past Orders List</h1>
         {this.state.orders &&
           this.state.orders.map((order) => {
             return (
               <>
-                <div>
-                  <p>Date ordered</p>
-                  <p>
-                    <strong>{order.dateCreated}</strong>
-                  </p>
-                </div>
-                <div>
-                  <p>Value</p>
-                  <p>
-                    <strong>
-                      {order.total.amount} {order.total.currency}
-                    </strong>
-                  </p>
+                <div className="card">
+                  <div className="date">
+                    <p>Date ordered</p>
+                    <p>
+                      <strong>{formatDate(order.timestamps.updatedAt)}</strong>
+                    </p>
+                  </div>
+                  <div className="value">
+                    <p>Value</p>
+                    <p>
+                      <strong>{formatPrice(order.total)}</strong>
+                    </p>
+                  </div>
+
+                  <div>
+                    <button className="button">
+                      <Link to={`/order/${order._id}`}>View order</Link>
+                    </button>
+                  </div>
                 </div>
               </>
             );
           })}
-        <button>View order</button>
       </div>
     );
   }

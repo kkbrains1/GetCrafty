@@ -114,10 +114,24 @@ class App extends Component {
       <div className="App">
         <BrowserRouter>
           <NavBar user={this.state.user} updateUser={this.updateUser} />
-          <div>
-            <Link to="/products/craftbeer/list" >Craftbeers</Link>
-            <Link to="/products/snack/list" >Snacks</Link>
-            <Link to="/products/brewingkit/list" >Brewing Kit</Link>
+          <div className="productlinks">
+            <div className="productspace">
+              {' '}
+              <Link to="/products/craftbeer/list" className="product">
+                Craftbeers
+              </Link>
+            </div>
+            <div className="productspace">
+              <Link to="/products/snack/list" className="product">
+                Snacks
+              </Link>
+            </div>
+            <div className="productspace">
+              {' '}
+              <Link to="/products/brewingkit/list" className="product">
+                Brewing Kit
+              </Link>
+            </div>
           </div>
           <Switch>
             <Route path="/" exact render={(props) => <HomeView {...props} />} />

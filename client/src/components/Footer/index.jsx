@@ -7,17 +7,19 @@ function Footer() {
   return (
     <>
       <div className="footerjsx">
-        <div>
+        <div className="footerlinkspace">
           <Link to="#">
-            <p className="footerLink">Contact us | </p>
+            <p className="footerLink">Contact us</p>
           </Link>
         </div>
-        <div>
+        <p>|</p>
+        <div className="footerlinkspace">
           <Link to="#">
-            <p className="footerLink">FAQ | </p>
+            <p className="footerLink">FAQ</p>
           </Link>
         </div>
-        <div>
+        <p>|</p>
+        <div className="footerlinkspace">
           <Link to="#">
             <p className="footerLink">Partners</p>
           </Link>
