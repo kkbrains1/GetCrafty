@@ -22,7 +22,7 @@ class UpdateImgView extends Component {
     event.preventDefault();
 
     const {photo} = this.state;
-    console.log(photo)
+    //console.log(photo)
 
     updateImg({photo})
       .then((user) => {

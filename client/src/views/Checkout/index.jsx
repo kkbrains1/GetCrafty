@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import { CardElement, Elements, ElementsConsumer } from '@stripe/react-stripe-js';
-import { listOrders } from './../../services/orders';
+import { createOrder } from './../../services/orders';
 import ShoppingBasketTotal from './../../components/ShoppingBasketTotal';
-
 
 import './style.scss';
 
-const STRIPE_API_KEY = process.env.STRIPE_API_TEST_KEY;
+const STRIPE_PUBLIC_API_KEY = process.env.REACT_APP_STRIPE_API_PUBLIC_KEY;
 
 const STRIPE_INPUT_OPTIONS = {
   style: {
@@ -34,10 +33,11 @@ class CheckoutView extends Component {
       postCode: '',
       contact: ''
     };
-    this.stripePromise = loadStripe(STRIPE_API_KEY);
+    this.stripePromise = loadStripe(STRIPE_PUBLIC_API_KEY);
+    //console.log('load stripe', this.stripePromise);
   }
 
-  handleInputChange = (event) => {
+  handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({
       [name]: value
@@ -46,26 +46,29 @@ class CheckoutView extends Component {
 
   handleFormSubmission = (event, stripe, elements) => {
     event.preventDefault();
-    console.log(elements);
+    //console.log('event', event, 'stripe', stripe, 'elements', elements);
+    //console.log(this.props);
     stripe
       .createPaymentMethod({
         type: 'card',
         card: elements.getElement(CardElement)
       })
-      .then((data) => {
+      .then(data => {
         if (data.error) {
           return Promise.reject(data.error);
         } else {
           const { firstName, lastName, country, city, address, postCode, contact } = this.state;
+          //const address = this.state.address;
           const creditCardToken = data.paymentMethod.id;
           // Call create order service and send creditCardToken, array of dishes with corresponding quantity, address
-          const shoppingBasket = this.props.shoppingBasket.map((item) => {
+          const shoppingBasket = this.props.shoppingBasket.map(item => {
             return {
               quantity: item.quantity,
               product: item.product._id
             };
           });
-          return listOrders({
+          return createOrder({ firstName, lastName, country, city, address, postCode, contact, shoppingBasket, creditCardToken });
+          /*           return listOrders({
             address,
             firstName,
             lastName,
@@ -76,7 +79,7 @@ class CheckoutView extends Component {
             contact,
             shoppingBasket,
             creditCardToken
-          });
+          }); */
         }
       })
       .then(() => {
@@ -85,21 +88,21 @@ class CheckoutView extends Component {
         // Redirect user to home page after successful purchase
         this.props.history.push('/');
       })
-      .catch((error) => {
+      .catch(error => {
         console.log(error);
       });
   };
 
   render() {
-    console.log('PROPS HERE =>', this.props);
+    //console.log('PROPS HERE =>', this.props);
     return (
-      <div className="container">
+      <div>
         <h1>Checkout</h1>
         <Elements stripe={this.stripePromise}>
           <ElementsConsumer>
             {({ stripe, elements }) => (
-              <form onSubmit={(event) => this.handleFormSubmission(event, stripe, elements)}>
-                <label className="billing-adress">Billing Address</label>
+              <form onSubmit={event => this.handleFormSubmission(event, stripe, elements)}>
+                <label htmlFor="first-name-input">First Name</label>
                 <input
                   id="first-name-input"
                   type="text"
@@ -108,6 +111,7 @@ class CheckoutView extends Component {
                   value={this.state.firstName}
                   onChange={this.handleInputChange}
                 />
+                <label htmlFor="last-name-input">Last Name</label>
                 <input
                   id="last-name-input"
                   type="text"
@@ -116,6 +120,34 @@ class CheckoutView extends Component {
                   value={this.state.lastName}
                   onChange={this.handleInputChange}
                 />
+                <label htmlFor="address-input">Delivery Address</label>
+                <input
+                  id="address-input"
+                  type="text"
+                  name="address"
+                  placeholder="Full Address"
+                  value={this.state.address}
+                  onChange={this.handleInputChange}
+                />
+                <label htmlFor="city-input">City</label>
+                <input
+                  id="city-input"
+                  type="text"
+                  name="city"
+                  placeholder="City"
+                  value={this.state.city}
+                  onChange={this.handleInputChange}
+                /> 
+<label htmlFor="post-code-input">Postcode</label>
+<input
+                  id="post-code-input"
+                  type="text"
+                  name="postCode"
+                  placeholder="Postcode"
+                  value={this.state.postCode}
+                  onChange={this.handleInputChange}
+                />
+                <label htmlFor="country-input">Country</label>
                 <input
                   id="country-input"
                   type="text"
@@ -124,30 +156,7 @@ class CheckoutView extends Component {
                   value={this.state.country}
                   onChange={this.handleInputChange}
                 />
-                <input
-                  id="city-input"
-                  type="text"
-                  name="city"
-                  placeholder="City"
-                  value={this.state.city}
-                  onChange={this.handleInputChange}
-                />
-                <input
-                  id="address-input"
-                  type="text"
-                  name="address"
-                  placeholder="Address"
-                  value={this.state.address}
-                  onChange={this.handleInputChange}
-                />
-                <input
-                  id="post-code-input"
-                  type="text"
-                  name="postCode"
-                  placeholder="Postcode"
-                  value={this.state.postCode}
-                  onChange={this.handleInputChange}
-                />
+                <label htmlFor="contact-input">Contact Number</label>
                 <input
                   id="contact-input"
                   type="number"
@@ -155,41 +164,10 @@ class CheckoutView extends Component {
                   placeholder="Contact"
                   value={this.state.contact}
                   onChange={this.handleInputChange}
-                />
+                /> 
+
 
                 <CardElement option={STRIPE_INPUT_OPTIONS} />
-
-                {/* <table>
-                  <thead>
-                    <tr>
-                      <th colspan="2">Your Order</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th>Products</th>
-                      <th>Total</th>
-                    </tr>
-                    <tr>
-                      <td>[product.name]</td> 
-                      <td>[product.price]</td>
-                    </tr>
-                    <tr>
-                      <td>[product.name]</td>
-                      <td>[product.price]</td>
-                    </tr>
-                    <tr>
-                      <th>Shipping Costs</th>
-                      <td>[shipping.price]</td>
-                    </tr>
-                    <tr>
-                      <th>Subtotal</th>
-                      <td>[subtotal]</td>
-                    </tr>
-                  </tbody>
-                </table> */}
-
-                <ShoppingBasketTotal shoppingBasket={this.props.shoppingBasket} />
 
                 <button>Confirm Purchase</button>
               </form>

@@ -31,7 +31,7 @@ const uploader = multer({ storage });
 
 router.post('/sign-up', uploader.single("photo"), (req, res, next) => {
   const { name, email, password } = req.body;
-  console.log(req.file)
+  //console.log(req.file)
   let imageUrl;
   if (req.file) imageUrl = req.file.path;
   bcryptjs
@@ -103,7 +103,7 @@ router.post('/update-password', (req, res, next) => {
 
 router.post('/update-img', uploader.single("photo"), (req, res, next) => {
   const photo = req.file.path;
-  console.log(req.file)
+  //console.log(req.file)
   User.findByIdAndUpdate(req.user._id, { photo: photo })
     .then(user => {
     req.session.user = user._id;

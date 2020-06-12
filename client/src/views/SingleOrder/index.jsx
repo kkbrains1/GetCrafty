@@ -18,7 +18,7 @@ class SingleOrderView extends Component {
 
     loadOrder(id)
       .then((order, products) => {
-        console.log(order, products);
+        //console.log(order, products);
         this.setState({
           loaded: true,
           order

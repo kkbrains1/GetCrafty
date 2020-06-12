@@ -3,5 +3,8 @@
   "scripts": {
     "start": "node ./server/server.js",
     "postinstall": "cd client && npm i && npm run build && cd ../server && npm i && cd .."
+  },
+  "dependencies": {
+    "@stripe/react-stripe-js": "^1.1.2"
   }
 }

@@ -31,6 +31,7 @@ class PastOrdersView extends Component {
   }
 
   render() {
+    //console.log(this.state.orders);
     return (
       <div>
         {!this.state.loaded && <span>Loading...</span>}
@@ -43,7 +44,7 @@ class PastOrdersView extends Component {
                   <div className="date">
                     <p>Date ordered</p>
                     <p>
-                      <strong>{formatDate(order.timestamps.updatedAt)}</strong>
+                      <strong>{formatDate(order.dateUpdated)}</strong>
                     </p>
                   </div>
                   <div className="value">

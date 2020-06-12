@@ -28,6 +28,12 @@ const schema = new mongoose.Schema(
       }
     },
     address: { type: String },
+    firstName: { type: String },
+    lastName: { type: String },
+    country: { type: String },
+    city: { type: String },
+    postCode: { type: String },
+    contact: { type: String },
     payment: { type: String },
     user: {
       type: mongoose.Schema.Types.ObjectId,
