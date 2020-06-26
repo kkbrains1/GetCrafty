@@ -1,25 +1,6 @@
+https://getcrafty.herokuapp.com/
 
-://source.unsplash.com/
-
- GetCrafty
-  CraftFixe
-   
-    
-     Example Wireframe for mobile e-commerce
-      
-       https://www.behance.net/gallery/7360127/E-Commerce-wireframe-Concept-design
-        
-	 
-	  
-	   Product knowledge
-	    
-	     https://www.brewdog.com/uk/community/diy-dog & https://punkapi.com/ 
-	      https://cervejaartesanalportuguesa.pt/cervejas/
-	       https://loja.cervejamusa.com/
-	        https://www.facebook.com/Sputnik-Craft-Beer-Bar-Lisbon-112049310161465/?ref=page_internal & https://untappd.com/v/sputnik-craft-beer/9345553
-		 https://www.facebook.com/artesanalisbottleshop/?ref=page_internal
-		  https://www.gourmetgiftbaskets.com/Beer-Gift-Baskets.asp
-		   https://www.businessinsider.com/best-craft-beer-food-pairings-summer-2018-6
+GetCrafty, an e-commerce platform for crafbeers + paired foods, and all the ingredients needed to brew your own!
 		    
 		     REACT
 		      
